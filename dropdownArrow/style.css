@@ -1,0 +1,40 @@
+/*@keyframes rotate-180{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+    transform-origin: 39% 54%;
+	}
+	100%{
+		-webkit-transform:rotate(-180deg);
+		transform:rotate(-180deg);
+    transform-origin: 39% 54%;
+	}
+}
+@-webkit-keyframes rotate-180{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+    transform-origin: 39% 54%;
+	}
+	100%{
+		-webkit-transform:rotate(180deg);
+		transform:rotate(180deg);
+    transform-origin: 39% 54%;
+	}
+}
+.rotate-180{
+	-webkit-animation: rotate-180 .25s 1 ease-in-out;
+	animation: rotate-180 .25s 1 ease-in-out;
+}*/
+
+.dropdown-toggle > .fa-angle-down{
+  transform: rotate(0deg);
+  transform-origin: 39% 45%;
+  transition: transform .1s ease-in-out;
+}
+
+.dropdown-toggle > .fa-angle-down.open{
+  transform: rotate(-180deg);
+  transform-origin: 39% 45%;
+  transition: transform .1s ease-in-out;
+}

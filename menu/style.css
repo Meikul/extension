@@ -1,0 +1,77 @@
+
+input{
+  background: inherit;
+}
+
+a{
+  color: #384660;
+}
+
+a:hover{
+  color: #384660;
+}
+
+li.active{
+  color: #385660;
+}
+
+.extension-nav{
+  width: 100%;
+  background: #f8f8f8;
+}
+
+.graynav{
+  background: #f8f8f8;
+}
+
+.nav-wrapper{
+  max-width: 1170px;
+  background: #f8f8f8;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-right{
+  margin-right: 0;
+}
+
+.row{
+  padding: 0;
+  margin: 0;
+}
+
+li > .container{
+  padding: 0;
+  margin: 0;
+}
+
+.yamm-content{
+  padding: 0;
+  margin: 0;
+}
+
+ul.navbar-right > li > form > div > input {
+  font-family: 'Helvetica Neue';
+  /*background: inherit;*/
+}
+
+.dropdown.yamm-fw .dropdown-menu{
+  left: 0;
+  right: 0;
+  background: #e7e7e7;
+}
+
+ul.navbar-nav > li > a{
+  font-size: 18px;
+  font-family: 'Roboto Condensed';
+}
+
+.navbar-brand{
+  font-size: 25px;
+  font-family: 'Roboto Condensed';
+}
+
+.navbar{
+  border-radius: 0;
+  border: none;
+}

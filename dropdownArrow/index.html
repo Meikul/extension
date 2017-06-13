@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquery children</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="script.js"></script> -->
+    <nav class="navbar navbar-default">
+      <style>
+      .dropdown-toggle > .fa-angle-down{
+        transform: rotate(0deg);
+        transform-origin: 39% 45%;
+        transition: transform .3s ease-in-out;
+      }
+
+      .dropdown-toggle > .fa-angle-down.open{
+        transform: rotate(-180deg);
+        transform-origin: 39% 45%;
+        transition: transform .3s ease-in-out;
+      }
+      </style>
+      <script type="text/javascript">
+      $(document).ready(function(){
+        $('.dropdown').on('click',function(elem){
+          const angle = $(this).find('.dropdown-toggle > .fa-angle-down');
+          angle.toggleClass('open');
+        });
+        $('.dropdown').focusout('click',function(elem){
+          const angle = $(this).find('.dropdown-toggle > .fa-angle-down');
+          angle.removeClass('open');
+        });
+      });
+      </script>
+      <div class="navbar-header"><button class="navbar-toggle" data-toggle="collapse" data-target="#extNav1"> <span class="sr-only">Toggle navigation</span> <span class="navmenu" style="font-align: center;">NACAA 2017 Menu</span> </button></div>
+      <li class="groupTitle toggle-mobile dt-nav-title hidden-xs">Browse NACAA 2017</li>
+      <div id="extNav1" class="collapse navbar-collapse">
+      	<ul class="nav navbar-stacked">
+      		<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Visit Salt Lake <em class="fa fa-angle-down" aria-hidden="true">&nbsp;</em></a>
+      			<ul class="dropdown-menu">
+      				<li><a title="Pioneer History Walking Tour of Salt Lake | Maps &amp; Info" href="https://www.visitsaltlake.com/group-tour-itineraries/pioneer-history/">Walking Tour</a></li>
+      				<li><a title="Restaurant Guide" href="{{f:13952607}}">Restaurant Guide</a></li>
+      			</ul>
+      		</li>
+      		<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Visit Utah <em class="fa fa-angle-down" aria-hidden="true">&nbsp;</em></a>
+      			<ul class="dropdown-menu">
+      				<li><a title="National Parks In and Around Utah" href="{{f:8409032}}">National Parks</a></li>
+      				<li><a title="National Parks In and Around Utah" href="https://www.visitutah.com/places-to-go/cities-and-towns" target="_blank">Cities &amp; Towns</a></li>
+      			</ul>
+      		</li>
+      		<li><a title="Dine with a Specialist Program" href="{{f:14309317}}">Dine with a Specialist Program</a></li>
+      		<li><a title="Life Members Program" href="{{f:14235813}}">Life Members Program</a></li>
+      		<li><a title="Professional Improvement Tours" href="{{f:14181927}}">Professional Improvement Tours</a></li>
+      		<li><a title="Second Amendment Celebration Trap Shoot" href="{{f:14728829}}">Second Amendment Celebration Trap Shoot</a></li>
+      		<li><a title="Sons and Daughters" href="{{f:14236207}}">Sons and Daughters</a></li>
+      		<li><a title="Spouses/Guest Program" href="{{f:14146706}}">Spouses/Guest Program</a></li>
+      		<li><a title="Tradeshow Information" href="/nacaa2017/2017-Trade-Show-Intro">Tradeshow Information</a></li>
+      		<li><a title="Talent Revue" href="{{f:14932959}}">Talent Revue</a></li>
+      	</ul>
+      	<a href="https://okzyhxiuzf.formstack.com/forms/?2624699-MIUG7m8VIw" target="_blank" class="btn btn-default btn-block">Conference Registration</a>
+      </div>
+    </nav>
+  </body>
+</html>
