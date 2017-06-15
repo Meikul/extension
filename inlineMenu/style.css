@@ -16,6 +16,8 @@ a:hover{
 
 #header{
   width: 100%;
+  background: #f8f8f8;
+  border-bottom: 1px solid #e7e7e7;
 }
 
 #header-wrapper{
@@ -25,12 +27,24 @@ a:hover{
     padding: 0;
 }
 
-.brand>a>img{
-  padding:30px 50px;
+#extension-logo{
+  padding:30px 0;
   margin: 0;
 }
 
 /************* NavBar **************/
+
+#dept-logo{
+  height:100%;
+  border:none;
+}
+
+.navs-wrapper{
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  padding:0;
+  height: 100%;
+}
 
 .fullwidth-nav{
   width: 100%;
@@ -44,6 +58,7 @@ a:hover{
   color: black;
   font-family: 'Roboto Condensed';
   border-right: 1px solid #e7e7e7;
+  border-left: 1px solid #e7e7e7;
 }
 
 li.dropdown.open>a.dropdown-toggle{

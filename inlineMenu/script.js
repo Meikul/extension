@@ -11,4 +11,8 @@ $(document).ready(function(){
     const angle = $(this).find('.dropdown-toggle > .fa-angle-down');
     angle.removeClass('up-angle');
   });
+  $(window).scroll(function(){
+    console.log('scroll');
+  })
+
 });
