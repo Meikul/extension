@@ -1,0 +1,121 @@
+
+
+#spacer{
+  height: 2000px;
+}
+
+input:hover{
+  cursor: text;
+}
+
+a{
+  color: #384660;
+}
+
+a:hover{
+  color: #384660;
+}
+
+/************* Header **************/
+
+#header{
+  width: 100%;
+}
+
+#header-wrapper{
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+.brand>a>img{
+  padding:30px 50px;
+  margin: 0;
+}
+
+/************* NavBar **************/
+
+.fullwidth-nav{
+  width: 100%;
+  background: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+}
+
+.navbar-brand{
+  padding-left: 30px;
+  font-size: 18px;
+  color: black;
+  font-family: 'Roboto Condensed';
+  border-right: 1px solid #e7e7e7;
+}
+
+li.dropdown.open>a.dropdown-toggle{
+  background: #f0f0f0;
+
+}
+
+.navbar-nav>li>a.dropdown-toggle:hover{
+  background: #f0f0f0;
+}
+
+.navbar-nav>li.open>a.dropdown-toggle:focus{
+  background: #f0f0f0;
+}
+
+div.yamm-content>.row>div>h1, div.yamm-content>.row>div>h2, div.yamm-content>.row>div>h3{
+  font-family: 'Roboto Condensed';
+}
+
+.nav-wrapper{
+  max-width: 1170px;
+  background: #f8f8f8;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul.navbar-right > li > form > div > input {
+  /*font-family: 'Helvetica Neue';*/
+  font-family: 'Roboto Condensed';
+  /*background: inherit;*/
+}
+
+.dropdown.yamm-fw .dropdown-menu{
+  left: 0;
+  right: 0;
+  background: #f0f0f0;
+  z-index: 20;
+}
+
+ul.navbar-nav > li > a{
+  font-size: 18px;
+  font-family: 'Roboto Condensed';
+}
+
+.navbar{
+  border-radius: 0;
+  border: none;
+}
+
+nav.navbar{
+  margin: 0;
+}
+
+.dropdown-toggle > .fa-angle-down{
+  transform: rotate(0deg);
+  transform-origin: 39% 45%;
+  transition: transform .25s ease-in-out;
+}
+
+.dropdown-toggle > .fa-angle-down.up-angle{
+  transform: rotate(-180deg);
+  transform-origin: 39% 45%;
+  transition: transform .25s ease-in-out;
+}
+
+/******* Results *******/
+.results-wrapper{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+}
