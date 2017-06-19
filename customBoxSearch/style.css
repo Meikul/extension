@@ -77,6 +77,7 @@ div.yamm-content>.row>div>h1, div.yamm-content>.row>div>h2, div.yamm-content>.ro
 ul.navbar-right > li > form > div > input {
   /*font-family: 'Helvetica Neue';*/
   font-family: 'Roboto Condensed';
+  -webkit-user-select: auto;
   /*background: inherit;*/
 }
 
@@ -102,20 +103,30 @@ nav.navbar{
 }
 
 .dropdown-toggle > .fa-angle-down{
-  transform: rotate(0deg);
-  transform-origin: 39% 45%;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transform-origin: 39% 45%;
+          transform-origin: 39% 45%;
+  -webkit-transition: -webkit-transform .25s ease-in-out;
+  transition: -webkit-transform .25s ease-in-out;
   transition: transform .25s ease-in-out;
+  transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
 }
 
 .dropdown-toggle > .fa-angle-down.up-angle{
-  transform: rotate(-180deg);
-  transform-origin: 39% 45%;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-transform-origin: 39% 45%;
+          transform-origin: 39% 45%;
+  -webkit-transition: -webkit-transform .25s ease-in-out;
+  transition: -webkit-transform .25s ease-in-out;
   transition: transform .25s ease-in-out;
+  transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
 }
 
 /******* Results *******/
 .results-wrapper{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 200px;
+  margin-top:100px;
 }
