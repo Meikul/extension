@@ -5,8 +5,8 @@ window.onfocus = function() { blurred && (location.reload()); };
 $(document).ready(function(){
 
 
-  function isShort(){
-    return window.innerHeight<636;
+  function isMobile(){
+    return window.innerWidth < 768;
   }
 
   // makes yamm dropdown not close when you click somthing in it
@@ -16,18 +16,25 @@ $(document).ready(function(){
 
 
   // turns dropdown angles
-  $(document).on('click', '.dropdown', function(elem){
-    const angle = $(this).find('.dropdown-toggle > .fa-angle-down');
-    angle.toggleClass('up-angle');
-  });
-  $('.dropdown').on('click',function(elem){
-    const angle = $(this).find('.dropdown-toggle > .fa-angle-down');
-    angle.toggleClass('up-angle');
-  });
-  $('.dropdown').focusout('click',function(elem){
-    const angle = $(this).find('.dropdown-toggle > .fa-angle-down');
-    angle.removeClass('up-angle');
-  });
+  // $(document).on('click', '.dropdown', function(elem){
+  //   const angle = $(this).find('.dropdown-toggle > .fa-angle-down');
+  //   angle.toggleClass('up-angle');
+  // });
+  // $('.dropdown').on('click',function(elem){
+  //   const angle = $(this).find('.dropdown-toggle > .fa-angle-down');
+  //   angle.toggleClass('up-angle');
+  // });
+  // $('.dropdown').focusout('click',function(elem){
+  //   const angle = $(this).find('.dropdown-toggle > .fa-angle-down');
+  //   angle.removeClass('up-angle');
+  // });
+
+
+  // $('.dropdown').hover(function(){
+  //   if(!isMobile()) $(this).find('.dropdown-toggle > .fa-angle-down').addClass('up-angle');
+  // },function(){
+  //   if(!isMobile()) $(this).find('.dropdown-toggle > .fa-angle-down').removeClass('up-angle');
+  // });
 
 
 

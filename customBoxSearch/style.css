@@ -103,6 +103,7 @@ input:hover{
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.175);
 }
 
+
 li.dropdown.open>a.dropdown-toggle{
   background: #e7e7e7;
 
@@ -141,8 +142,6 @@ ul.navbar-right > li > form > div > input {
 .dropdown.yamm-fw .dropdown-menu{
   left: 0;
   right: 0;
-  background: #e7e7e7;
-  z-index: 20;
 }
 
 ul.navbar-nav > li > a{
@@ -159,15 +158,21 @@ nav.navbar{
   margin: 0;
 }
 
+.dropdown-menu{
+  background: #e7e7e7;
+  border-radius: 0;
+  z-index: 20;
+}
+
 .dropdown-toggle > .fa-angle-down{
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   -webkit-transform-origin: 39% 45%;
           transform-origin: 39% 45%;
-  -webkit-transition: -webkit-transform .25s ease-in-out;
-  transition: -webkit-transform .25s ease-in-out;
-  transition: transform .25s ease-in-out;
-  transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 .dropdown-toggle > .fa-angle-down.up-angle{
@@ -175,23 +180,86 @@ nav.navbar{
           transform: rotate(-180deg);
   -webkit-transform-origin: 39% 45%;
           transform-origin: 39% 45%;
-  -webkit-transition: -webkit-transform .25s ease-in-out;
-  transition: -webkit-transform .25s ease-in-out;
-  transition: transform .25s ease-in-out;
-  transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+#more-dropdown{
+  z-index: 20;
+}
+
+#more-dropdown .dropdown-menu{
+  padding: 0;
+}
+
+#more-dropdown .dropdown-menu>li{
+  padding: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#more-dropdown .dropdown-menu>li>a{
+  padding:15px 15px;
+  width: 100%
+  float: left;
+  font-size: 16px;
+  font-family: 'Roboto Condensed';
+  height: 50px;
+  color: #777;
+}
+
+#soc-media-list{
+  position: absolute;
+  right:0;
+  top:0;
+  list-style-type: none;
+  height: 50px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  background: #e7e7e7;
+  border: 1px solid #ddd;
+  position: relative;
+  overflow: hidden;
+  width:;
+  transition: width .3s ease-in-out;
+}
+
+.soc-media-item{
+  height:50px;
+  width: 50px;
+  position: relative;
+  /*border-right: 1px solid #ddd;*/
+}
+
+.soc-media-item .fa{
+  font-size: 30px;
+  color: #777;
+}
+
+#soc-media:hover>#soc-media-list{
+  width:200px;
+  display: block;
+  left:-300px;
+  transition: width .3s ease-in-out, left .3s ease-in-out;
 }
 
 
-@media (min-width: 768px) {
-  #courses{ /* keeps it from wrapping*/
-    padding-left: 0;
+@media (min-width: 768px) { /* Desktop */
+  #more-dropdown{
+    display: block;
+  }
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+      display: block;
   }
   .navbar-collapse .collapse-divider{
     display: none;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px) { /* Mobile */
+  #more-dropdown{
+    display: none;
+  }
   .navbar-collapse .collapse-divider{
     height: 1px;
     width: 100%;
