@@ -106,6 +106,9 @@ $(document).ready(function(){
     });
   }
 
+  // $('#soc-media').hover(function(){$('#soc-media-list').animate({width: '200px', left:'-200px'}, 300)},
+  //                       function(){$('#soc-media-list').animate({width: '0', left:'0'}, 300))};
+
   // search functionality
 
   // $('#search-btn').click(function(e){
