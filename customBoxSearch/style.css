@@ -12,14 +12,6 @@ input:hover{
   cursor: text;
 }
 
-a{
-  color: #384660;
-}
-
-a:hover{
-  color: #384660;
-}
-
 /************* Header **************/
 
 #header{
@@ -33,9 +25,61 @@ a:hover{
     padding: 0;
 }
 
-.brand>a>img{
-  padding:30px 50px;
-  margin: 0;
+#header a{
+  font-size: 9pt;
+}
+
+.header-right{
+  position: relative;
+  right: 0;
+  top:0;
+  float: right;
+}
+
+#search-input{
+  text-align: center;
+  margin-left: 10px;
+}
+
+#search-group{
+    width: 100%;
+}
+#search-form{
+  float: right;
+  margin: 7px 10px 10px 10px;
+}
+#header-links{
+  float: right;
+  font-size: 9pt;
+}
+
+
+@media (min-width: 320px) and (max-width: 767px) { /* Mobile */
+  .brand img{
+    margin: 20px auto;
+  }
+  #header-social{
+    display: none;
+  }
+  #header-links{
+    margin: 0 10px 7px 0;
+  }
+}
+
+@media (min-width: 768px) { /* Desktop */
+  #search-form{
+    max-width: 350px;
+  }
+  .brand img{
+    margin: 30px 50px;
+  }
+  #header-social{
+    margin: 0 10px 0 0;
+    float: right;
+  }
+  #header-links{
+    margin: 30px 10px 7px 0;
+  }
 }
 
 /************* NavBar **************/
@@ -54,17 +98,22 @@ a:hover{
   border-right: 1px solid #e7e7e7;
 }
 
+.department-nav{
+  position: relative;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.175);
+}
+
 li.dropdown.open>a.dropdown-toggle{
-  background: #f0f0f0;
+  background: #e7e7e7;
 
 }
 
 .navbar-nav>li>a.dropdown-toggle:hover{
-  background: #f0f0f0;
+  background: #e7e7e7;
 }
 
 .navbar-nav>li.open>a.dropdown-toggle:focus{
-  background: #f0f0f0;
+  background: #e7e7e7;
 }
 
 div.yamm-content>.row>div>h1, div.yamm-content>.row>div>h2, div.yamm-content>.row>div>h3{
@@ -78,6 +127,10 @@ div.yamm-content>.row>div>h1, div.yamm-content>.row>div>h2, div.yamm-content>.ro
   margin-right: auto;
 }
 
+.dark-nav{
+  background: #f0f0f0;
+}
+
 ul.navbar-right > li > form > div > input {
   /*font-family: 'Helvetica Neue';*/
   font-family: 'Roboto Condensed';
@@ -88,7 +141,7 @@ ul.navbar-right > li > form > div > input {
 .dropdown.yamm-fw .dropdown-menu{
   left: 0;
   right: 0;
-  background: #f0f0f0;
+  background: #e7e7e7;
   z-index: 20;
 }
 
@@ -104,28 +157,6 @@ ul.navbar-nav > li > a{
 
 nav.navbar{
   margin: 0;
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .navbar-search {
-    padding: 0;
-    position: absolute;
-    top: 0;
-    right: 90px;
-    border-radius: 4px;
-  }
-  #search-input{
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-}
-
-@media (min-width: 768px) {
-  .navbar-search {
-    position: absolute;
-    top: 0;
-    right:0;
-  }
 }
 
 .dropdown-toggle > .fa-angle-down{
@@ -150,9 +181,43 @@ nav.navbar{
   transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
 }
 
+
+@media (min-width: 768px) {
+  #courses{ /* keeps it from wrapping*/
+    padding-left: 0;
+  }
+  .navbar-collapse .collapse-divider{
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse .collapse-divider{
+    height: 1px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #ddd;
+  }
+}
+
 /******* Results *******/
-.results-wrapper{
+/*.results-wrapper{
   margin-left: auto;
   margin-right: auto;
   margin-top:100px;
+}*/
+
+#results-wrapper{
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#gsc-searchbox-wrapper{
+  display: none;
+  height: 0;
+  width: 0;
+  overflow: hidden;
 }
