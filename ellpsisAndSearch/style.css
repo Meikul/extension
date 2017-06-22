@@ -219,7 +219,7 @@ nav.navbar{
   z-index: -20;
   /*box-shadow: -6px 6px 12px rgba(0, 0, 0, 0.175);*/
   background: #e7e7e7;
-  overflow: visible;
+  overflow: hidden;
   height: 50px;
   width: 0;
   float: left;
@@ -237,7 +237,7 @@ nav.navbar{
   /*transition-timing-function: linear;*/
   transition-timing-function: ease;
   transition-property: width, transform;
-  transition-duration: .7s;
+  transition-duration: .5s;
 }
 
 .soc-media-item{
