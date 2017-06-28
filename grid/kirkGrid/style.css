@@ -12,7 +12,7 @@
 /* General style */
 
 h1, h2, h3 {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Condensed';
 }
 
 p {
@@ -24,315 +24,146 @@ p {
 	margin: auto;
 }
 
-.google-grid-gallery ul {
+.grid-gallery ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.google-grid-gallery figure {
+.grid-sizer{
+	padding: 0 !important;
+}
+
+.grid-gallery figure {
 	margin: 0;
 }
 
-.google-grid-gallery figure img {
+.grid-gallery figure img {
 	display: block;
 	width: 100%;
 }
 
-.google-grid-gallery figcaption h3 {
+.grid-gallery figcaption h3 {
+	font-size: 17px;
+	color: #384660;
 	margin: 0;
 	padding: 0 0 0.5em;
 }
 
-.google-grid-gallery figcaption p {
+.grid-gallery figcaption p {
 	margin: 0;
 }
 
 /* Grid style */
-.google-grid-wrap {
+.grid-wrap {
 	margin: 0 auto;
 	padding: 0 1em 1.875em;
 }
 
-.google-grid {
+.grid {
 	margin: 0 auto;
 }
 
-.google-grid li {
+.grid li {
+	margin: 0;
+	padding: 15px;
 	float: left;
 	cursor: pointer;
 }
 
-@media (min-width:1200px){
-	.google-grid li{
-		width: 25%;
-	}
+.grid li>figure{
+	padding: 0;
+	overflow: hidden;
+	border-radius: 1px; /* box shadow animation overshoots if 0 for some reason */
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  /*transition: all 0.3s cubic-bezier(.25,.8,.25,1);*/
+	transition: all 0.15s ease;
 }
 
-@media (max-width: 1199px) and (min-width: 800px){
-	.google-grid li{
+/* Shadow Effect */
+.grid li>figure:hover {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+@media (min-width:1000px){
+	.grid li:not(.grid-sizer){
+		width: calc(33% - 30px) !important;
+	}
+	.grid-sizer{
 		width: 33% !important;
 	}
 }
 
-@media (max-width: 799px) and (min-width: 530px){
-	.google-grid li{
+@media (max-width: 1099px) and (min-width: 850px){
+	.grid li:not(.grid-sizer){
+		width: calc(33% - 30px) !important;
+	}
+	.grid-sizer{
+		width: 33% !important;
+	}
+}
+
+@media (max-width: 849px) and (min-width: 530px){
+	.grid li:not(.grid-sizer){
+		width: calc(50% - 30px) !important;
+	}
+	.grid-sizer{
 		width: 50% !important;
 	}
 }
 
 @media (max-width: 529px){
-	.google-grid li{
+	.grid li:not(.grid-sizer){
+		width: calc(100% - 30px) !important;
+	}
+	.grid-sizer{
 		width: 100% !important;
 	}
 }
 
 
 
-.google-grid figure {
-	padding: 15px;
+.grid figure {
+	padding: 0;
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 }
 
-.google-grid li:hover figure {
-	opacity: 0.7;
+.grid li:hover figure {
+	opacity: 1;
 }
 
-.google-grid figcaption {
-	background: #e4e4e4;
+.grid figcaption {
+	background: #f4f4f4;
 	padding: 25px;
 }
 
 /* Slideshow style */
-.google-slideshow {
+.slideshow{
 	position: fixed;
-	background: rgba(0,0,0,0.6);
-	width: 100%;
-	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: 500;
-	opacity: 0;
-	visibility: hidden;
+	height: 100%;
+	width: 100%;
+	display: none;
+	background: rgba(0, 0, 0, 0.7);
 	overflow: hidden;
-	-webkit-perspective: 1000px;
-	perspective: 1000px;
-	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-	transition: opacity 0.5s, visibility 0s 0.5s;
+	z-index: 30;
 }
 
-.google-slideshow-open .google-slideshow {
-	opacity: 1;
-	visibility: visible;
-	-webkit-transition: opacity 0.5s;
-	transition: opacity 0.5s;
-}
-
-.google-slideshow ul {
-	width: 100%;
-	height: 100%;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	-webkit-transform: translate3d(0,0,150px);
-	transform: translate3d(0,0,150px);
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-}
-
-.google-slideshow ul.animatable li {
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-}
-
-.google-slideshow-open .google-slideshow ul {
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-
-.google-slideshow li {
-	width: 660px;
-	height: 560px;
+.slideshow figure{
+	border: 2px solid #f4f4f4;
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -280px 0 0 -330px;
-	visibility: hidden;
+	/*height: 70%;*/
+	width: 70%;
+	top: 15%;
+	left: 15%;
+	overflow: show;
+	background: #f4f4f4;
 }
 
-.google-slideshow li.show {
-	visibility: visible;
-}
-
-.google-slideshow li:after {
-	content: '';
-	position: absolute;
+.slideshow figcaption{
+	position: relative;
+	/*background: red;*/
 	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: rgba(255,255,255,0.8);
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
 }
-
-.google-slideshow li.current:after {
-	visibility: hidden;
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, visibility 0s 0.3s;
-	transition: opacity 0.3s, visibility 0s 0.3s;
-}
-
-.google-slideshow figure {
-	width: 100%;
-	height: 100%;
-	background: #fff;
-	border: 50px solid #fff;
-	overflow: hidden;
-}
-
-.google-slideshow figcaption {
-	padding-bottom: 20px;
-}
-
-.google-slideshow figcaption h3 {
-	font-weight: 300;
-	font-size: 200%;
-}
-
-/* Navigation */
-
-.google-slideshow nav span {
-	position: fixed;
-	z-index: 1000;
-	color: #59656c;
-	text-align: center;
-	padding: 3%;
-	cursor: pointer;
-	font-size: 2.2em;
-}
-
-.google-slideshow nav span.nav-prev,
-.google-slideshow nav span.nav-next {
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-
-.google-slideshow nav span.nav-next {
-	right: 0;
-}
-
-.google-slideshow nav span.nav-close {
-	top: 0;
-	right: 0;
-	padding: 0.5em 1em;
-	color: #31373a;
-}
-
-.icon:before,
-.icon:after {
-	font-family: 'fontawesome';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-span.nav-prev:before {
-	content: "\e601";
-}
-
-span.nav-next:before  {
-	content: "\e600";
-}
-
-span.nav-close:before {
-	content: "\e602";
-}
-
-/* Info on arrow key navigation */
-.google-info-keys {
-	position: fixed;
-	top: 10px;
-	left: 10px;
-	width: 60px;
-	font-size: 8px;
-	padding-top: 20px;
-	text-transform: uppercase;
-	color: #fff;
-	letter-spacing: 1px;
-	text-align: center;
-}
-
-.google-info-keys:before,
-.google-info-keys:after {
-	position: absolute;
-	top: 0;
-	width: 16px;
-	height: 16px;
-	border: 1px solid #fff;
-	text-align: center;
-	line-height: 14px;
-	font-size: 12px;
-}
-
-.google-info-keys:before {
-	left: 10px;
-	content: "\e603";
-}
-
-.google-info-keys:after {
-	right: 10px;
-	content: "\e604";
-}
-
-/* Example media queries (reduce number of columns and change slideshow layout) */
-
-@media screen and (max-width: 60em) {
-	/* responsive columns; see "Element sizing" on http://masonry.desandro.com/options.html */
-	.google-grid li {
-		width: 33.3%;
-	}
-
-	.google-slideshow li {
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		margin: 0;
-	}
-
-	.google-slideshow li figure img {
-		width: auto;
-		margin: 0 auto;
-		max-width: 100%;
-	}
-
-	.google-slideshow nav span,
-	.google-slideshow nav span.nav-close {
-		font-size: 1.8em;
-		padding: 0.3em;
-	}
-
-	.google-info-keys {
-		display: none;
-	}
-
-}
-
-/*@media screen and (max-width: 35em) {
-	.google-grid li {
-		width: 50%;
-	}
-}
-
-@media screen and (max-width: 24em) {
-	.google-grid li {
-		width: 100%;
-	}
-}*/

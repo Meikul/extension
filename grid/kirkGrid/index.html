@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/Users/extension/Projects/reload/reload.js"></script>
-
+    <script type="text/javascript" src="script.js"></script>
     <div class="main-container-wide">
 			<div class="main-container-wrapper">
 				<div class="row" id="content">
@@ -22,13 +22,13 @@
 						<div class="row">
 							<div class="row">
 
-								<div id="google-grid-gallery" class="google-grid-gallery">
+								<div id="grid-gallery" class="grid-gallery">
 
-									<section class="google-grid-wrap">
+									<section class="grid-wrap">
 
-										<ul class="google-grid" data-masonry='{"itemSelector":".google-grid li", "columnWidth":".google-grid-sizer"}'>
+										<ul class="grid">
 
-											<li class="google-grid-sizer"></li>
+											<li class="grid-sizer"></li>
 											<!-- for Masonry column width -->
 
 											<li>
@@ -183,9 +183,21 @@
 										</ul>
 
 									</section>
-									<!-- // google-grid-wrap -->
+                  <section class="slideshow">
+                    <figure>
+                      <img src="https://caas.usu.edu/ou-images/aviation-banner.jpg" alt="img06">
+
+                      <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        <p>Street chillwave hoodie ea gentrify.</p>
+                      </figcaption>
+
+                    </figure>
+                    <!-- modal is generated and stuck in here -->
+                  </section>
+									<!-- // grid-wrap -->
 								</div>
-								<!-- // google-grid-gallery -->
+								<!-- // grid-gallery -->
 								<script src="https://caas.usu.edu/_resources/scripts/photo-gallery/imagesloaded.pkgd.min.js"></script>
 								<script src="https://caas.usu.edu/_resources/scripts/photo-gallery/masonry.pkgd.min.js"></script>
 								<script src="https://caas.usu.edu/_resources/scripts/photo-gallery/classie.js"></script>
