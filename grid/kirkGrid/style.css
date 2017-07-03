@@ -155,15 +155,47 @@ p {
 	border: 2px solid #f4f4f4;
 	position: absolute;
 	/*height: 70%;*/
-	width: 70%;
+	width: 80%;
 	top: 15%;
-	left: 15%;
-	overflow: show;
+	left: 10%;
+	overflow: hidden;
 	background: #f4f4f4;
 }
 
 .slideshow figcaption{
 	position: relative;
-	/*background: red;*/
+	margin: 0;
+	padding: 25px;
 	width: 100%;
+	box-sizing: border-box;
+}
+
+.slideshow h3{
+	font-size: 30px !important;
+	color: black;
+	/*background: white;*/
+}
+
+.grid .modal-text{
+	display: none;
+}
+
+.slideshow p:not(.modal-text){
+	display: none;
+}
+
+.slideshow .img-container{
+	max-height: 400px;
+	overflow: hidden;
+}
+
+.slideshow .more-info{
+	width: 100%;
+	background: #384660;
+	text-align: center;
+	color: white;
+	padding: 10px;
+	font-family: 'Roboto Condensed';
+	font-size: 30px;
+	box-sizing: border-box;
 }
