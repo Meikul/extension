@@ -1,4 +1,4 @@
-.slideshow {
+.lightbox {
 	position: fixed;
 	background: rgba(0,0,0,0.6);
 	width: 100%;
@@ -15,14 +15,14 @@
 	transition: opacity 0.5s, visibility 0s 0.5s;
 }
 
-.slideshow-open .slideshow {
+.lightbox-open .lightbox {
 	opacity: 1;
 	visibility: visible;
 	-webkit-transition: opacity 0.5s;
 	transition: opacity 0.5s;
 }
 
-.slideshow ul {
+.lightbox ul {
 	width: 100%;
 	height: 100%;
 	-webkit-transform-style: preserve-3d;
@@ -33,17 +33,17 @@
 	transition: transform 0.5s;
 }
 
-.slideshow ul.animatable li {
+.lightbox ul.animatable li {
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
-.slideshow-open .slideshow ul {
+.lightbox-open .lightbox ul {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-.slideshow li {
+.lightbox li {
 	width: 660px;
 	height: 560px;
 	position: absolute;
@@ -53,11 +53,11 @@
 	visibility: hidden;
 }
 
-.slideshow li.show {
+.lightbox li.show {
 	visibility: visible;
 }
 
-.slideshow li:after {
+.lightbox li:after {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -69,14 +69,14 @@
 	transition: opacity 0.3s;
 }
 
-.slideshow li.current:after {
+.lightbox li.current:after {
 	visibility: hidden;
 	opacity: 0;
 	-webkit-transition: opacity 0.3s, visibility 0s 0.3s;
 	transition: opacity 0.3s, visibility 0s 0.3s;
 }
 
-.slideshow figure {
+.lightbox figure {
 	width: 100%;
 	height: 100%;
 	background: #fff;
@@ -84,18 +84,18 @@
 	overflow: hidden;
 }
 
-.slideshow figcaption {
+.lightbox figcaption {
 	padding-bottom: 20px;
 }
 
-.slideshow figcaption h3 {
+.lightbox figcaption h3 {
 	font-weight: 300;
 	font-size: 200%;
 }
 
 /* Navigation */
 
-.slideshow nav span {
+.lightbox nav span {
 	position: fixed;
 	z-index: 1000;
 	color: #59656c;
@@ -105,18 +105,18 @@
 	font-size: 2.2em;
 }
 
-.slideshow nav span.nav-prev,
-.slideshow nav span.nav-next {
+.lightbox nav span.nav-prev,
+.lightbox nav span.nav-next {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
-.slideshow nav span.nav-next {
+.lightbox nav span.nav-next {
 	right: 0;
 }
 
-.slideshow nav span.nav-close {
+.lightbox nav span.nav-close {
 	top: 0;
 	right: 0;
 	padding: 0.5em 1em;
@@ -184,7 +184,7 @@ span.nav-close:before {
 	content: "\e604";
 }
 
-/* Example media queries (reduce number of columns and change slideshow layout) */
+/* Example media queries (reduce number of columns and change lightbox layout) */
 
 @media screen and (max-width: 60em) {
 	/* responsive columns; see "Element sizing" on http://masonry.desandro.com/options.html */
@@ -192,7 +192,7 @@ span.nav-close:before {
 		width: 33.3%;
 	}
 
-	.slideshow li {
+	.lightbox li {
 		width: 100%;
 		height: 100%;
 		top: 0;
@@ -200,14 +200,14 @@ span.nav-close:before {
 		margin: 0;
 	}
 
-	.slideshow li figure img {
+	.lightbox li figure img {
 		width: auto;
 		margin: 0 auto;
 		max-width: 100%;
 	}
 
-	.slideshow nav span,
-	.slideshow nav span.nav-close {
+	.lightbox nav span,
+	.lightbox nav span.nav-close {
 		font-size: 1.8em;
 		padding: 0.3em;
 	}
