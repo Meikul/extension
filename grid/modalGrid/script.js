@@ -30,7 +30,7 @@ $(document).ready(function() {
     $('.lightbox').fadeOut(500, function(){$('.lightbox').children().remove()});
   }
   $('.lightbox').click(closeModal);
-  $(document).keyup(function(e) {
+  $(document).keydown(function(e) {
     if (e.keyCode == 27) closeModal();
   });
 });
