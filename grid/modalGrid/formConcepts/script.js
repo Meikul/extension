@@ -23,7 +23,7 @@ $(document).ready(function() {
     //                      // use jQuery UI or Easing plugin for more options
     //     step: function() {
     //         console.log(this.blurRadius);
-    //         $('.grid-wrap').css({
+    //         $('.grids-wrap').css({
     //             "-webkit-filter": "blur("+this.blurRadius+"px)",
     //             "filter": "blur("+this.blurRadius+"px)"
     //         });

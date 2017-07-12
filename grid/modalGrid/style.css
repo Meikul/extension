@@ -29,6 +29,36 @@ body{
 	margin: auto;
 }
 
+#degrees-header{
+	position: relative;
+	left: 30px;
+}
+
+#degrees-header h2{
+	display: inline;
+	margin-right: 40px;
+}
+
+#grid-selectors{
+	margin-top: 20px;
+	white-space: nowrap;
+	display: inline;
+}
+
+.grid-selector{
+	display: inline;
+	font-size: 17px;
+	padding: 10px;
+	cursor: pointer;
+	color: #38b;
+	/*border: 1px solid #ddd;*/
+}
+
+.active-grid-selector, .grid-selector:hover{
+	text-decoration: underline;
+	color: black;
+}
+
 .main-content > h2{
 	padding-left: 30px;
 }
@@ -74,9 +104,19 @@ body{
 }
 
 /* Grid style */
-.grid-wrap {
+.grids-wrap {
 	margin: auto;
 	padding: 0 1em 1.875em;
+}
+
+.grid-wrap{
+	top: 0;
+	left: 0;
+}
+
+.grid-wrap:not(.active-grid){
+	/*display: none;*/
+	opacity: 0;
 }
 
 .grid {

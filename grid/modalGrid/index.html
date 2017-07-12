@@ -16,348 +16,533 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/Users/extension/Projects/reload/reload.js"></script>
     <script type="text/javascript" src="script.js"></script>
-    <!-- <div class="main-container-wide">
+    <div class="main-container-wide">
 			<div class="main-container-wrapper">
-				<div class="row" id="content"> -->
+				<!-- <div class="row" id="content"> -->
 					<div class="main-content" role="main">
+            <div id="degrees-header">
             <h2 style="font-size: 3em;">Equine Degrees</h2>
-
+            <div id="grid-selectors">
+              <div id="undergrad-link" class="grid-selector active-grid-selector">Undergraduate</div>
+              <div id="graduate-link" class="grid-selector">Graduate</div>
+              <div id="minors-link" class="grid-selector">Minors</div>
+            </div>
+            </div>
 							<div class="row">
 
 								<div id="grid-gallery" class="grid-gallery">
 
-									<section class="grid-wrap">
+									<section class="grids-wrap">
+                    <div id="undergrad-grid" class="active-grid grid-wrap">
+                      <ul class="grid">
 
-										<ul class="grid">
+  											<li class="grid-sizer"></li>
+  											<!-- for Masonry column width -->
 
-											<li class="grid-sizer"></li>
-											<!-- for Masonry column width -->
+  											<li>
 
-											<li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/2017-commencement.jpg" alt="img01">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/2017-commencement.jpg" alt="img01">
-                          </div>
+  													<figcaption>
+  														<h3>Letterpress asymmetrical</h3>
+  														<p class="short-text">Chillwave hoodie ea gentrify aute sriracha consequat.</p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
+  												</figure>
 
-													<figcaption>
-														<h3>Letterpress asymmetrical</h3>
-														<p class="short-text">Chillwave hoodie ea gentrify aute sriracha consequat.</p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
-												</figure>
+  											</li>
 
-											</li>
+  											<li>
 
-											<li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/aggie-fuel-blank.jpg" alt="img02">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/aggie-fuel-blank.jpg" alt="img02">
-                          </div>
+  													<figcaption>
+  														<h3>Vice velit chia</h3>
+  														<p class="short-text">Laborum tattooed iPhone, Schlitz irure nulla Tonx retro 90's chia cardigan quis asymmetrical paleo. </p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
 
-													<figcaption>
-														<h3>Vice velit chia</h3>
-														<p class="short-text">Laborum tattooed iPhone, Schlitz irure nulla Tonx retro 90's chia cardigan quis asymmetrical paleo. </p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
+  												</figure>
 
-												</figure>
+  											</li>
 
-											</li>
+  											<li>
 
-											<li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/Irrigated.jpg" alt="img03">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/Irrigated.jpg" alt="img03">
-                          </div>
+  													<figcaption>
+  														<h3>Brunch semiotics</h3>
+  														<p class="short-text">Ex disrupt cray yr, butcher pour-over magna umami kitsch before they sold out commodo.</p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
+  												</figure>
 
-													<figcaption>
-														<h3>Brunch semiotics</h3>
-														<p class="short-text">Ex disrupt cray yr, butcher pour-over magna umami kitsch before they sold out commodo.</p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-                            <form class="more-info-form">
-                              <label>Email </label><input type="email" name="email"/><br/>
-                              <label>Send you things?</label>
-                              <input type="checkbox" name="send"/>
-                            </form>
-													</figcaption>
-												</figure>
+  											</li>
 
-											</li>
+  											<li>
 
-											<li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/vetmed-still.jpg" alt="img04">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/vetmed-still.jpg" alt="img04">
-                          </div>
+  													<figcaption>
+  														<h3>Chillwave nihil occupy</h3>
+  														<p class="short-text">In post-ironic gluten-free deserunt, PBR non pork belly cupidatat polaroid. </p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
 
-													<figcaption>
-														<h3>Chillwave nihil occupy</h3>
-														<p class="short-text">In post-ironic gluten-free deserunt, PBR non pork belly cupidatat polaroid. </p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
+  												</figure>
 
-												</figure>
+  											</li>
 
-											</li>
+  											<li>
 
-											<li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/rodeo.jpeg" alt="img05">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/rodeo.jpeg" alt="img05">
-                          </div>
+  													<figcaption>
+  														<h3>Kale chips lomo biodiesel</h3>
+  														<p class="short-text">Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. </p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
 
-													<figcaption>
-														<h3>Kale chips lomo biodiesel</h3>
-														<p class="short-text">Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. </p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
+  												</figure>
 
-												</figure>
+  											</li>
+                        <li>
 
-											</li>
-                      <li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/rodeo.jpeg" alt="img05">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/rodeo.jpeg" alt="img05">
-                          </div>
+  													<figcaption>
+  														<h3>Kale chips lomo biodiesel</h3>
+  														<p class="short-text">Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. </p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
 
-													<figcaption>
-														<h3>Kale chips lomo biodiesel</h3>
-														<p class="short-text">Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. </p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
+  												</figure>
 
-												</figure>
+  											</li>
+                        <li>
 
-											</li>
-                      <li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/vetmed-still.jpg" alt="img04">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/vetmed-still.jpg" alt="img04">
-                          </div>
+  													<figcaption>
+  														<h3>Chillwave nihil occupy</h3>
+  														<p class="short-text">In post-ironic gluten-free deserunt, PBR non pork belly cupidatat polaroid. </p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
 
-													<figcaption>
-														<h3>Chillwave nihil occupy</h3>
-														<p class="short-text">In post-ironic gluten-free deserunt, PBR non pork belly cupidatat polaroid. </p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
+  												</figure>
 
-												</figure>
+  											</li>
+                        <li>
 
-											</li>
-                      <li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/rodeo.jpeg" alt="img05">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/rodeo.jpeg" alt="img05">
-                          </div>
+  													<figcaption>
+  														<h3>Kale chips lomo biodiesel</h3>
+  														<p class="short-text">Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. </p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
 
-													<figcaption>
-														<h3>Kale chips lomo biodiesel</h3>
-														<p class="short-text">Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. </p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
+  												</figure>
 
-												</figure>
+  											</li>
+                        <li>
 
-											</li>
-                      <li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/aviation-banner.jpg" alt="img06">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/aviation-banner.jpg" alt="img06">
-                          </div>
+  													<figcaption>
+  														<h3>Exercitation occaecat</h3>
+  														<p class="short-text">Street chillwave hoodie ea gentrify.</p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
 
-													<figcaption>
-														<h3>Exercitation occaecat</h3>
-														<p class="short-text">Street chillwave hoodie ea gentrify.</p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
+  												</figure>
 
-												</figure>
+  											</li>
+                        <li>
 
-											</li>
-                      <li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/rodeo.jpeg" alt="img05">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/rodeo.jpeg" alt="img05">
-                          </div>
+  													<figcaption>
+  														<h3>Kale chips lomo biodiesel</h3>
+  														<p class="short-text">Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. </p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
 
-													<figcaption>
-														<h3>Kale chips lomo biodiesel</h3>
-														<p class="short-text">Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. </p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
+  												</figure>
 
-												</figure>
+  											</li>
 
-											</li>
+  											<li>
 
-											<li>
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/aviation-banner.jpg" alt="img06">
+                            </div>
 
-												<figure>
-                          <div class="modal-close">
-                            <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
-                          </div>
-                          <div class="img-container">
-                            <img src="https://caas.usu.edu/ou-images/aviation-banner.jpg" alt="img06">
-                          </div>
+  													<figcaption>
+  														<h3>Exercitation occaecat</h3>
+  														<p class="short-text">Street chillwave hoodie ea gentrify.</p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
 
-													<figcaption>
-														<h3>Exercitation occaecat</h3>
-														<p class="short-text">Street chillwave hoodie ea gentrify.</p>
-                            <p class="modal-text">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                   sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
-													</figcaption>
+  												</figure>
 
-												</figure>
+  											</li>
 
-											</li>
+  										</ul>
+                    </div>
+                    <div id="graduate-grid" class="grid-wrap">
+                      <ul class="grid">
 
-										</ul>
+  											<li class="grid-sizer"></li>
+  											<!-- for Masonry column width -->
+
+  											<li>
+
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/2017-commencement.jpg" alt="img01">
+                            </div>
+
+  													<figcaption>
+  														<h3>Letterpress asymmetrical</h3>
+  														<p class="short-text">Chillwave hoodie ea gentrify aute sriracha consequat.</p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
+  												</figure>
+
+  											</li>
+
+  											<li>
+
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/aggie-fuel-blank.jpg" alt="img02">
+                            </div>
+
+  													<figcaption>
+  														<h3>Vice velit chia</h3>
+  														<p class="short-text">Laborum tattooed iPhone, Schlitz irure nulla Tonx retro 90's chia cardigan quis asymmetrical paleo. </p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
+
+  												</figure>
+
+  											</li>
+
+  											<li>
+
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/Irrigated.jpg" alt="img03">
+                            </div>
+
+  													<figcaption>
+  														<h3>Brunch semiotics</h3>
+  														<p class="short-text">Ex disrupt cray yr, butcher pour-over magna umami kitsch before they sold out commodo.</p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
+  												</figure>
+
+  											</li>
+
+  											<li>
+
+  												<figure>
+                            <div class="modal-close">
+                              <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                            </div>
+                            <div class="img-container">
+                              <img src="https://caas.usu.edu/ou-images/vetmed-still.jpg" alt="img04">
+                            </div>
+
+  													<figcaption>
+  														<h3>Chillwave nihil occupy</h3>
+  														<p class="short-text">In post-ironic gluten-free deserunt, PBR non pork belly cupidatat polaroid. </p>
+                              <p class="modal-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </p>
+                              <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+  													</figcaption>
+
+  												</figure>
+
+  											</li>
+  										</ul>
+                    </div>
+                    <div id="minors-grid" class="grid-wrap">
+                      <ul class="grid">
+                        <li class="grid-sizer">
+                          <li>
+
+    												<figure>
+                              <div class="modal-close">
+                                <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                              </div>
+                              <div class="img-container">
+                                <img src="https://caas.usu.edu/ou-images/vetmed-still.jpg" alt="img04">
+                              </div>
+
+    													<figcaption>
+    														<h3>Chillwave nihil occupy</h3>
+    														<p class="short-text">In post-ironic gluten-free deserunt, PBR non pork belly cupidatat polaroid. </p>
+                                <p class="modal-text">
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                   enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                     in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                      nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                       sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                                <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+    													</figcaption>
+
+    												</figure>
+
+    											</li>
+                          <li>
+
+    												<figure>
+                              <div class="modal-close">
+                                <img src="https://caas.usu.edu/_resources/program-grid/modal-grid/close.svg" alt="close"/>
+                              </div>
+                              <div class="img-container">
+                                <img src="https://caas.usu.edu/ou-images/rodeo.jpeg" alt="img05">
+                              </div>
+
+    													<figcaption>
+    														<h3>Kale chips lomo biodiesel</h3>
+    														<p class="short-text">Pariatur food truck street art consequat sustainable, et kogi beard qui paleo. </p>
+                                <p class="modal-text">
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                   enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                     in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                      nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                       sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+                                <a href="#" class="more-info btn btn-info btn-block btn-lg">More Info</a>
+    													</figcaption>
+
+    												</figure>
+
+    											</li>
+                        </li>
+                      </ul>
+                    </div>
 
 									</section>
                   <section class="lightbox">
-                    
+
                     <!-- modal is generated and stuck in here -->
                   </section>
-									<!-- // grid-wrap -->
+									<!-- // grids-wrap -->
 								</div>
 								<!-- // grid-gallery -->
 								<script src="https://caas.usu.edu/_resources/scripts/photo-gallery/imagesloaded.pkgd.min.js"></script>
@@ -365,9 +550,9 @@
 								<script src="https://caas.usu.edu/_resources/scripts/photo-gallery/classie.js"></script>
 							</div>
           </div>
-				<!-- </div>
+				<!-- </div> -->
 			</div>
-		</div> -->
+		</div>
 
   </body>
 </html>
