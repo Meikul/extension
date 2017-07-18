@@ -12,7 +12,7 @@ $(document).ready(function() {
     $('.lightbox').fadeIn(500);
     $('.lightbox').children().click(function(){return false;});
     $('.modal-close>img').click(closeModal);
-    $('.lightbox .more-info').click(function(){
+    $('.lightbox .more-info-btn').click(function(){
       // console.log('ok');
       $(this).parentsUntil('figure').append(`
         <h3>ok</h3>

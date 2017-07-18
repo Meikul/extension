@@ -43,6 +43,8 @@ body{
 	margin-top: 20px;
 	white-space: nowrap;
 	display: inline;
+	float: right;
+	margin-right: 70px;
 }
 
 .grid-selector{
@@ -274,7 +276,7 @@ body{
 	display: none;
 }
 
-.lightbox .more-info{
+.lightbox .more-info-btn{
 	margin-top: 20px;
 	/*border-radius: 0;*/
 	background: #384660;
@@ -283,6 +285,6 @@ body{
 	border: 1px solid #283650;
 }
 
-.grid .more-info{
+.grid .more-info-btn{
 	display: none;
 }

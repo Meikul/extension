@@ -1,0 +1,475 @@
+@font-face {
+	font-family: 'fontawesome';
+	src:url('../fonts/fontawesome/fontawesome.eot?-e43dk9');
+	src:url('../fonts/fontawesome/fontawesome.eot?#iefix-e43dk9') format('embedded-opentype'),
+		url('../fonts/fontawesome/fontawesome.woff?-e43dk9') format('woff'),
+		url('../fonts/fontawesome/fontawesome.ttf?-e43dk9') format('truetype'),
+		url('../fonts/fontawesome/fontawesome.svg?-e43dk9#fontawesome') format('svg');
+	font-weight: normal;
+	font-style: normal;
+} /* Made with http://icomoon.io/app */
+
+/* General style */
+
+// $blue-accent: #384660;
+$blue-accent: #384670;
+$form-boxshadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+h1, h2, h3, h4, h5, h6, label {
+  font-family: 'Roboto Condensed';
+}
+
+p {
+  font-family: 'Helvetica Neue';
+}
+
+body{
+	background: #f4f4f4;
+}
+
+.main-content{
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+}
+
+#degrees-header{
+	position: relative;
+	left: 30px;
+}
+
+#degrees-header h2{
+	display: inline;
+	margin-right: 40px;
+}
+
+#grid-selectors{
+	margin-top: 20px;
+	white-space: nowrap;
+	display: inline;
+}
+
+.grid-selector{
+	display: inline;
+	font-size: 17px;
+	padding: 10px;
+	cursor: pointer;
+	color: #38b;
+	/*border: 1px solid #ddd;*/
+}
+
+.active-grid-selector, .grid-selector:hover{
+	text-decoration: underline;
+	color: black;
+}
+
+.main-content > h2{
+	padding-left: 30px;
+}
+
+.grid-gallery ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.grid-sizer{
+	/*width: 100%;*/
+	/*width: 1000px;*/
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.grid-gallery figure {
+	margin: 0;
+}
+
+.grid-gallery figure img {
+	display: block;
+	width: 100%;
+	margin: 0;
+}
+
+.grid figcaption {
+	background: #f4f4f4;
+	padding: 25px;
+	position: relative;
+}
+
+.grid-gallery figcaption h3 {
+	font-size: 20px;
+	color: $blue-accent;
+	margin: 0;
+	padding: 0 0 0.5em;
+}
+
+.grid-gallery figcaption p {
+	margin: 0;
+}
+
+/* Grid style */
+.grids-wrap {
+	margin: auto;
+	padding: 0 1em 1.875em;
+}
+
+.grid-wrap{
+	top: 0;
+	left: 0;
+}
+
+.grid-wrap:not(.active-grid){
+	/*display: none;*/
+	opacity: 0;
+}
+
+.grid {
+	margin: 0 auto;
+}
+
+.grid li {
+	margin: 15px;
+	/*padding: 15px 0;*/
+	float: left;
+	cursor: pointer;
+}
+
+.grid li>figure{
+	padding: 0;
+	overflow: hidden;
+	border-radius: 1px; /* box shadow animation overshoots if 0 for some reason */
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.15s ease;
+}
+
+/* Shadow Effect */
+.grid li>figure:hover {
+	box-shadow: $form-boxshadow;
+}
+
+@media (min-width:1000px){
+	.grid li:not(.grid-sizer){
+		width: calc(33% - 30px) !important;
+	}
+	.grid-sizer{
+		width: 33% !important;
+	}
+}
+
+@media (max-width: 1099px) and (min-width: 850px){
+	.grid li:not(.grid-sizer){
+		width: calc(33% - 30px) !important;
+	}
+	.grid-sizer{
+		width: 33% !important;
+	}
+}
+
+@media (max-width: 849px) and (min-width: 530px){
+	.grid li:not(.grid-sizer){
+		width: calc(50% - 30px) !important;
+	}
+	.grid-sizer{
+		width: 50% !important;
+	}
+}
+
+@media (max-width: 529px){
+	.lightbox .modal-close{
+		opacity: 1;
+	}
+	.lightbox figure{
+		max-height: 80vh;
+		overflow-y: auto;
+	}
+	.grid li:not(.grid-sizer){
+		width: calc(100% - 30px) !important;
+	}
+	.grid-sizer{
+		width: 100% !important;
+	}
+}
+
+/* lightbox style */
+.lightbox{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 300vh;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	overflow: auto;
+	z-index: 30;
+}
+
+.lightbox figure{
+	position: relative;
+	width: 80vw;
+	max-width: 1300px;
+	top: 10vh;
+	margin: auto;
+	border-radius: 2px;
+	overflow: hidden;
+	background: #f4f4f4;
+}
+
+.lightbox figcaption{
+	position: relative;
+	margin: 0;
+	padding: 25px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.lightbox h3{
+	font-size: 30px !important;
+	color: black;
+	/*background: white;*/
+}
+
+.lightbox .modal-text{
+	font-size: 17px;
+}
+
+.grid .modal-text{
+	display: none;
+}
+
+.lightbox p:not(.modal-text){
+	display: none;
+}
+
+.lightbox .img-container{
+	max-height: 50vh;
+	overflow: hidden;
+}
+
+.lightbox .modal-close{
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 10px;
+	right: 10px;
+	height: 40px;
+	width: 40px;
+	/*background: #f4f4f4;*/
+	font-size: 48px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.lightbox .modal-close:hover{
+	/*background: rgba(100, 20, 20, 1);*/
+}
+
+.lightbox .modal-close img{
+	height: 100%;
+	width: 100%;
+	opacity: 0.6;
+	transform: rotate(0deg);
+	transition: all 0.3s ease;
+}
+
+.lightbox .modal-close:hover img{
+	opacity: 1;
+	transform: rotate(90deg);
+}
+
+.grid .modal-close{
+	display: none;
+}
+
+.lightbox .more-info-btn{
+	margin-top: 20px;
+	border-radius: 2px;
+	background: $blue-accent;
+	font-family: 'Roboto Condensed';
+	font-size: 20px;
+	border: 1px solid #283650;
+}
+
+.grid .more-info-btn{
+	display: none;
+}
+
+.lightbox figure{
+	margin-bottom: 100px;
+}
+
+.grid .more-info{
+	display: none;
+}
+
+.lightbox figure .more-info{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto Mono';
+  background: rgba(0, 0, 0, 0.4);
+  form{
+    box-shadow: $form-boxshadow;
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #f4f4f4;
+    font-size: 16px;
+    input, select{
+      border: none;
+      outline: none;
+      background: none;
+      border-radius: 2px;
+    }
+    &>div{
+      position: relative;
+      margin: 30px 20px;
+      &::before{
+        content: '';
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: calc(100% + 2px);
+        background: #aaa;
+        transition: all 0.2s ease;
+      }
+      &::after{
+        content: '';
+        height: 2px;
+        width: 0;
+        position: absolute;
+        left: 50%;
+        top: calc(100% + 2px);
+        background: $blue-accent;
+        transition: all 0.2s ease;
+      }
+      input{
+        padding: 5px;
+        padding-left: 10px;
+        width: 300px;
+      }
+      label{
+        cursor: text;
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-family: 'Roboto Mono';
+        transition: all 0.2s ease;
+      }
+      &.focused{
+        &::before{
+        }
+        &::after{
+          width: 100%;
+          left: 0;
+        }
+        &.text-field label{
+          top: -15px;
+          font-size: 11px;
+          color: $blue-accent;
+        }
+      }
+      &.filled{
+        label{
+          color: #aaa;
+          top: -15px;
+          font-size: 11px;
+        }
+      }
+    }
+    div.select-field{
+      height: 40px;
+      z-index: 1;
+      // background: #eeeeee;
+      label{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+      .select-list{
+        position: absolute;
+        cursor: default;
+        right: 5px;
+        top: 5px;
+        outline: none;
+        background: #e5e5e5;
+        width: 13ch;
+        // padding: 5px;
+        border-radius: 2px;
+        transition: box-shadow 0.2s ease;
+        div:not(.selected){
+          display: none;
+        }
+        .selected{
+          padding: 5px;
+        }
+      }
+      em{
+        position: absolute;
+        right: 5px;
+        top: 8px;
+      }
+      &.focused{
+        .select-list{
+          box-shadow: 0 0 0 1px #aaa;
+        }
+      }
+      &.open{
+        z-index: 2;
+        label{
+          color: $blue-accent;
+        }
+        .select-list{
+          z-index: 2;
+          // box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          box-shadow: 0 0 0 1px #aaa;
+          div{
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            padding: 5px;
+            transition: all 0.2s ease;
+            // border-bottom: 1px solid #99a;
+          }
+          div:hover{
+            background: #bbb;
+          }
+          .selected{
+            background: #ccc;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lightbox figure:nth-child(1){
+  .more-info{
+  	box-shadow: $form-boxshadow;
+  	display: block;
+  	position: absolute;
+  	border-radius: 2px;
+  	top: 0;
+  	left: 0;
+  	height: 100%;
+  	background: #f4f4f4;
+  	font-size: 16px;
+    font-family: 'Helvetica Neue';
+  }
+}
+
+.lightbox figure:nth-child(2){
+  .more-info{
+    font-family: 'Helvetica Neue';
+  }
+}
+
+.lightbox figure:nth-child(3){
+  .more-info{
+    font-family: 'Roboto Mono';
+  }
+}
