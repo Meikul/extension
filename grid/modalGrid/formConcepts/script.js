@@ -10,10 +10,35 @@ $(document).ready(function() {
     $(this).next('input').focus();
   });
 
+  $('.select-field').focus(function(){
+    $(this).children('.select-list').focus();
+  });
+
   var textInputs = $('.more-info input[type=text]');
-  var inputs = $('.more-info input, .more-info .select-list');
+  var inputs = $('.more-info input, .more-info .select-list, .more-info .checkbox-field>label');
+  var checkboxes = $('.more-info .checkbox-field>label');
   var selectLists = $('.select-list');
   var selectListItems = selectLists.children('div');
+
+  checkboxes.keydown(function(e){
+    if(e.which === 13){
+      $(this).click();
+    }
+  });
+  checkboxes.click(function(){
+    var checked = $('.checkbox-field[data-required] input:checked').closest('.checkbox-field');
+    var parentForm = $(this).closest('form');
+    parentForm.children('.input-field').removeClass('active-field').children('input, .select-list').attr('tabindex','-1');
+    // parentForm.children('.input-field').fadeOut(150);
+    checked.each(function(){
+      var required = $(this).attr('data-required').split(' ');
+      required.forEach(function(reqGroup){
+        this.children('.'+reqGroup).addClass('active-field').children('input, .select-list').attr('tabindex','0');
+        // this.children('.'+reqGroup).fadeIn(150);
+      }, parentForm);
+    });
+  });
+
   selectListItems.click(function(){
     if(!$(this).hasClass('selected')){
       $(this).siblings('.selected').removeClass('selected');
@@ -50,7 +75,7 @@ $(document).ready(function() {
   });
 
   inputs.focus(function(){
-    $(this).parent().addClass('focused');
+    $(this).parent().closest('div').addClass('focused');
   });
   inputs.focusout(function(){
     $(this).parent().removeClass('focused');

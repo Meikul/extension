@@ -153,19 +153,62 @@
         <div class="more-info">
           <em class="fa fa-long-arrow-left fa-2x">&nbsp;</em>
           <form>
-            <div class="text-field">
+            <div class="info-checkboxes">
+              <span>I want a...</span>
+              <div class="checkbox-field" data-required="nameEmail phone age">
+                <label tabindex="0">
+                  <span>Campus Tour</span>
+                  <input type="checkbox">
+                  <div></div>
+                </label>
+              </div>
+              <div class="checkbox-field" data-required="nameEmail">
+                <label tabindex="0">
+                  <span>Email Newsletter</span>
+                  <input type="checkbox">
+                  <div></div>
+                </label>
+              </div>
+              <div class="checkbox-field" data-required="nameEmail phone age contactMethod">
+                <label tabindex="0">
+                  <span>Advisor Appointment</span>
+                  <input type="checkbox">
+                  <div></div>
+                </label>
+              </div>
+              <div class="checkbox-field" data-required="nameEmail address age">
+                <label tabindex="0">
+                  <span>Physical Mailer</span>
+                  <input type="checkbox">
+                  <div></div>
+                </label>
+              </div>
+            </div>
+            <div class="nameEmail text-field input-field">
               <label>First name</label>
               <input name="firstname" type="text">
             </div>
-            <div class="text-field">
+            <div class="nameEmail text-field input-field">
               <label>Last name</label>
               <input type="text" name="lastname">
             </div>
-            <div class="text-field">
+            <div class="nameEmail text-field input-field">
               <label>Email</label>
               <input name="email" type="text">
             </div>
-            <div class="select-field">
+            <div class="phone text-field input-field">
+              <label>Phone</label>
+              <input name="phone" type="text">
+            </div>
+            <div class="address text-field input-field">
+              <label>Address</label>
+              <input name="address" type="text">
+            </div>
+            <div class="contactMethod text-field input-field">
+              <label>Contact Method</label>
+              <input name="contactMethod" type="text">
+            </div>
+            <div class="age select-field input-field">
               <label>High school year</label>
               <div class="select-list" tabindex="0">
                 <div>Freshman</div>
