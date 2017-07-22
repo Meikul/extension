@@ -20,20 +20,25 @@ $(document).ready(function() {
   var selectLists = $('.select-list');
   var selectListItems = selectLists.children('div');
 
-  checkboxes.keydown(function(e){
+  function enterClick(e){
     if(e.which === 13){
       $(this).click();
     }
-  });
+  }
+  $('.submit').keydown(function(e){ enterClick.call($(this).children('input'), e); });
+  checkboxes.keydown(enterClick);
   checkboxes.click(function(){
     var checked = $('.checkbox-field[data-required] input:checked').closest('.checkbox-field');
     var parentForm = $(this).closest('form');
-    parentForm.children('.input-field').removeClass('active-field').children('input, .select-list').attr('tabindex','-1');
+    console.log(parentForm.children('.submit').children('input')[0]);
+    // if(checked.length) parentForm.children('.submit').children('input')[0].disabled = false;
+    // else parentForm.children('.submit').children('input')[0].disabled = true;
+    parentForm.children('.input-field').removeClass('active-field').children('input, .select-list').attr('tabindex','-1').each(function(){this.disabled=true;});
     // parentForm.children('.input-field').fadeOut(150);
     checked.each(function(){
       var required = $(this).attr('data-required').split(' ');
       required.forEach(function(reqGroup){
-        this.children('.'+reqGroup).addClass('active-field').children('input, .select-list').attr('tabindex','0');
+        this.children('.'+reqGroup).addClass('active-field').children('input, .select-list').attr('tabindex','0').each(function(){this.disabled=false;});
         // this.children('.'+reqGroup).fadeIn(150);
       }, parentForm);
     });
