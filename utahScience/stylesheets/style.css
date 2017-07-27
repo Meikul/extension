@@ -1,0 +1,34 @@
+/* line 3, ../sass/style.scss */
+.ut-sci-content {
+  font-family: 'Open Sans';
+  background: white;
+  margin: 0;
+  padding: 0;
+  height: 500px;
+}
+/* line 9, ../sass/style.scss */
+.ut-sci-content .ut-sci-header {
+  padding: 20px;
+  margin: 20px auto 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  background: #0F2439;
+}
+/* line 16, ../sass/style.scss */
+.ut-sci-content .ut-sci-header h1.title {
+  margin: 0;
+  padding: 20px;
+  color: white;
+  font-size: 80px;
+  font-weight: 400;
+  text-align: center;
+}
+/* line 23, ../sass/style.scss */
+.ut-sci-content .ut-sci-header h1.title span {
+  font-weight: 700;
+}
+/* line 27, ../sass/style.scss */
+.ut-sci-content .ut-sci-header a {
+  color: white;
+  font-size: 20px;
+}

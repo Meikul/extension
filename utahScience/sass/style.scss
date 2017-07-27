@@ -1,0 +1,32 @@
+$blue-accent: #0F2439;
+
+.ut-sci-content{
+  font-family: 'Open Sans';
+  background: white;
+  margin: 0;
+  padding: 0;
+  height: 500px;
+  .ut-sci-header{
+    padding: 20px;
+    margin: 20px auto 0 auto;
+    // height: auto;
+    width: 100%;
+    max-width: 1200px;
+    background: $blue-accent;
+    h1.title{
+      margin: 0;
+      padding: 20px;
+      color: white;
+      font-size: 80px;
+      font-weight: 400;
+      text-align: center;
+      span{
+        font-weight: 700;
+      }
+    }
+    a{
+      color: white;
+      font-size: 20px;
+    }
+  }
+}
