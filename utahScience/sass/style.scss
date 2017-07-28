@@ -2,16 +2,20 @@ $blue-accent: #0F2439;
 
 .ut-sci-content{
   font-family: 'Open Sans';
-  background: white;
+  background: #fefefe;
   margin: 0;
   padding: 0;
-  height: 500px;
+  height: auto;
   .ut-sci-header{
+    .head-wrapper{
+      max-width: 1200px;
+      margin: auto;
+    }
     padding: 20px;
-    margin: 20px auto 0 auto;
+    margin: 0 auto 0 auto;
     // height: auto;
     width: 100%;
-    max-width: 1200px;
+    // max-width: 1200px;
     background: $blue-accent;
     h1.title{
       margin: 0;
@@ -20,13 +24,98 @@ $blue-accent: #0F2439;
       font-size: 80px;
       font-weight: 400;
       text-align: center;
+      font-family: 'Antique Olive';
       span{
         font-weight: 700;
       }
     }
-    a{
-      color: white;
-      font-size: 20px;
+    .link-col{
+      text-align: center;
+      margin: 0;
+      a{
+        position: relative;
+        top: 50px;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        &::before{
+          content: '';
+          position: absolute;
+          left: -5%;
+          top: 100%;
+          height: 1px;
+          width: 110%;
+          background: white;
+          transition: all 0.3s ease;
+        }
+        &::after{
+          content: '';
+          position: absolute;
+          left: 50%;
+          top: calc(100% + 2px);
+          height: 1px;
+          width: 0;
+          background: white;
+          transition: all 0.3s ease;
+        }
+        &:hover::after, &:focus::after{
+          left: 10%;
+          width: 80%;
+        }
+        // &:hover::before{
+        //   width: 120%;
+        //   left: -10%;
+        // }
+      }
     }
+  }
+
+  .cover-row{
+    // max-width: 1200px;
+    position: relative;
+    top: 0;
+    margin: auto;
+    height: 500px;
+    padding: 20px;
+    background: #f0f0f0;
+    .cover{
+      padding: 30px;
+      perspective: 1000px;
+      height: 100%;
+      img{
+        height: 100%;
+        box-shadow: 20px 0 30px rgba(40,20,10, 0.3);
+        transform: rotateY(-10deg) translateZ(0);
+        position: relative;
+        transition: all 0.4s ease;
+      }
+      &:hover img{
+        box-shadow: 20px 0 31px 1px rgba(40,20,10, 0.3);
+        transform: rotateY(-11deg) translateZ(3px);
+      }
+    }
+    .this-issue{
+      font-family: 'Nunito';
+      text-align: center;
+      h1{
+        margin-top: 50px;
+        color: inherit;
+        font-family: inherit;
+        font-size: 80px;
+      }
+      h3{
+        margin-top: 150px;
+        font-size: 30px;
+        color: inherit;
+        font-family: inherit;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .side-col{
+    position: absolute;
+    top: 0;
   }
 }
