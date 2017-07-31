@@ -24,7 +24,8 @@ $blue-accent: #0F2439;
       font-size: 80px;
       font-weight: 400;
       text-align: center;
-      font-family: 'Antique Olive';
+      // font-family: 'Antique Olive';
+      font-family: 'Oxygen';
       span{
         font-weight: 700;
       }
@@ -77,39 +78,49 @@ $blue-accent: #0F2439;
     margin: auto;
     height: 500px;
     padding: 20px;
-    background: #f0f0f0;
+    background: white;
+    max-width: 1200px;
     .cover{
       padding: 30px;
       perspective: 1000px;
       height: 100%;
       img{
         height: 100%;
-        box-shadow: 20px 0 30px rgba(40,20,10, 0.3);
+        box-shadow: 20px 10px 30px rgba(40,20,10, 0.3);
         transform: rotateY(-10deg) translateZ(0);
         position: relative;
         transition: all 0.4s ease;
       }
       &:hover img{
-        box-shadow: 20px 0 31px 1px rgba(40,20,10, 0.3);
-        transform: rotateY(-11deg) translateZ(3px);
+        box-shadow: 20px 12px 31px 1px rgba(40,20,10, 0.3);
+        transform: rotateY(-12deg) translateZ(5px);
       }
     }
     .this-issue{
-      font-family: 'Nunito';
+      font-family: 'Oxygen';
       text-align: center;
+      // font-weight: 100;
       h1{
-        margin-top: 50px;
+        font-weight: inherit;
+        margin-top: 100px;
         color: inherit;
         font-family: inherit;
         font-size: 80px;
       }
       h3{
+        font-weight: inherit;
         margin-top: 150px;
         font-size: 30px;
         color: inherit;
         font-family: inherit;
+        text-decoration: underline;
+        cursor: pointer;
       }
     }
+  }
+  .story-row{
+    height: 400px;
+    background: grey;
   }
 }
 
