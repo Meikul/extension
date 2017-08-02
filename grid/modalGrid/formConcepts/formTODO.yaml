@@ -1,0 +1,19 @@
+Steps
+  -Make form on ou that has required data so schema is cool
+  -Submit data w/ for and look at the post it's sending
+    -To find post go to Network in the inspector
+    -Remember to get uuid from that
+  -make jquery that'll make a string like that
+  -make jquery to post string
+
+
+  -Notes
+    -With select fields have a hidden text or select field that the submit click
+    handler jquery injects the selected into.
+
+Look into having a hidden form (maybe a copy of the generated form) that you can
+just jquery serialize instead of making your own post string. That'd probably be
+less efficient. Maybe if this string thing doesn't work.
+
+-Also make a hidden form element on the page that is cloned instead of having a
+huge html string. maybe the browser will even cache it if we're lucky
