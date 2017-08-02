@@ -70,47 +70,38 @@ $blue-accent: #0F2439;
     }
   }
 
-  .cover-row{
-    // max-width: 1200px;
+  .current-issue{
+    background: #333;
     position: relative;
-    top: 0;
-    margin: auto;
-    height: 300px;
-    padding: 20px;
-    background: white;
-    max-width: 1200px;
+    padding: 10px;
     .cover{
-      position: relative;
-      right: 10%;
-      padding: 30px;
-      perspective: 1000px;
       height: 100%;
+      float: right;
+      margin-right: 10%;
+      position: relative;
       img{
         height: 100%;
-        // box-shadow: 20px 10px 30px rgba(40,20,10, 0.3);
-        // transform: rotateY(-10deg) translateZ(0);
-        position: relative;
-        transition: all 0.4s ease;
-      }
-      &:hover img{
-        box-shadow: 21px 12px 32px 1 rgba(40,20,10, 0.3);
-        // transform: rotateY(-12deg) translateZ(5px);
       }
     }
     .this-issue{
-      font-family: 'Roboto Slab';
+      float: left;
+      margin-left: 20%;
+      // background: green;
+      position: relative;
       font-weight: 300;
       text-align: center;
+      color: white;
+      font-family: 'Roboto Slab';
       h1{
         font-weight: inherit;
-        margin-top: 50px;
+        margin-top: 30%;
         color: inherit;
         font-family: inherit;
         font-size: 70px;
       }
       h3{
         font-weight: inherit;
-        margin-top: 50px;
+        margin-top: 30%;
         font-size: 30px;
         color: inherit;
         font-family: inherit;
@@ -120,14 +111,14 @@ $blue-accent: #0F2439;
     }
   }
   .story-grid{
-    height: 2000px;
-    width: 100vw;
+    height: 1000px;
+    width: 100%;
     background: #eef;
     display: grid;
     // max-width: 1500px;
     // margin: auto;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     .story-item{
       position: relative;
       overflow: hidden;
@@ -185,7 +176,7 @@ $blue-accent: #0F2439;
             height: 100%;
             width: 100%;
             border: 1px solid white;
-            transition: all 0.3s ease;
+            transition: all 0.27s ease;
           }
           &:hover::after{
             left: -4px;

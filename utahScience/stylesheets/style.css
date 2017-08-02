@@ -73,72 +73,65 @@
   width: 80%;
 }
 /* line 73, ../sass/style.scss */
-.ut-sci-content .cover-row {
+.ut-sci-content .current-issue {
+  background: #333;
   position: relative;
-  top: 0;
-  margin: auto;
-  height: 300px;
-  padding: 20px;
-  background: white;
-  max-width: 1200px;
+  padding: 10px;
+}
+/* line 77, ../sass/style.scss */
+.ut-sci-content .current-issue .cover {
+  height: 100%;
+  float: right;
+  margin-right: 10%;
+  position: relative;
 }
 /* line 82, ../sass/style.scss */
-.ut-sci-content .cover-row .cover {
-  position: relative;
-  right: 10%;
-  padding: 30px;
-  perspective: 1000px;
+.ut-sci-content .current-issue .cover img {
   height: 100%;
 }
-/* line 88, ../sass/style.scss */
-.ut-sci-content .cover-row .cover img {
-  height: 100%;
+/* line 86, ../sass/style.scss */
+.ut-sci-content .current-issue .this-issue {
+  float: left;
+  margin-left: 20%;
   position: relative;
-  transition: all 0.4s ease;
-}
-/* line 95, ../sass/style.scss */
-.ut-sci-content .cover-row .cover:hover img {
-  box-shadow: 21px 12px 32px 1 rgba(40, 20, 10, 0.3);
-}
-/* line 100, ../sass/style.scss */
-.ut-sci-content .cover-row .this-issue {
-  font-family: 'Roboto Slab';
   font-weight: 300;
   text-align: center;
+  color: white;
+  font-family: 'Roboto Slab';
 }
-/* line 104, ../sass/style.scss */
-.ut-sci-content .cover-row .this-issue h1 {
+/* line 95, ../sass/style.scss */
+.ut-sci-content .current-issue .this-issue h1 {
   font-weight: inherit;
-  margin-top: 50px;
+  margin-top: 30%;
   color: inherit;
   font-family: inherit;
   font-size: 70px;
 }
-/* line 111, ../sass/style.scss */
-.ut-sci-content .cover-row .this-issue h3 {
+/* line 102, ../sass/style.scss */
+.ut-sci-content .current-issue .this-issue h3 {
   font-weight: inherit;
-  margin-top: 50px;
+  margin-top: 30%;
   font-size: 30px;
   color: inherit;
   font-family: inherit;
   text-decoration: underline;
   cursor: pointer;
 }
-/* line 122, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 .ut-sci-content .story-grid {
-  height: 2000px;
-  width: 100vw;
+  height: 1000px;
+  width: 100%;
   background: #eef;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
-/* line 131, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item {
   position: relative;
   overflow: hidden;
 }
-/* line 134, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item img {
   position: absolute;
   top: -1%;
@@ -147,7 +140,7 @@
   min-height: 102%;
   transition: all 0.2s ease;
 }
-/* line 143, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item .story-card {
   transition: all 0.25s ease;
   position: absolute;
@@ -158,27 +151,27 @@
   border: 1px solid white;
   background: rgba(10, 10, 10, 0.5);
 }
-/* line 152, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item .story-card h2, .ut-sci-content .story-grid .story-item .story-card p {
   color: white;
   font-family: 'Roboto Slab';
 }
-/* line 156, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item .story-card p {
   font-weight: 300;
   font-size: 16px;
 }
-/* line 160, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item .story-card h2 {
   font-weight: 300;
   font-size: 26px;
 }
-/* line 164, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item .story-card .author {
   font-weight: 300;
   margin-bottom: 20px;
 }
-/* line 168, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item .story-card .see-article {
   text-align: center;
   position: relative;
@@ -192,7 +185,7 @@
   margin-left: 5px;
   cursor: pointer;
 }
-/* line 180, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item .story-card .see-article::after, .ut-sci-content .story-grid .story-item .story-card .see-article::before {
   content: '';
   position: absolute;
@@ -201,44 +194,44 @@
   height: 100%;
   width: 100%;
   border: 1px solid white;
-  transition: all 0.3s ease;
+  transition: all 0.27s ease;
 }
-/* line 190, ../sass/style.scss */
+/* line 181, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item .story-card .see-article:hover::after {
   left: -4px;
   top: -4px;
   height: calc(100% + 2px);
   width: calc(100% + 2px);
 }
-/* line 196, ../sass/style.scss */
+/* line 187, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item .story-card .see-article:hover::before {
   left: 2px;
   top: 2px;
   height: calc(100% + 2px);
   width: calc(100% + 2px);
 }
-/* line 205, ../sass/style.scss */
+/* line 196, ../sass/style.scss */
 .ut-sci-content .story-grid .story-item:hover img {
   -webkit-filter: blur(3px);
 }
 
-/* line 216, ../sass/style.scss */
+/* line 207, ../sass/style.scss */
 #one {
   background: blue;
 }
 
-/* line 219, ../sass/style.scss */
+/* line 210, ../sass/style.scss */
 .row-1 {
   border-left: 1px solid black;
 }
 
-/* line 222, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 .spacer {
   height: 300px;
 }
 
 @media (max-width: 768px) {
-  /* line 227, ../sass/style.scss */
+  /* line 218, ../sass/style.scss */
   .side-col {
     position: absolute;
     top: 0;

@@ -1,0 +1,31 @@
+/* line 7, ../sass/storystyle.scss */
+.article .banner {
+  width: 100%;
+  position: relative;
+  top: auto;
+  left: 0;
+  z-index: 1;
+}
+/* line 14, ../sass/storystyle.scss */
+.article .article-body {
+  z-index: 2;
+  font-family: 'Roboto Slab';
+  color: red;
+  padding: 20px;
+}
+/* line 19, ../sass/storystyle.scss */
+.article .article-body h1 {
+  font-size: 30px;
+  margin: 0;
+  font-family: "Roboto Slab";
+}
+/* line 24, ../sass/storystyle.scss */
+.article .article-body h3 {
+  font-size: 16px;
+  font-family: "Open Sans";
+}
+
+/* line 31, ../sass/storystyle.scss */
+.spacer {
+  height: 200vh;
+}

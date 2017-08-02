@@ -1,0 +1,33 @@
+
+$title-font: 'Roboto Slab';
+$body-font: 'Open Sans';
+
+.article{
+  // width: 100%;
+  .banner{
+    width: 100%;
+    position: relative;
+    top: auto;
+    left: 0;
+    z-index: 1;
+  }
+  .article-body{
+    z-index: 2;
+    font-family: 'Roboto Slab';
+    color: red;
+    padding: 20px;
+    h1{
+      font-size: 30px;
+      margin: 0;
+      font-family: $title-font;
+    }
+    h3{
+      font-size: 16px;
+      font-family: $body-font;
+    }
+  }
+}
+
+.spacer{
+  height: 200vh;
+}
