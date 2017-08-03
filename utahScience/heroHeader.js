@@ -1,13 +1,13 @@
 $(document).ready(function() {
+  var article = $('.article');
   var banner = $('.banner');
   var win = $(window);
   $(window).scroll(function(){
-    console.log(banner.offset().top-win.scrollTop());
-    if(banner.offset().top - win.scrollTop()<=0){
-      banner.css('position','fixed');
+    if(article.offset().top - win.scrollTop()<=0){
+      banner.css({position: 'fixed', top: '0'});
     }
     else{
-      banner.css('position','relative');
+      banner.css({position: 'relative', top: 'auto'});
     }
   });
 });

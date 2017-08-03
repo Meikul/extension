@@ -17,3 +17,7 @@ less efficient. Maybe if this string thing doesn't work.
 
 -Also make a hidden form element on the page that is cloned instead of having a
 huge html string. maybe the browser will even cache it if we're lucky
+
+
+https://caas.usu.edu/more-info-form
+firstname=Michael&lastname=Harris&email=michael.harris%40usu.edu&phonenumber=19875982734&address=091283+fwef&grade%5B%5D=junior&contactmethod%5B%5D=text&form_uuid=fda8bcf4-300e-40a9-8bda-ec7613906579&site_name=z_Clone_USU
