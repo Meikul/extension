@@ -416,12 +416,22 @@ body {
   opacity: 0;
 }
 /* line 363, ../sass/style.scss */
-.lightbox figure .more-info form > div input[type=text] {
+.lightbox figure .more-info form > div input[type=text], .lightbox figure .more-info form > div input[type=number] {
   padding: 5px;
   padding-left: 10px;
   width: 300px;
 }
 /* line 368, ../sass/style.scss */
+.lightbox figure .more-info form > div input[type=number]::-webkit-outer-spin-button,
+.lightbox figure .more-info form > div input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* line 374, ../sass/style.scss */
+.lightbox figure .more-info form > div input[type=number] {
+  -moz-appearance: textfield;
+}
+/* line 377, ../sass/style.scss */
 .lightbox figure .more-info form > div label {
   cursor: text;
   position: absolute;
@@ -430,35 +440,35 @@ body {
   font-family: 'Roboto Mono';
   transition: all 0.2s ease;
 }
-/* line 379, ../sass/style.scss */
+/* line 388, ../sass/style.scss */
 .lightbox figure .more-info form > div.focused::after {
   width: 100%;
   left: 0;
 }
-/* line 383, ../sass/style.scss */
+/* line 392, ../sass/style.scss */
 .lightbox figure .more-info form > div.focused.text-field label {
   top: -15px;
   font-size: 11px;
   color: #384670;
 }
-/* line 390, ../sass/style.scss */
+/* line 399, ../sass/style.scss */
 .lightbox figure .more-info form > div.filled label {
   color: #aaa;
   top: -15px;
   font-size: 11px;
 }
-/* line 397, ../sass/style.scss */
+/* line 406, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field {
   height: 40px;
   z-index: 1;
 }
-/* line 401, ../sass/style.scss */
+/* line 410, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field label {
   position: absolute;
   top: 10px;
   left: 10px;
 }
-/* line 406, ../sass/style.scss */
+/* line 415, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field .select-list {
   position: absolute;
   cursor: default;
@@ -470,37 +480,37 @@ body {
   border-radius: 2px;
   transition: box-shadow 0.2s ease;
 }
-/* line 418, ../sass/style.scss */
+/* line 427, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field .select-list div:not(.selected) {
   display: none;
 }
-/* line 421, ../sass/style.scss */
+/* line 430, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field .select-list .selected {
   padding: 5px;
 }
-/* line 425, ../sass/style.scss */
+/* line 434, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field em {
   position: absolute;
   right: 5px;
   top: 8px;
 }
-/* line 431, ../sass/style.scss */
+/* line 440, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field.focused .select-list {
   background: #d5d5d5;
 }
-/* line 436, ../sass/style.scss */
+/* line 445, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field.open {
   z-index: 2;
 }
-/* line 438, ../sass/style.scss */
+/* line 447, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field.open label {
   color: #384670;
 }
-/* line 441, ../sass/style.scss */
+/* line 450, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field.open .select-list {
   z-index: 2;
 }
-/* line 445, ../sass/style.scss */
+/* line 454, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field.open .select-list div {
   cursor: pointer;
   display: block;
@@ -508,15 +518,15 @@ body {
   padding: 5px;
   transition: all 0.2s ease;
 }
-/* line 453, ../sass/style.scss */
+/* line 462, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field.open .select-list div:hover {
   background: #bbb;
 }
-/* line 456, ../sass/style.scss */
+/* line 465, ../sass/style.scss */
 .lightbox figure .more-info form div.select-field.open .select-list .selected {
   background: #ccc;
 }
-/* line 463, ../sass/style.scss */
+/* line 472, ../sass/style.scss */
 .lightbox figure .more-info form div.checkbox-field label {
   outline: none;
   position: relative;
@@ -525,17 +535,17 @@ body {
   cursor: pointer;
   transition: all 0.15s ease;
 }
-/* line 470, ../sass/style.scss */
+/* line 479, ../sass/style.scss */
 .lightbox figure .more-info form div.checkbox-field label span {
   position: absolute;
   left: 30px;
   transition: inherit;
 }
-/* line 475, ../sass/style.scss */
+/* line 484, ../sass/style.scss */
 .lightbox figure .more-info form div.checkbox-field label input[type=checkbox] {
   display: none;
 }
-/* line 478, ../sass/style.scss */
+/* line 487, ../sass/style.scss */
 .lightbox figure .more-info form div.checkbox-field label div {
   position: relative;
   height: 20px;
@@ -545,7 +555,7 @@ body {
   border: 3px solid #555;
   transition: inherit;
 }
-/* line 486, ../sass/style.scss */
+/* line 495, ../sass/style.scss */
 .lightbox figure .more-info form div.checkbox-field label div::after {
   content: '';
   height: 8px;
@@ -558,23 +568,23 @@ body {
   transition: inherit;
   opacity: 0;
 }
-/* line 499, ../sass/style.scss */
+/* line 508, ../sass/style.scss */
 .lightbox figure .more-info form div.checkbox-field label input:checked + div::after {
   opacity: 1;
 }
-/* line 504, ../sass/style.scss */
+/* line 513, ../sass/style.scss */
 .lightbox figure .more-info form div.checkbox-field.focused span, .lightbox figure .more-info form div.checkbox-field:hover span {
   color: black;
 }
-/* line 507, ../sass/style.scss */
+/* line 516, ../sass/style.scss */
 .lightbox figure .more-info form div.checkbox-field.focused div, .lightbox figure .more-info form div.checkbox-field:hover div {
   border-color: black;
 }
-/* line 509, ../sass/style.scss */
+/* line 518, ../sass/style.scss */
 .lightbox figure .more-info form div.checkbox-field.focused div::after, .lightbox figure .more-info form div.checkbox-field:hover div::after {
   background: black;
 }
-/* line 515, ../sass/style.scss */
+/* line 524, ../sass/style.scss */
 .lightbox figure .more-info form div.submit {
   position: relative;
   outline: none;
@@ -589,27 +599,27 @@ body {
   cursor: pointer;
 }
 @media (max-height: 1135px) {
-  /* line 515, ../sass/style.scss */
+  /* line 524, ../sass/style.scss */
   .lightbox figure .more-info form div.submit {
     margin-bottom: 20px;
   }
 }
-/* line 530, ../sass/style.scss */
+/* line 539, ../sass/style.scss */
 .lightbox figure .more-info form div.submit input {
   cursor: pointer;
   color: #555;
   transition: color 0.2s ease;
 }
-/* line 535, ../sass/style.scss */
+/* line 544, ../sass/style.scss */
 .lightbox figure .more-info form div.submit:hover, .lightbox figure .more-info form div.submit:focus {
   box-shadow: 0 0 0 1px #555;
 }
-/* line 537, ../sass/style.scss */
+/* line 546, ../sass/style.scss */
 .lightbox figure .more-info form div.submit:hover input, .lightbox figure .more-info form div.submit:focus input {
   color: black;
 }
 
-/* line 570, ../sass/style.scss */
+/* line 579, ../sass/style.scss */
 .lightbox figure:nth-child(1) .more-info {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   display: block;
@@ -623,12 +633,12 @@ body {
   font-family: 'Helvetica Neue';
 }
 
-/* line 585, ../sass/style.scss */
+/* line 594, ../sass/style.scss */
 .lightbox figure:nth-child(2) .more-info {
   font-family: 'Helvetica Neue';
 }
 
-/* line 591, ../sass/style.scss */
+/* line 600, ../sass/style.scss */
 .lightbox figure:nth-child(3) .more-info {
   font-family: 'Roboto Mono';
 }

@@ -151,7 +151,7 @@
           <a href="javascript:void(0)" class="more-info-btn btn btn-info btn-block btn-lg">More Info</a>
         </figcaption>
         <div class="more-info">
-          <form>
+          <form id="form_fda8bcf4-300e-40a9-8bda-ec7613906579" method="post">
             <div class="info-checkboxes">
               <span>I want a...</span>
               <div class="checkbox-field" data-required="nameEmail phone age">
@@ -197,7 +197,7 @@
             </div>
             <div class="phone text-field input-field">
               <label>Phone number</label>
-              <input name="phone" type="text">
+              <input name="phonenumber" type="number">
             </div>
             <div class="address text-field input-field">
               <label>Address</label>
@@ -213,6 +213,7 @@
                 <div>Graduated</div>
                 <em class="fa fa-caret-down">&nbsp;</em>
               </div>
+              <input name="grade[]" type="hidden" value="senior">
             </div>
             <div class="contactMethod select-field input-field">
               <label>Contact method</label>
@@ -222,15 +223,18 @@
                 <div>Email</div>
                 <em class="fa fa-caret-down">&nbsp;</em>
               </div>
+              <input name="contactmethod[]" type="hidden" value="text">
             </div>
+            <input name="form_uuid" type="hidden" value="fda8bcf4-300e-40a9-8bda-ec7613906579">
+            <input name="site_name" type="hidden" value="z_Clone_USU">
             <div class="submit" tabindex="0">
-              <input type="submit" disabled>
+              <input type="button" value="Submit">
             </div>
           </form>
         </div>
       </figure>
     </section>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-
+    <script src="formSubmit.js" charset="utf-8"></script>
   </body>
 </html>

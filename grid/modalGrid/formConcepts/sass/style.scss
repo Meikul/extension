@@ -360,11 +360,20 @@ body{
 			&.input-field:not(.active-field){
 				opacity: 0;
 			}
-      input[type=text]{
+      input[type=text], input[type=number]{
         padding: 5px;
         padding-left: 10px;
         width: 300px;
       }
+			input[type=number]::-webkit-outer-spin-button,
+			input[type=number]::-webkit-inner-spin-button {
+			    -webkit-appearance: none;
+			    margin: 0;
+			}
+
+			input[type=number] {
+			    -moz-appearance:textfield;
+			}
       label{
         cursor: text;
         position: absolute;
