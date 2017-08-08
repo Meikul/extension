@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   $('.more-info label').click(function(){
     $(this).next('input').focus();
+    console.log($('input:checked'));
   });
 
   $('.select-field').focus(function(){
