@@ -17,6 +17,9 @@ $dark-gray: #555;
 $light-gray: #aaa;
 $off-white: #f4f4f4;
 $form-boxshadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+$error-red: #C0392B;
+$success-green: #2ECC71;
+
 
 h1, h2, h3, h4, h5, h6, label {
   font-family: 'Roboto Condensed';
@@ -334,74 +337,95 @@ body{
 			&.info-checkboxes{
 				margin: 10px;
 			}
-      &.input-field::before{
-        content: '';
-        height: 2px;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: calc(100% + 2px);
-        background: $light-gray;
-        transition: all 0.2s ease;
-      }
-      &.input-field::after{
-        content: '';
-        height: 2px;
-        width: 0;
-        position: absolute;
-        left: 50%;
-        top: calc(100% + 2px);
-        background: $blue-accent;
-        transition: all 0.2s ease;
-      }
 			&.input-field{
-				transition: all 0.15s ease;
+				&::before{
+					content: '';
+					height: 2px;
+					width: 100%;
+					position: absolute;
+					left: 0;
+					top: calc(100% + 2px);
+					background: $light-gray;
+					transition: all 0.2s ease;
+				}
+				&::after{
+					content: '';
+					height: 2px;
+					width: 0;
+					position: absolute;
+					left: 50%;
+					top: calc(100% + 2px);
+					background: $blue-accent;
+					transition: all 0.2s ease;
+				}
+				&{
+					transition: all 0.15s ease;
+				}
+				&:not(.active-field){
+					opacity: 0;
+				}
+				input[type=text], input[type=number]{
+					padding: 2px;
+					padding-left: 10px;
+					width: 300px;
+				}
+				input[type=number]::-webkit-outer-spin-button,
+				input[type=number]::-webkit-inner-spin-button {
+					-webkit-appearance: none;
+					margin: 0;
+				}
+				&.filled{
+					label{
+						color: $light-gray;
+						top: -12px;
+						font-size: 11px;
+					}
+				}
+				span{
+					display: none;
+				}
+				&.invalid{
+					label{
+						color: $error-red;
+					}
+					&::before{
+						background: $error-red;
+						opacity: 0.5;
+					}
+					&::after{
+						background: $error-red;
+					}
+					color: $error-red;
+					span{
+						display: block;
+						position: absolute;
+						font-size: 11px;
+						bottom: -18px;
+						right: 10px;
+					}
+				}
 			}
-			&.input-field:not(.active-field){
-				opacity: 0;
+			label{
+				cursor: text;
+				position: absolute;
+				top: 2px;
+				left: 10px;
+				font-family: 'Roboto Mono';
+				transition: all 0.2s ease;
 			}
-      input[type=text], input[type=number]{
-        padding: 5px;
-        padding-left: 10px;
-        width: 300px;
-      }
-			input[type=number]::-webkit-outer-spin-button,
-			input[type=number]::-webkit-inner-spin-button {
-			    -webkit-appearance: none;
-			    margin: 0;
+			&.focused{
+				&::before{
+				}
+				&::after{
+					width: 100%;
+					left: 0;
+				}
+				&.text-field label{
+					top: -12px;
+					font-size: 11px;
+					color: $blue-accent;
+				}
 			}
-
-			input[type=number] {
-			    -moz-appearance:textfield;
-			}
-      label{
-        cursor: text;
-        position: absolute;
-        top: 5px;
-        left: 10px;
-        font-family: 'Roboto Mono';
-        transition: all 0.2s ease;
-      }
-      &.focused{
-        &::before{
-        }
-        &::after{
-          width: 100%;
-          left: 0;
-        }
-        &.text-field label{
-          top: -15px;
-          font-size: 11px;
-          color: $blue-accent;
-        }
-      }
-      &.filled{
-        label{
-          color: $light-gray;
-          top: -15px;
-          font-size: 11px;
-        }
-      }
     }
     div.select-field{
       height: 40px;
@@ -525,7 +549,8 @@ body{
 			position: relative;
 			outline: none;
 			border-radius: 2px;
-			width: 150px;
+			width: 170px;
+			height: 36px;
 			text-align: center;
 			@media (max-height: 1135px){
 				margin-bottom: 20px;
@@ -534,19 +559,70 @@ body{
 			padding: 5px;
 			left: 0;
 			box-shadow: 0 0 0 1px $light-gray;
-			transition: all 0.2s ease;
+			transition: all 0.3s ease;
+			transition-delay: 0.1s;
 			cursor: pointer;
 			input{
 				cursor: pointer;
 				color: $dark-gray;
-				transition: color 0.2s ease;
+				transition: all 0.2s ease;
 			}
 			&:hover, &:focus{
-				box-shadow: 0 0 0 1px $dark-gray;
+				box-shadow: 0 0 0 2px $blue-accent;
 				input{
-					color: black;
+					color: $blue-accent;
 				}
 			}
+			&.pending{
+				height: 36px;
+				width: 36px;
+				border-radius: 20%;
+				-webkit-animation: rotation 2s 1 linear;
+				input{
+					transition-delay: 0s;
+					opacity: 0;
+				}
+			}
+			&.success{
+				box-shadow: 0 0 0 1px $success-green;
+				input{
+					transition-delay: 0.2s;
+					color: $success-green;
+				}
+			}
+			&.error{
+				box-shadow: 0 0 0 1px $error-red;
+				input{
+					transition-delay: 0.2s;
+					color: #D91E18;
+				}
+			}
+			&.shaking{
+				-webkit-animation: shaker 0.25s 2 ease;
+			}
+			@-webkit-keyframes shaker{
+				from{
+					-webkit-transform: rotate(0);
+				}
+				25%{
+					-webkit-transform: rotate(-5deg);
+				}
+				75%{
+					-webkit-transform: rotate(5deg);
+				}
+				to{
+					-webkit-transform: rotate(0);
+				}
+			}
+			@-webkit-keyframes rotation {
+					from {
+							-webkit-transform: rotate(0deg);
+					}
+					to {
+							-webkit-transform: rotate(359deg);
+					}
+			}
+
 			// &::before{
       //   content: '';
       //   height: 2px;

@@ -14,7 +14,7 @@ $(document).ready(function() {
     $(this).children('.select-list').focus();
   });
 
-  var textInputs = $('.more-info input[type=text]');
+  var textInputs = $('.more-info input[type=text], .more-info input[type=number]');
   var inputs = $('.more-info input, .more-info .select-list, .more-info .checkbox-field>label');
   var checkboxes = $('.more-info .checkbox-field>label');
   var selectLists = $('.select-list');
@@ -90,6 +90,6 @@ $(document).ready(function() {
     else $(this).parent('.text-field').addClass('filled');
   });
   $('.lightbox .more-info-btn').click(function(){
-    $(this).parentsUntil('figure').append(``);
+    $(this).closest('figure').append(``);
   });
 });

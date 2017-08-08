@@ -137,7 +137,7 @@
         </div>
 
         <figcaption>
-          <h3>Letterpress asymmetrical</h3>
+          <h3 class="program-title">Letterpress asymmetrical</h3>
           <p class="short-text">Chillwave hoodie ea gentrify aute sriracha consequat.</p>
           <p class="modal-text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -157,28 +157,28 @@
               <div class="checkbox-field" data-required="nameEmail phone age">
                 <label tabindex="0">
                   <span>Campus Tour</span>
-                  <input type="checkbox">
+                  <input name="itemswanted[]" type="checkbox" value="tour">
                   <div></div>
                 </label>
               </div>
               <div class="checkbox-field" data-required="nameEmail">
                 <label tabindex="0">
                   <span>Email Newsletter</span>
-                  <input type="checkbox">
+                  <input name="itemswanted[]" type="checkbox" value="email">
                   <div></div>
                 </label>
               </div>
               <div class="checkbox-field" data-required="nameEmail phone age contactMethod">
                 <label tabindex="0">
                   <span>Advisor Appointment</span>
-                  <input type="checkbox">
+                  <input name="itemswanted[]" type="checkbox" value="advisor">
                   <div></div>
                 </label>
               </div>
               <div class="checkbox-field" data-required="nameEmail address age">
                 <label tabindex="0">
                   <span>Physical Mailer</span>
-                  <input type="checkbox">
+                  <input name="itemswanted[]" type="checkbox" value="mail">
                   <div></div>
                 </label>
               </div>
@@ -186,18 +186,22 @@
             <div class="nameEmail text-field input-field">
               <label>First name</label>
               <input name="firstname" type="text">
+              <span>Required</span>
             </div>
             <div class="nameEmail text-field input-field">
               <label>Last name</label>
               <input type="text" name="lastname">
+              <span>Required</span>
             </div>
             <div class="nameEmail text-field input-field">
               <label>Email</label>
               <input name="email" type="text">
+              <span>Invalid email</span>
             </div>
             <div class="phone text-field input-field">
               <label>Phone number</label>
               <input name="phonenumber" type="number">
+              <span>Required</span>
             </div>
             <div class="address text-field input-field">
               <label>Address</label>
@@ -225,6 +229,8 @@
               </div>
               <input name="contactmethod[]" type="hidden" value="text">
             </div>
+            <input name="program" type="hidden">
+            <input name="department" type="hidden">
             <input name="form_uuid" type="hidden" value="fda8bcf4-300e-40a9-8bda-ec7613906579">
             <input name="site_name" type="hidden" value="z_Clone_USU">
             <div class="submit" tabindex="0">
@@ -235,6 +241,6 @@
       </figure>
     </section>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script src="formSubmit.js" charset="utf-8"></script>
+    <script src="gridForm.js" charset="utf-8"></script>
   </body>
 </html>
