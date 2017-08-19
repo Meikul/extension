@@ -11,14 +11,13 @@
 		<meta name="revisit-after" content="5 days">
 
 		<link href="//ajax.googleapis.com" rel="dns-prefetch">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300|Roboto+Mono" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300|Roboto+Mono|Roboto" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="https://www.usu.edu/style/classic-full.min.css">
 		<link rel="stylesheet" type="text/css" href="https://caas.usu.edu/_resources/caas-css/6-column.css">
 		<link href="/_resources/css/prettyPhoto.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://caas.usu.edu/_resources/program-grid/modal-grid/modalGridStyle.css">
 		<link rel="stylesheet" type="text/css" href="https://caas.usu.edu/_resources/caas-css/profile_layouts/profile-page-v3-overview.css">
 		<link rel="stylesheet" type="text/css" href="https://caas.usu.edu/_resources/caas-css/google-photo-gallery.css">
-		<link rel="stylesheet" href="file:///Users/extension/Projects/extension/newIndex/style.css">
 
 		<title>New CAAS Home Page</title>
 
@@ -27,6 +26,111 @@
 		<script src="https://caas.usu.edu/_resources/program-grid/modal-grid/modalGridscript.js"></script>
 		<!-- <script type="text/javascript" src="file:///Users/extension/Projects/extension/grid/modalGrid/script.js"></script> -->
 
+		<style>
+			.main-container-wrapper{
+				max-width: 2000px;
+				width: 100%;
+			}
+			.main-content{
+				max-width: 2000px;
+				width: 100%;
+			}
+			.grid li:not(.grid-sizer){
+			  text-align: center;
+			  overflow: hidden;
+			  height: 15vw;
+			  max-height: 300px;
+			  min-height: 150px;
+			  min-width: 270px;
+			  box-sizing: border-box;
+			}
+
+			.grid-sizer{
+			  padding: 0;
+			  margin: 0;
+			  height: 0;
+			  width: 0;
+			}
+
+			.grid li img{
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  height: auto;
+			  min-height: 100%;
+			  min-width: 100%;
+			  z-index: 0;
+			  box-sizing: border-box;
+			  transition: all 0.2s ease;
+			}
+
+			.grid li:not(.grid-sizer)::after{
+			  content: '';
+			  position: absolute;
+			  display: block;
+			  left: 0;
+			  top: 0;
+			  width: 100%;
+			  height: 100%;
+			  background: black;
+			  opacity: 0.2;
+			  transition: opacity 0.2s ease;
+			  z-index: 1;
+			}
+
+			.grid li h3{
+			  position: absolute;
+			  bottom: 0;
+			  color: white;
+			  z-index: 2;
+			  font-size: 40px;
+			  margin: 0;
+			  text-align: left;
+			  font-family: 'Roboto Condensed';
+			  margin: 10px;
+			  transition: all 0.2s ease;
+			}
+
+			/*.grid li:nth-child(4) h3{
+			  font-size: 300%;
+			}*/
+
+			.grid li p{
+			  /*position: absolute;*/
+			  display: none;
+			}
+
+			.grid li:hover::after{
+			  opacity: 0.4;
+			}
+
+			.grid li:hover img{
+			  min-width: 105%;
+			  min-height: 105%;
+			  top:-2%;
+			  left: -2%;
+			}
+
+			@media (max-width: 1100px) {
+			  .grid li:not(.grid-sizer){
+			    width: calc(50% - 30px) !important;
+					padding-top: 30%;
+			  }
+			  .grid-sizer{
+			    width: 50% !important;
+			  }
+			}
+
+			@media (max-width: 730px) {
+			  .grid li:not(.grid-sizer){
+			    width: calc(100% - 30px) !important;
+					padding-top: 50%;
+			  }
+			  .grid-sizer{
+			    width: 100% !important;
+			  }
+			}
+		</style>
 
 		<!-- ouc:div label="/_resources/global_includes/headcode.inc" path="/_resources/global_includes/headcode.inc"
 --><script type="text/javascript">
