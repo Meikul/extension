@@ -285,12 +285,16 @@ body{
 	font-family: 'Roboto Condensed';
 	font-size: 20px;
 	border: 1px solid #283650;
-  width: 50%;
+  width: 49%;
+	/*margin: 20px 2% 0 2%;*/
 }
 
-/*.lightbox .bottom-btn-group::after{
+.lightbox .bottom-btn-group:after{
+	visibility: hidden;
+	display: block;
+	content: "";
   clear: both;
-}*/
+}
 
 .grid .bottom-btn{
 	display: none;
@@ -312,6 +316,38 @@ body{
 
 .grid .more-info {
   display: none;
+}
+
+#grid-gallery>.apply-now{
+	display: none;
+}
+
+.lightbox .apply-now{
+	display: block;
+  position: relative;
+  width: 80vw;
+  max-width: 1300px;
+  top: 10vh;
+  margin: auto;
+  border-radius: 2px;
+  overflow: auto;
+  background: #f4f4f4;
+	padding: 0;
+}
+
+.lightbox .apply-now iframe{
+	width: 100%;
+	height: auto;
+	height: 40vw;
+	margin: 0;
+}
+
+.lightbox .apply-now .bottom-btn{
+	/*width: calc(100% - 20px);*/
+	/*margin: 5px 10px 10px 10px;*/
+	margin: 0;
+	width: 100%;
+	border-radius: 0;
 }
 
 #grid-gallery>.more-info{

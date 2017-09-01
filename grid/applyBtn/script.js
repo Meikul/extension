@@ -6,7 +6,9 @@ $(document).ready(function() {
 
   $('.grid-wrap:not(.active-grid)').css('display', 'none');
 
-  $('.grid figure').click(function(e){
+  $('.grid figure').click(openModal);
+
+  function openModal(e){
     var fig = $(e.target).closest('figure');
     fig.clone().appendTo('.lightbox');
     $('.lightbox').fadeIn(500);
@@ -17,19 +19,17 @@ $(document).ready(function() {
       $('.lightbox .more-info').fadeIn(300, setFormEvents);
       $('.lightbox .more-info form').animate({left:'0'}, 300);
     });
-    // Background Blur Effect
-    // $({blurRadius: 0}).animate({blurRadius: 5}, {
-    //     duration: 500,
-    //     easing: 'swing', // or "linear"
-    //                      // use jQuery UI or Easing plugin for more options
-    //     step: function() {
-    //         $('.grids-wrap').css({
-    //             "-webkit-filter": "blur("+this.blurRadius+"px)",
-    //             "filter": "blur("+this.blurRadius+"px)"
-    //         });
-    //     }
-    // });
-  });
+    $('.lightbox .apply-now-btn').click(function(){
+      closeModal(openVideo);
+    });
+  }
+
+  function openVideo(){
+    var vidWindow = $('#grid-gallery>.apply-now');
+    vidWindow.clone().appendTo('.lightbox');
+    $('.lightbox .apply-now').fadeIn(500);
+    $('.lightbox').children().click(function(){return false;});
+  }
 
   function setFormEvents(){
     $lightbox = $('.lightbox');
@@ -258,10 +258,19 @@ $(document).ready(function() {
      });
    }
 
-
   // Close Modal
-  function closeModal(){
-    $('.lightbox').fadeOut(500, function(){$('.lightbox').children().remove();});
+  function closeModal(callback = undefined){
+    if(typeof callback === 'function'){
+      $('.lightbox figure').fadeOut(500, function(){
+        $('.lightbox').children().remove();
+        callback();
+      });
+    }
+    else{
+      $('.lightbox').fadeOut(500, function(){
+        $('.lightbox').children().remove();
+      });
+    }
   }
   $('.lightbox').click(closeModal);
   $(document).keydown(function(e) {
