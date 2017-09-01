@@ -278,29 +278,30 @@ body{
 	display: none;
 }
 
-.lightbox .more-info-btn{
+.lightbox .bottom-btn{
 	margin-top: 20px;
 	/*border-radius: 0;*/
 	background: #384660;
 	font-family: 'Roboto Condensed';
 	font-size: 20px;
 	border: 1px solid #283650;
-}
-
-.lightbox .btn-container{
   width: 50%;
-  height: auto;
-  display: inline-block;
 }
 
-.lightbox .info-btn-group{
-  height: auto;
-  width: 100%;
-  display: inline-block;
-}
+/*.lightbox .bottom-btn-group::after{
+  clear: both;
+}*/
 
-.grid .more-info-btn, .grid .btn-container{
+.grid .bottom-btn{
 	display: none;
+}
+
+.lightbox .more-info-btn{
+  float: left;
+}
+
+.lightbox .apply-now-btn{
+  float: right;
 }
 
 
