@@ -12,15 +12,18 @@ $(document).ready(function() {
     var fig = $(e.target).closest('figure');
     fig.clone().appendTo('.lightbox');
     $('.lightbox').fadeIn(500);
-    $('.lightbox').children().click(function(){return false;});
     $('.modal-close>img').click(closeModal);
     $('.lightbox .more-info-btn').click(function(){
+      if($(window).width() < 529){}
       $('.more-info').clone().appendTo($(this).closest('figure'));
       $('.lightbox .more-info').fadeIn(300, setFormEvents);
       $('.lightbox .more-info form').animate({left:'0'}, 300);
     });
     $('.lightbox .apply-now-btn').click(function(){
       closeModal(openVideo);
+    });
+    $('.lightbox').click(function(e){
+      if(e.target === this) closeModal();
     });
   }
 
@@ -29,6 +32,9 @@ $(document).ready(function() {
     vidWindow.clone().appendTo('.lightbox');
     $('.lightbox .apply-now').fadeIn(500);
     $('.lightbox').children().click(function(){return false;});
+    $('.apply-now a').click(function(){
+      window.location.href = this.href;
+    });
   }
 
   function setFormEvents(){
@@ -189,6 +195,17 @@ $(document).ready(function() {
         valid($(this));
       }
     });
+    $form.find('.active-field input[name=zipcode]').each(function(){
+      var length = $(this).val().length;
+      if(length === 0){
+        invalid($(this), 'Required');
+        allValid = false;
+      }
+      else if(length !== 5){
+        invalid($(this), 'Invalid postal code');
+        allValid = false;
+      }
+    });
     $form.find('.active-field input[name=phonenumber]').each(function(){
       var $input = $(this);
       var length = $input.val().length;
@@ -245,10 +262,9 @@ $(document).ready(function() {
        data: $form.serialize(),
        success: function (data) {
          $btn.off('click');
-         $btn.find('input').val('Done!');
+         $btn.find('input').val('Thank You');
          $btn.removeClass('pending');
          $btn.addClass('success');
-         $
        },
        error: function (data) {
          $btn.find('input').val("Couldn't Submit");
@@ -272,7 +288,7 @@ $(document).ready(function() {
       });
     }
   }
-  $('.lightbox').click(closeModal);
+  // $('.lightbox').click(closeModal);
   $(document).keydown(function(e) {
     if (e.keyCode == 27) closeModal();
   });

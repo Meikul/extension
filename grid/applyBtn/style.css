@@ -19,8 +19,10 @@ p {
   font-family: 'Helvetica Neue';
 }
 
-body{
+html{
+	width: 100vw;
 	background: #f4f4f4;
+	overflow-x: hidden;
 }
 
 .main-content{
@@ -485,6 +487,7 @@ body{
   width: 100%;
   left: 0;
 }
+
 
 .lightbox figure .more-info form > div.focused.text-field label {
   top: -12px;
