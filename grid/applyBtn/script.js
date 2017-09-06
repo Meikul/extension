@@ -14,10 +14,11 @@ $(document).ready(function() {
     $('.lightbox').fadeIn(500);
     $('.modal-close>img').click(closeModal);
     $('.lightbox .more-info-btn').click(function(){
-      if($(window).width() < 529){}
       $('.more-info').clone().appendTo($(this).closest('figure'));
       $('.lightbox .more-info').fadeIn(300, setFormEvents);
-      $('.lightbox .more-info form').animate({left:'0'}, 300);
+      if($(window).width() >= 529) {
+        $('.lightbox .more-info form').animate({left:'0'}, 300);
+      }
     });
     $('.lightbox .apply-now-btn').click(function(){
       closeModal(openVideo);

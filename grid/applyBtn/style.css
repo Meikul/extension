@@ -356,6 +356,7 @@ html{
 	display: none;
 }
 
+/*hhh*/
 .lightbox figure .more-info {
   position: absolute;
   left: 0;
@@ -368,7 +369,6 @@ html{
 }
 
 .lightbox figure .more-info form {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   display: block;
   position: absolute;
   border-radius: 2px;
@@ -379,6 +379,24 @@ html{
   background: #f4f4f4;
   font-size: 16px;
   overflow-y: auto;
+}
+
+@media (max-width: 529px){
+	.lightbox figure .more-info{
+		position: fixed;
+		top: 0;
+		left: 0;
+		overflow-y: auto;
+	}
+	.lightbox figure .more-info form{
+		position: relative;
+		left: 0;
+		width: 80vw;
+	  top: 10vh;
+		margin: auto;
+		height: auto;
+		margin-bottom: 30px;
+	}
 }
 
 .lightbox figure .more-info form input, .lightbox figure .more-info form select {
