@@ -734,12 +734,13 @@ html{
 
 #req-more-info{
   position: relative;
-  width: 350px;
-  height: 80vh;
+  width: auto;
   top: 10vh;
   background: none;
   margin: auto;
   display: none;
+	margin-bottom: 10vh;
+	overflow: visible;
 }
 
 .lightbox #req-more-info{
@@ -750,8 +751,14 @@ html{
   position: relative;
   left: 0;
   top: 0;
+	margin: auto;
 }
 
 .lightbox #req-more-info .more-info{
   display: block;
+	position: relative;
+	top: 0;
+	left: 0;
+	margin: auto;
+	background: none;
 }

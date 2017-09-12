@@ -7,10 +7,10 @@ $(document).ready(function() {
   $('.grid-wrap:not(.active-grid)').css('display', 'none');
 
   $('#req-info').click(function(){
-    $('#req-more-info').appendTo('.lightbox');
+    $('#req-more-info').clone().appendTo('.lightbox');
     $('.lightbox .more-info').css({left: '0'});
-    $('.lightbox').fadeIn(300);
-    $('.lightbox').click(function(e){
+    $('.lightbox').fadeIn(300, setFormEvents);
+    $('.lightbox, .more-info').click(function(e){
       if(e.target === this) closeModal();
     });
   });
