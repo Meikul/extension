@@ -17,11 +17,14 @@ $(document).ready(function() {
 
   $('.grid figure').click(openModal);
 
+  var pageName = $('#degrees-header h2').text();
+  var degreeName = '';
   function openModal(e){
     var fig = $(e.target).closest('figure');
     fig.clone().appendTo('.lightbox');
     $('.lightbox').fadeIn(500);
     $('.modal-close>img').click(closeModal);
+    degreeName = $(this).closest('figure').find('h3').text();
     $('.lightbox .more-info-btn').click(function(){
       $('.more-info').clone().appendTo($(this).closest('figure'));
       $('.lightbox .more-info').fadeIn(300, setFormEvents);
@@ -35,12 +38,27 @@ $(document).ready(function() {
     $('.lightbox').click(function(e){
       if(e.target === this) closeModal();
     });
+
+    $('figure .more-info-btn').click(function(){
+			fbq('track', 'ClickedMoreInfo', {
+				content_name: degreeName,
+				content_type: pageName,
+				value: 10.00,
+				currency: 'USD'
+			});
+		});
   }
 
   function openVideo(){
     var vidWindow = $('#grid-gallery>.apply-now');
     vidWindow.clone().appendTo('.lightbox');
     $('.lightbox .apply-now').fadeIn(500);
+    fbq('track', 'OpenedVideo', {
+      content_name: degreeName,
+      content_type: pageName,
+      value: 10.00,
+      currency: 'USD'
+    });
   }
 
   function setFormEvents(){
@@ -271,6 +289,12 @@ $(document).ready(function() {
          $btn.find('input').val('Thank You');
          $btn.removeClass('pending');
          $btn.addClass('success');
+         fbq('track', 'SubmittedMoreInfoForm', {
+  				content_name: degreeName,
+  				content_type: pageName,
+  				value: 10.00,
+  				currency: 'USD'
+   			 });
        },
        error: function (data) {
          $btn.find('input').val("Couldn't Submit");
