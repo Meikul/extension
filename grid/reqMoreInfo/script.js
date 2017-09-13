@@ -7,6 +7,12 @@ $(document).ready(function() {
   $('.grid-wrap:not(.active-grid)').css('display', 'none');
 
   $('#req-info').click(function(){
+    fbq('track', 'ClickedRequestMoreInfo', {
+      content_name: '',
+      content_type: pageName,
+      value: 10.00,
+      currency: 'USD'
+    });
     $('#req-more-info').clone().appendTo('.lightbox');
     $('.lightbox .more-info').css({left: '0'});
     $('.lightbox').fadeIn(300, setFormEvents);
@@ -26,6 +32,12 @@ $(document).ready(function() {
     $('.modal-close>img').click(closeModal);
     degreeName = $(this).closest('figure').find('h3').text();
     $('.lightbox .more-info-btn').click(function(){
+      fbq('track', 'ClickedMoreInfo', {
+				content_name: degreeName,
+				content_type: pageName,
+				value: 10.00,
+				currency: 'USD'
+			});
       $('.more-info').clone().appendTo($(this).closest('figure'));
       $('.lightbox .more-info').fadeIn(300, setFormEvents);
       if($(window).width() >= 529) {
@@ -34,31 +46,22 @@ $(document).ready(function() {
     });
     $('.lightbox .apply-now-btn').click(function(){
       closeModal(openVideo);
-    });
-    $('.lightbox').click(function(e){
-      if(e.target === this) closeModal();
-    });
-
-    $('figure .more-info-btn').click(function(){
-			fbq('track', 'ClickedMoreInfo', {
+      fbq('track', 'OpenedVideo', {
 				content_name: degreeName,
 				content_type: pageName,
 				value: 10.00,
 				currency: 'USD'
 			});
-		});
+    });
+    $('.lightbox').click(function(e){
+      if(e.target === this) closeModal();
+    });
   }
 
   function openVideo(){
     var vidWindow = $('#grid-gallery>.apply-now');
     vidWindow.clone().appendTo('.lightbox');
     $('.lightbox .apply-now').fadeIn(500);
-    fbq('track', 'OpenedVideo', {
-      content_name: degreeName,
-      content_type: pageName,
-      value: 10.00,
-      currency: 'USD'
-    });
   }
 
   function setFormEvents(){
@@ -76,6 +79,15 @@ $(document).ready(function() {
 
     $lightbox.find('form').click(function(e){
       return false;
+    });
+
+    $lighbox.find('.apply-now-btn').click(function(){
+      fbq('track', 'ClickedApplyNow', {
+				content_name: degreeName,
+				content_type: pageName,
+				value: 10.00,
+				currency: 'USD'
+			});
     });
 
     $lightbox.find('.checkbox-field label').click(function(){
