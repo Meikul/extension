@@ -1,7 +1,18 @@
+body{
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+}
+
 .grid{
   height: auto;
-  width: 100vw;
-  margin: auto;
+  width: 100%;
+  background: #aad;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .msn-item{
@@ -9,12 +20,56 @@
 }
 
 .item{
-  width: 200px;
-  height: 200px;
+  height: auto;
   border-radius: 5px;
   background: #fcb;
   margin: 5px;
 }
+/*
+@media (min-width: 1100px) {
+  .item{
+    width: calc(20% - 30px);
+  }
+  .grid-sizer{
+    width: 20%;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1099px){
+  .item{
+    width: calc(25% - 40px);
+  }
+  .grid-sizer{
+    width: 25%;
+  }
+}
+
+@media (max-width: 899px) and (min-width: 700px){
+  .item{
+    width: calc(33% - 30px);
+  }
+  .grid-sizer{
+    width: 33%;
+  }
+}
+
+@media (max-width: 699px) and (min-width: 500px){
+  .item{
+    width: calc(50% - 20px);
+  }
+  .grid-sizer{
+    width: 50%;
+  }
+}
+
+@media (max-width: 499px){
+  .item{
+    width: calc(100% - 25px);
+  }
+  .grid-sizer{
+    width: 100%;
+  }
+}*/
 
 .big{
   width: 400px;
