@@ -20,7 +20,9 @@ body{
 }
 
 .item{
-  height: auto;
+  max-width: 300px;
+  min-width: 200px;
+  width: calc(20% - 30px);
   border-radius: 5px;
   background: #fcb;
   margin: 5px;
