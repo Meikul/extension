@@ -1,0 +1,21 @@
+.grid{
+  height: auto;
+  width: 100vw;
+  margin: auto;
+}
+
+.msn-item{
+  box-sizing: border-box;
+}
+
+.item{
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  background: #fcb;
+  margin: 5px;
+}
+
+.big{
+  width: 400px;
+}
