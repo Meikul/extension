@@ -1,0 +1,772 @@
+@font-face {
+	font-family: 'fontawesome';
+	src:url('../fonts/fontawesome/fontawesome.eot?-e43dk9');
+	src:url('../fonts/fontawesome/fontawesome.eot?#iefix-e43dk9') format('embedded-opentype'),
+		url('../fonts/fontawesome/fontawesome.woff?-e43dk9') format('woff'),
+		url('../fonts/fontawesome/fontawesome.ttf?-e43dk9') format('truetype'),
+		url('../fonts/fontawesome/fontawesome.svg?-e43dk9#fontawesome') format('svg');
+	font-weight: normal;
+	font-style: normal;
+} /* Made with http://icomoon.io/app */
+
+/* General style */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Condensed';
+}
+
+p {
+  font-family: 'Helvetica Neue';
+}
+
+html{
+	width: 100vw;
+	background: #f4f4f4;
+	overflow-x: hidden;
+}
+
+.main-content{
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+}
+
+#degrees-header{
+	position: relative;
+	left: 30px;
+}
+
+#degrees-header h2{
+	display: inline;
+	margin-right: 40px;
+}
+
+#grid-selectors{
+	margin-top: 20px;
+	white-space: nowrap;
+	display: inline;
+	float: right;
+	margin-right: 70px;
+}
+
+.grid-selector{
+	display: inline;
+	font-size: 17px;
+	padding: 10px;
+	cursor: pointer;
+	color: #38b;
+	/*border: 1px solid #ddd;*/
+}
+
+.active-grid-selector, .grid-selector:hover{
+	text-decoration: underline;
+	color: black;
+}
+
+.main-content > h2{
+	padding-left: 30px;
+}
+
+.grid-gallery ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.grid-sizer{
+	/*width: 100%;*/
+	/*width: 1000px;*/
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.grid-gallery figure {
+	margin: 0;
+}
+
+.grid-gallery figure img {
+	display: block;
+	width: 100%;
+	margin: 0;
+}
+
+.lightbox img
+{
+	margin-top:-15% !important;
+}
+
+.grid figcaption {
+	background: #f4f4f4;
+	padding: 25px;
+	position: relative;
+}
+
+.grid-gallery figcaption h3 {
+	font-size: 20px;
+	color: #384660;
+	margin: 0;
+	padding: 0 0 0.5em;
+}
+
+.grid-gallery figcaption p {
+	margin: 0;
+}
+
+/* Grid style */
+.grids-wrap {
+	margin: auto;
+	padding: 0 1em 1.875em;
+}
+
+.grid-wrap{
+	top: 0;
+	left: 0;
+}
+
+.grid-wrap:not(.active-grid){
+	/*display: none;*/
+	opacity: 0;
+}
+
+.grid {
+	margin: 0 auto;
+}
+
+.grid li {
+	margin: 15px;
+	/*padding: 15px 0;*/
+	float: left;
+	cursor: pointer;
+}
+
+.grid li>figure{
+	padding: 0;
+	overflow: hidden;
+	border-radius: 1px; /* box shadow animation overshoots if 0 for some reason */
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.15s ease;
+}
+
+/* Shadow Effect */
+.grid li>figure:hover {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+@media (min-width:1000px){
+	.grid li:not(.grid-sizer){
+		width: calc(33% - 30px) !important;
+	}
+	.grid-sizer{
+		width: 33% !important;
+	}
+}
+
+@media (max-width: 1099px) and (min-width: 850px){
+	.grid li:not(.grid-sizer){
+		width: calc(33% - 30px) !important;
+	}
+	.grid-sizer{
+		width: 33% !important;
+	}
+}
+
+@media (max-width: 849px) and (min-width: 530px){
+	.grid li:not(.grid-sizer){
+		width: calc(50% - 30px) !important;
+	}
+	.grid-sizer{
+		width: 50% !important;
+	}
+}
+
+@media (max-width: 529px){
+	.grid li:not(.grid-sizer){
+		width: calc(100% - 30px) !important;
+	}
+	.grid-sizer{
+		width: 100% !important;
+	}
+}
+
+/* lightbox style */
+.lightbox{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+	background: rgba(0, 0, 0, 0.7);
+	overflow: auto;
+	z-index: 30;
+}
+
+.lightbox figure{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90vw;
+  max-width: 1300px;
+	min-width: 350px;
+  margin: auto;
+  border-radius: 2px;
+  overflow: auto;
+  background: #f4f4f4;
+}
+
+.lightbox figcaption{
+	position: relative;
+	margin: 0;
+	padding: 25px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.lightbox h3{
+	font-size: 30px !important;
+	color: black;
+	/*background: white;*/
+}
+
+.lightbox .modal-text{
+	font-size: 14px;
+}
+
+.grid .modal-text{
+	display: none;
+}
+
+.lightbox p:not(.modal-text){
+	display: none;
+}
+
+.lightbox .img-container{
+	max-height: 50vh;
+	overflow: hidden;
+}
+
+.lightbox .modal-close{
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 10px;
+	right: 10px;
+	height: 40px;
+	width: 40px;
+	/*background: #f4f4f4;*/
+	font-size: 48px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.lightbox .modal-close:hover{
+	/*background: rgba(100, 20, 20, 1);*/
+}
+
+.lightbox .modal-close img{
+	height: 100%;
+	width: 100%;
+	opacity: 0.6;
+	transform: rotate(0deg);
+	transition: all 0.3s ease;
+}
+
+.lightbox .modal-close:hover img{
+	opacity: 1;
+	transform: rotate(90deg);
+}
+
+.grid .modal-close{
+	display: none;
+}
+
+.lightbox .bottom-btn{
+	margin-top: 20px;
+	/*border-radius: 0;*/
+	background: #384660;
+	font-family: 'Roboto Condensed';
+	font-size: 20px;
+	border: 1px solid #283650;
+  width: 49%;
+	/*margin: 20px 2% 0 2%;*/
+}
+
+.lightbox .bottom-btn-group:after{
+	visibility: hidden;
+	display: block;
+	content: "";
+  clear: both;
+}
+
+.grid .bottom-btn{
+	display: none;
+}
+
+.lightbox .more-info-btn{
+  float: left;
+}
+
+.lightbox .apply-now-btn{
+  float: right;
+}
+
+.grid .more-info {
+  display: none;
+}
+
+#grid-gallery>.apply-now{
+	display: none;
+}
+
+.lightbox .apply-now{
+	display: block;
+  position: relative;
+  width: 80vw;
+  max-width: 1300px;
+  top: 10vh;
+  margin: auto;
+  border-radius: 2px;
+  overflow: auto;
+  background: #f4f4f4;
+	padding: 0;
+}
+
+.lightbox .apply-now iframe{
+	width: 100%;
+	height: auto;
+	height: 40vw;
+	margin: 0;
+}
+
+.lightbox .apply-now .bottom-btn{
+	/*width: calc(100% - 20px);*/
+	/*margin: 5px 10px 10px 10px;*/
+	margin: 0;
+	width: 100%;
+	border-radius: 0;
+}
+
+#grid-gallery>.more-info{
+	display: none;
+}
+
+/*hhh*/
+.lightbox figure .more-info {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto Condensed';
+  background: rgba(0, 0, 0, 0.4);
+	display: none;
+}
+
+.lightbox figure .more-info form {
+  display: block;
+  position: absolute;
+  border-radius: 2px;
+  top: 0;
+	left: -350px;
+	width: 350px;
+  height: 100%;
+  background: #f4f4f4;
+  font-size: 16px;
+  overflow-y: auto;
+}
+
+@media (max-width: 529px){
+	.lightbox .modal-close{
+		opacity: 1;
+	}
+	.lightbox figure{
+		max-height: 90vh;
+		overflow-y: scroll;
+	}
+	.lightbox figure .more-info{
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		overflow-y: auto;
+	}
+	.lightbox figure .more-info form{
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 90vw;
+		margin: auto;
+		height: auto;
+	}
+}
+
+.lightbox figure .more-info form input, .lightbox figure .more-info form select {
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 2px;
+}
+
+.lightbox figure .more-info form > div {
+  position: relative;
+  margin: 20px 20px;
+}
+
+.lightbox figure .more-info form > div:nth-child(2){
+	margin-top: 0;
+}
+
+.lightbox figure .more-info form > div.info-checkboxes {
+  margin: 10px;
+}
+
+.lightbox figure .more-info form > div.input-field::before {
+  content: '';
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 2px);
+  background: #aaa;
+  transition: all 0.2s ease;
+}
+
+.lightbox figure .more-info form > div.input-field::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 2px);
+  background: #384670;
+  transition: all 0.2s ease;
+}
+
+.lightbox figure .more-info form > div.input-field {
+  transition: all 0.15s ease;
+}
+
+.lightbox figure .more-info form > div.input-field:not(.active-field) {
+  opacity: 0;
+}
+
+.lightbox figure .more-info form > div.input-field input[type=text], .lightbox figure .more-info form > div.input-field input[type=number] {
+  padding: 2px;
+  padding-left: 10px;
+  width: 300px;
+}
+
+.lightbox figure .more-info form > div.input-field input[type=number]::-webkit-outer-spin-button,
+.lightbox figure .more-info form > div.input-field input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.lightbox figure .more-info form > div.input-field.filled label {
+  color: #aaa;
+  top: -12px;
+  font-size: 11px;
+}
+
+.lightbox figure .more-info form > div.input-field span {
+  display: none;
+}
+
+.lightbox figure .more-info form > div.input-field.invalid {
+  color: #C0392B;
+}
+
+.lightbox figure .more-info form > div.input-field.invalid label {
+  color: #C0392B;
+}
+
+.lightbox figure .more-info form > div.input-field.invalid::before {
+  background: #C0392B;
+  opacity: 0.5;
+}
+
+.lightbox figure .more-info form > div.input-field.invalid::after {
+  background: #C0392B;
+}
+
+.lightbox figure .more-info form > div.input-field.invalid span {
+  display: block;
+  position: absolute;
+  font-size: 11px;
+  bottom: -18px;
+  right: 10px;
+}
+
+.lightbox figure .more-info form > div label {
+  cursor: text;
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  font-family: 'Roboto Condensed';
+  transition: all 0.2s ease;
+}
+
+.lightbox figure .more-info form > div.focused::after {
+  width: 100%;
+  left: 0;
+}
+
+
+.lightbox figure .more-info form > div.focused.text-field label {
+  top: -12px;
+  font-size: 11px;
+  color: #384670;
+}
+
+.lightbox figure .more-info form div.select-field {
+  height: 40px;
+  z-index: 1;
+}
+
+.lightbox figure .more-info form div.select-field label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.lightbox figure .more-info form div.select-field .select-list {
+  position: absolute;
+  cursor: default;
+  right: 5px;
+  top: 5px;
+  outline: none;
+  background: #e5e5e5;
+  width: 13ch;
+  border-radius: 2px;
+  transition: box-shadow 0.2s ease;
+}
+
+.lightbox figure .more-info form div.select-field .select-list div:not(.selected) {
+  display: none;
+}
+
+.lightbox figure .more-info form div.select-field .select-list .selected {
+  padding: 5px;
+}
+
+.lightbox figure .more-info form div.select-field em {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+}
+
+.lightbox figure .more-info form div.select-field.focused .select-list {
+  background: #d5d5d5;
+}
+
+.lightbox figure .more-info form div.select-field.open {
+  z-index: 2;
+}
+
+.lightbox figure .more-info form div.select-field.open label {
+  color: #384670;
+}
+
+.lightbox figure .more-info form div.select-field.open .select-list {
+  z-index: 2;
+}
+
+.lightbox figure .more-info form div.select-field.open .select-list div {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+.lightbox figure .more-info form div.select-field.open .select-list div:hover {
+  background: #bbb;
+}
+
+.lightbox figure .more-info form div.select-field.open .select-list .selected {
+  background: #ccc;
+}
+
+.lightbox figure .more-info form div.checkbox-field label {
+  outline: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lightbox figure .more-info form div.checkbox-field label span {
+  position: absolute;
+  left: 30px;
+  transition: inherit;
+}
+
+.lightbox figure .more-info form div.checkbox-field label input[type=checkbox] {
+  display: none;
+}
+
+.lightbox figure .more-info form div.checkbox-field label div {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  border-radius: 3px;
+  border: 3px solid #555;
+  transition: inherit;
+}
+
+.lightbox figure .more-info form div.checkbox-field label div::after {
+  content: '';
+  height: 8px;
+  width: 8px;
+  border-radius: 2px;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  background: #555;
+  transition: inherit;
+  opacity: 0;
+}
+
+.lightbox figure .more-info form div.checkbox-field label input:checked + div::after {
+  opacity: 1;
+}
+
+.lightbox figure .more-info form div.checkbox-field.focused span, .lightbox figure .more-info form div.checkbox-field:hover span {
+  color: black;
+}
+
+.lightbox figure .more-info form div.checkbox-field.focused div, .lightbox figure .more-info form div.checkbox-field:hover div {
+  border-color: black;
+}
+
+.lightbox figure .more-info form div.checkbox-field.focused div::after, .lightbox figure .more-info form div.checkbox-field:hover div::after {
+  background: black;
+}
+
+.lightbox figure .more-info form div.submit {
+	background: #384660;
+	color: white;
+  position: relative;
+  outline: none;
+  border-radius: 6px;
+  width: 170px;
+  height: 36px;
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+  left: 0;
+  box-shadow: 0 0 0 1px #aaa;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  cursor: pointer;
+}
+@media (max-height: 1135px) {
+
+  .lightbox figure .more-info form div.submit {
+    margin-bottom: 20px;
+  }
+}
+
+.lightbox figure .more-info form div.submit input {
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.lightbox figure .more-info form div.submit:hover, .lightbox figure .more-info form div.submit:focus {
+  /*box-shadow: 0 0 0 2px #384670;*/
+}
+
+.lightbox figure .more-info form div.submit:hover input, .lightbox figure .more-info form div.submit:focus input {
+  color: white;
+}
+
+.lightbox figure .more-info form div.submit.pending {
+  height: 36px;
+  width: 36px;
+  border-radius: 20%;
+  -webkit-animation: rotation 2s infinite linear;
+}
+
+.lightbox figure .more-info form div.submit.pending input {
+  transition-delay: 0s;
+  opacity: 0;
+}
+
+.lightbox figure .more-info form div.submit.success {
+  /*box-shadow: 0 0 0 1px #2ECC71;*/
+}
+
+.lightbox figure .more-info form div.submit.success input {
+  transition-delay: 0.2s;
+  /*color: #2ECC71;*/
+}
+
+.lightbox figure .more-info form div.submit.error {
+  /*box-shadow: 0 0 0 1px #C0392B;*/
+}
+
+.lightbox figure .more-info form div.submit.error input {
+  transition-delay: 0.2s;
+  /*color: #D91E18;*/
+}
+
+.lightbox figure .more-info form div.submit.shaking {
+  -webkit-animation: shaker 0.25s 2 ease;
+}
+@-webkit-keyframes shaker {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(-5deg);
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform: rotate(0);
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+#req-more-info{
+  position: relative;
+  width: auto;
+  top: 50vh;
+  background: none;
+  margin: auto;
+  display: none;
+	margin-bottom: 10vh;
+	overflow: visible;
+}
+
+.lightbox #req-more-info{
+  display: block;
+}
+
+.lightbox #req-more-info form{
+  position: relative;
+  left: 0;
+  top: 0;
+	margin: auto;
+}
+
+.lightbox #req-more-info .more-info{
+  display: block;
+	position: relative;
+	top: 0;
+	left: 0;
+	margin: auto;
+	background: none;
+}
