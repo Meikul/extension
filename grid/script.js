@@ -4,6 +4,10 @@ $(document).ready(function() {
     columnWidth: '.grid-sizer'
   });
 
+  $(window).resize(function(){
+    $('.lightbox .img-container').height($('.lightbox figure').height() - $('.lightbox figcaption').outerHeight());
+  });
+
   $('.grid-wrap:not(.active-grid)').css('display', 'none');
 
   $('#req-info').click(function(){
@@ -17,19 +21,25 @@ $(document).ready(function() {
 
   $('.grid figure').click(openModal);
 
+  function sizeModalImg(){
+    var $lightbox = $('.lightbox');
+    $lightbox.find('.img-container').height(
+      $lightbox.find('figure').height() - $lightbox.find('figcaption').outerHeight()
+    );
+  }
+
   function openModal(e){
     var fig = $(e.target).closest('figure');
     fig.clone().appendTo('.lightbox');
     $('.lightbox').fadeIn(500);
-    console.log($('.lightbox figcaption').height());
     $('.lightbox .img-container').height($('.lightbox figure').height() - $('.lightbox figcaption').outerHeight());
     $('.modal-close>img').click(closeModal);
     $('.lightbox .more-info-btn').click(function(){
+      disableScroll();
       $('.more-info').clone().appendTo($(this).closest('figure'));
+      $('.lightbox .more-info').css('top', $('.lightbox figure').scrollTop());
       $('.lightbox .more-info').fadeIn(300, setFormEvents);
-      if($(window).width() >= 529) {
-        $('.lightbox .more-info form').animate({left:'0'}, 300);
-      }
+      $('.lightbox .more-info form').animate({left:'0'}, 300);
     });
     $('.lightbox .apply-now-btn').click(function(){
       closeModal(openVideo);
@@ -55,6 +65,7 @@ $(document).ready(function() {
       $(this).find('form').animate({left:'-350px'}, 300);
       $(this).fadeOut(300, function(){
         $(this).remove();
+        enableScroll($lightbox.find('figure').get());
       });
     });
 
@@ -91,15 +102,11 @@ $(document).ready(function() {
     checkboxes.click(function(){
       var checked = $lightbox.find('.checkbox-field[data-required] input:checked').closest('.checkbox-field');
       var parentForm = $(this).closest('form');
-      // if(checked.length) parentForm.children('.submit').children('input')[0].disabled = false;
-      // else parentForm.children('.submit').children('input')[0].disabled = true;
       parentForm.children('.input-field').removeClass('active-field').children('input, .select-list').attr('tabindex','-1');//.each(function(){this.disabled=true;});
-      // parentForm.children('.input-field').fadeOut(150);
       checked.each(function(){
         var required = $(this).attr('data-required').split(' ');
         required.forEach(function(reqGroup){
           this.children('.'+reqGroup).addClass('active-field').children('input, .select-list').attr('tabindex','0');//.each(function(){this.disabled=false;});
-          // this.children('.'+reqGroup).fadeIn(150);
         }, parentForm);
       });
     });
@@ -114,7 +121,6 @@ $(document).ready(function() {
       $(this).parent().toggleClass('open');
     });
     selectLists.keydown(function(e){
-      // if(e.which == 13) $(this).click();
       switch (e.which) {
         case 13:
           $(this).click();
@@ -284,6 +290,7 @@ $(document).ready(function() {
 
   // Close Modal
   function closeModal(callback = undefined){
+    enableScroll();
     if(typeof callback === 'function'){
       $('.lightbox figure').fadeOut(500, function(){
         $('.lightbox').children().remove();
@@ -333,4 +340,39 @@ function openGrid(id) {
       });
     });
   }
+}
+
+
+// Functions for preventing modal scroll when more info form is open.
+
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;
+}
+
+function disableScroll() {
+  window.addEventListener('DOMMouseScroll', preventDefault, false);
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove  = preventDefault; // mobile
+  document.onkeydown  = preventDefaultForScrollKeys;
+}
+
+function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.onmousewheel = document.onmousewheel = null;
+    window.onwheel = null;
+    window.ontouchmove = null;
+    document.onkeydown = null;
 }

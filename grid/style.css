@@ -192,7 +192,6 @@ html{
 	width: 100%;
 	display: none;
 	background: rgba(0, 0, 0, 0.7);
-	overflow: auto;
 	z-index: 30;
 }
 
@@ -204,7 +203,6 @@ html{
   max-width: 1300px;
 	min-width: 350px;
   margin: auto;
-	/*min-height: 710px;*/
 	height: 710px;
   border-radius: 2px;
   overflow: auto;
@@ -239,10 +237,11 @@ html{
 
 .lightbox .img-container{
 	overflow: hidden;
+	min-height: 200px;
 }
 
 .lightbox .img-container img{
-	margin-top: -15%;
+	margin-top: -10%;
 	min-height: 100%;
 	min-width: 100%;
 }
@@ -356,7 +355,7 @@ html{
 .lightbox figure .more-info {
   position: absolute;
   left: 0;
-  top: 0;
+	top: 0;
   width: 100%;
   height: 100%;
   font-family: 'Roboto Condensed';
@@ -381,7 +380,8 @@ html{
 	.lightbox .modal-close{
 		opacity: 1;
 	}
-	.lightbox figure .more-info{
+
+	/*x.lightbox figure .more-info{
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -396,12 +396,13 @@ html{
 		width: 90vw;
 		margin: auto;
 		height: auto;
-	}
+	}*/
 }
 
 @media (max-height: 710px){
 	.lightbox figure{
-		top: 56%;
+		top: 20px;
+		transform: none;
 		margin-bottom: 20px;
 	}
 }
@@ -748,12 +749,24 @@ html{
 #req-more-info{
   position: relative;
   width: auto;
-  top: 50vh;
   background: none;
   margin: auto;
   display: none;
 	margin-bottom: 10vh;
 	overflow: visible;
+}
+
+@media (min-height: 720px){
+	#req-more-info{
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+@media (max-height: 719px){
+	#req-more-info{
+		top: 10px;
+	}
 }
 
 .lightbox #req-more-info{
