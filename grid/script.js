@@ -21,6 +21,8 @@ $(document).ready(function() {
     var fig = $(e.target).closest('figure');
     fig.clone().appendTo('.lightbox');
     $('.lightbox').fadeIn(500);
+    console.log($('.lightbox figcaption').height());
+    $('.lightbox .img-container').height($('.lightbox figure').height() - $('.lightbox figcaption').outerHeight());
     $('.modal-close>img').click(closeModal);
     $('.lightbox .more-info-btn').click(function(){
       $('.more-info').clone().appendTo($(this).closest('figure'));

@@ -90,11 +90,6 @@ html{
 	margin: 0;
 }
 
-.lightbox img
-{
-	margin-top:-15% !important;
-}
-
 .grid figcaption {
 	background: #f4f4f4;
 	padding: 25px;
@@ -209,6 +204,8 @@ html{
   max-width: 1300px;
 	min-width: 350px;
   margin: auto;
+	/*min-height: 710px;*/
+	height: 710px;
   border-radius: 2px;
   overflow: auto;
   background: #f4f4f4;
@@ -241,8 +238,13 @@ html{
 }
 
 .lightbox .img-container{
-	max-height: 50vh;
 	overflow: hidden;
+}
+
+.lightbox .img-container img{
+	margin-top: -15%;
+	min-height: 100%;
+	min-width: 100%;
 }
 
 .lightbox .modal-close{
@@ -350,7 +352,7 @@ html{
 	display: none;
 }
 
-/*hhh*/
+
 .lightbox figure .more-info {
   position: absolute;
   left: 0;
@@ -379,10 +381,6 @@ html{
 	.lightbox .modal-close{
 		opacity: 1;
 	}
-	.lightbox figure{
-		max-height: 90vh;
-		overflow-y: scroll;
-	}
 	.lightbox figure .more-info{
 		position: fixed;
 		top: 0;
@@ -398,6 +396,13 @@ html{
 		width: 90vw;
 		margin: auto;
 		height: auto;
+	}
+}
+
+@media (max-height: 710px){
+	.lightbox figure{
+		top: 56%;
+		margin-bottom: 20px;
 	}
 }
 
