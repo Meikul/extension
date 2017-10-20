@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   // REMOVE
   $('.item').each(function(){
-    $(this).height(Math.floor(Math.random()*200 + 150));
+    $(this).height(Math.floor(Math.random()*100 + 150));
   }).parent('.msn-grid').masonry();
 
 });
@@ -24,8 +24,11 @@ function msnCheck() {
     const gridWidth = $grid.innerWidth();
     const $item = $grid.find('.msn-item');
     const itemMinWidth = parseFloat($item.css('min-width'), 10);
+    const itemMaxWidth = parseFloat($item.css('max-width'), 10);
     const itemMargin = $item.outerWidth(true) - $item.innerWidth();
-    var cols = Math.floor(gridWidth/(itemMinWidth+itemMargin));
+    var cols = 1;
+    if(itemMinWidth) cols = Math.floor(gridWidth/(itemMinWidth+itemMargin));
+    if(itemMaxWidth) cols = Math.ceil(gridWidth/(itemMaxWidth+itemMargin));
     if(msnCheck.lastCols[i] != cols) msnFill($grid, cols);
     msnCheck.lastCols[i] = cols;
   });
@@ -33,7 +36,9 @@ function msnCheck() {
 
 function msnFill($grid, cols){
   var itemWidth;
-  $grid.find('.msn-item').each(function(){
+  var $allItems = $grid.find('.msn-item');
+  if($allItems.length < cols) cols = $allItems.length;
+  $allItems.each(function(){
     var $item = $(this)
     var margin = $item.outerWidth(true) - $item.innerWidth();
     if (margin) itemWidth = 'calc('+(100/cols)+'% - '+margin+'px)';
