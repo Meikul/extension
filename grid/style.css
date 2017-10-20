@@ -76,8 +76,8 @@ html{
 .grid-sizer{
 	/*width: 100%;*/
 	/*width: 1000px;*/
-	padding: 0 !important;
-	margin: 0 !important;
+	/*padding: 0 !important;
+	margin: 0 !important;*/
 }
 
 .grid-gallery figure {
@@ -92,7 +92,7 @@ html{
 
 .grid figcaption {
 	background: #f4f4f4;
-	padding: 25px;
+	padding: 20px;
 	position: relative;
 }
 
@@ -127,10 +127,10 @@ html{
 	margin: 0 auto;
 }
 
-.grid li {
+.grid .msn-item {
 	margin: 15px;
 	/*padding: 15px 0;*/
-	float: left;
+	max-width: 500px;
 	cursor: pointer;
 }
 
@@ -145,42 +145,6 @@ html{
 /* Shadow Effect */
 .grid li>figure:hover {
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-@media (min-width:1000px){
-	.grid li:not(.grid-sizer){
-		width: calc(33% - 30px) !important;
-	}
-	.grid-sizer{
-		width: 33% !important;
-	}
-}
-
-@media (max-width: 1099px) and (min-width: 850px){
-	.grid li:not(.grid-sizer){
-		width: calc(33% - 30px) !important;
-	}
-	.grid-sizer{
-		width: 33% !important;
-	}
-}
-
-@media (max-width: 849px) and (min-width: 530px){
-	.grid li:not(.grid-sizer){
-		width: calc(50% - 30px) !important;
-	}
-	.grid-sizer{
-		width: 50% !important;
-	}
-}
-
-@media (max-width: 529px){
-	.grid li:not(.grid-sizer){
-		width: calc(100% - 30px) !important;
-	}
-	.grid-sizer{
-		width: 100% !important;
-	}
 }
 
 /* lightbox style */

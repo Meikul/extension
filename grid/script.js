@@ -1,8 +1,4 @@
 $(document).ready(function() {
-  $('.grid').masonry({
-    itemSelector: '.grid>li',
-    columnWidth: '.grid-sizer'
-  });
 
   $(window).resize(function(){
     $('.lightbox .img-container').height($('.lightbox figure').height() - $('.lightbox figcaption').outerHeight());
@@ -330,10 +326,6 @@ function openGrid(id) {
       $('.active-grid').removeClass('active-grid');
       $('#'+id).addClass('active-grid');
       $('.active-grid').show();
-      // $('.grid').masonry({
-      //   itemSelector: '.grid>li',
-      //   columnWidth: '.grid-sizer'
-      // });
       $('.active-grid').children().children('li').each(function(i, elem) {
         $(elem).css('display', 'none');
         $(elem).stop().delay(100*i).fadeIn(300);
