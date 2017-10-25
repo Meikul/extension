@@ -37,17 +37,20 @@ html{
 }
 
 #degrees-header h2{
-	display: inline;
+	/*display: inline;*/
 	margin-right: 40px;
 }
 
 #grid-selectors{
-	margin-top: 20px;
 	white-space: nowrap;
-	display: inline;
-	float: right;
-	margin-right: 70px;
+	float: left;
+	/*display: inline;*/
 }
+
+.grid-gallery{
+	margin-top: 20px;
+}
+
 
 .grid-selector{
 	display: inline;

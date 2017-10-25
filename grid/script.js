@@ -311,24 +311,25 @@ $(document).ready(function() { // This function is 319 lines long... I'm so sorr
     $link = $(this);
     $link.addClass('active-grid-selector');
 
-    var index = parseInt($link[0].id, 10);
-    console.log(index);
+    var index = $link.attr('id').split('-')[1];
     openGrid('grid-' + index);
   });
 });
 
 function openGrid(id) {
-  console.log(id);
   if ($('.active-grid')[0].id !== id) {
-    $('.active-grid').fadeOut(400, function() {
+    $('.active-grid').animate({opacity: 0}, {complete: function() {
+      $('.active-grid').css('display', 'none');
       $('.active-grid').removeClass('active-grid');
       $('#' + id).addClass('active-grid');
       $('.active-grid').show();
-      $('.active-grid').children().children('li').each(function(i, elem) {
+      $('.active-grid').css('opacity', 1);
+      $('.active-grid .msn-grid').masonry(); // Re init masonry in case of a window resize
+      $('.active-grid .msn-grid').children('li').each(function(i, elem) {
         $(elem).css('display', 'none');
         $(elem).stop().delay(100 * i).fadeIn(300);
       });
-    });
+    }});
   }
 }
 
