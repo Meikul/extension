@@ -1,0 +1,726 @@
+@font-face {
+  font-family: 'fontawesome';
+  src: url("../fonts/fontawesome/fontawesome.eot?-e43dk9");
+  src: url("../fonts/fontawesome/fontawesome.eot?#iefix-e43dk9") format("embedded-opentype"), url("../fonts/fontawesome/fontawesome.woff?-e43dk9") format("woff"), url("../fonts/fontawesome/fontawesome.ttf?-e43dk9") format("truetype"), url("../fonts/fontawesome/fontawesome.svg?-e43dk9#fontawesome") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Made with http://icomoon.io/app */
+/* General style */
+/* line 24, ../sass/style.scss */
+h1, h2, h3, h4, h5, h6, label {
+  font-family: 'Roboto Condensed';
+}
+
+/* line 28, ../sass/style.scss */
+p {
+  font-family: 'Helvetica Neue';
+}
+
+/* line 32, ../sass/style.scss */
+body {
+  background: #f4f4f4;
+}
+
+/* line 36, ../sass/style.scss */
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* line 42, ../sass/style.scss */
+#degrees-header {
+  position: relative;
+  left: 30px;
+}
+
+/* line 47, ../sass/style.scss */
+#degrees-header h2 {
+  display: inline;
+  margin-right: 40px;
+}
+
+/* line 52, ../sass/style.scss */
+#grid-selectors {
+  margin-top: 20px;
+  white-space: nowrap;
+  display: inline;
+}
+
+/* line 58, ../sass/style.scss */
+.grid-selector {
+  display: inline;
+  font-size: 17px;
+  padding: 10px;
+  cursor: pointer;
+  color: #38b;
+  /*border: 1px solid #ddd;*/
+}
+
+/* line 67, ../sass/style.scss */
+.active-grid-selector, .grid-selector:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+/* line 72, ../sass/style.scss */
+.main-content > h2 {
+  padding-left: 30px;
+}
+
+/* line 76, ../sass/style.scss */
+.grid-gallery ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 82, ../sass/style.scss */
+.grid-sizer {
+  /*width: 100%;*/
+  /*width: 1000px;*/
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* line 89, ../sass/style.scss */
+.grid-gallery figure {
+  margin: 0;
+}
+
+/* line 93, ../sass/style.scss */
+.grid-gallery figure img {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+/* line 99, ../sass/style.scss */
+.grid figcaption {
+  background: #f4f4f4;
+  padding: 25px;
+  position: relative;
+}
+
+/* line 105, ../sass/style.scss */
+.grid-gallery figcaption h3 {
+  font-size: 20px;
+  color: #384670;
+  margin: 0;
+  padding: 0 0 0.5em;
+}
+
+/* line 112, ../sass/style.scss */
+.grid-gallery figcaption p {
+  margin: 0;
+}
+
+/* Grid style */
+/* line 117, ../sass/style.scss */
+.grids-wrap {
+  margin: auto;
+  padding: 0 1em 1.875em;
+}
+
+/* line 122, ../sass/style.scss */
+.grid-wrap {
+  top: 0;
+  left: 0;
+}
+
+/* line 127, ../sass/style.scss */
+.grid-wrap:not(.active-grid) {
+  /*display: none;*/
+  opacity: 0;
+}
+
+/* line 132, ../sass/style.scss */
+.grid {
+  margin: 0 auto;
+}
+
+/* line 136, ../sass/style.scss */
+.grid li {
+  margin: 15px;
+  /*padding: 15px 0;*/
+  float: left;
+  cursor: pointer;
+}
+
+/* line 143, ../sass/style.scss */
+.grid li > figure {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 1px;
+  /* box shadow animation overshoots if 0 for some reason */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.15s ease;
+}
+
+/* Shadow Effect */
+/* line 152, ../sass/style.scss */
+.grid li > figure:hover {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+@media (min-width: 1000px) {
+  /* line 157, ../sass/style.scss */
+  .grid li:not(.grid-sizer) {
+    width: calc(33% - 30px) !important;
+  }
+
+  /* line 160, ../sass/style.scss */
+  .grid-sizer {
+    width: 33% !important;
+  }
+}
+@media (max-width: 1099px) and (min-width: 850px) {
+  /* line 166, ../sass/style.scss */
+  .grid li:not(.grid-sizer) {
+    width: calc(33% - 30px) !important;
+  }
+
+  /* line 169, ../sass/style.scss */
+  .grid-sizer {
+    width: 33% !important;
+  }
+}
+@media (max-width: 849px) and (min-width: 530px) {
+  /* line 175, ../sass/style.scss */
+  .grid li:not(.grid-sizer) {
+    width: calc(50% - 30px) !important;
+  }
+
+  /* line 178, ../sass/style.scss */
+  .grid-sizer {
+    width: 50% !important;
+  }
+}
+@media (max-width: 529px) {
+  /* line 184, ../sass/style.scss */
+  .lightbox .modal-close {
+    opacity: 1;
+  }
+
+  /* line 187, ../sass/style.scss */
+  .lightbox figure {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* line 191, ../sass/style.scss */
+  .grid li:not(.grid-sizer) {
+    width: calc(100% - 30px) !important;
+  }
+
+  /* line 194, ../sass/style.scss */
+  .grid-sizer {
+    width: 100% !important;
+  }
+}
+/* lightbox style */
+/* line 200, ../sass/style.scss */
+.lightbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  z-index: 30;
+}
+
+/* line 211, ../sass/style.scss */
+.lightbox figure {
+  position: relative;
+  width: 80vw;
+  max-width: 1300px;
+  top: 10vh;
+  margin: auto;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+/* line 222, ../sass/style.scss */
+.lightbox figcaption {
+  position: relative;
+  margin: 0;
+  padding: 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* line 230, ../sass/style.scss */
+.lightbox h3 {
+  font-size: 30px !important;
+  color: black;
+  /*background: white;*/
+}
+
+/* line 236, ../sass/style.scss */
+.lightbox .modal-text {
+  font-size: 17px;
+}
+
+/* line 240, ../sass/style.scss */
+.grid .modal-text {
+  display: none;
+}
+
+/* line 244, ../sass/style.scss */
+.lightbox p:not(.modal-text) {
+  display: none;
+}
+
+/* line 248, ../sass/style.scss */
+.lightbox .img-container {
+  max-height: 50vh;
+  overflow: hidden;
+}
+
+/* line 253, ../sass/style.scss */
+.lightbox .modal-close {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 10px;
+  right: 10px;
+  height: 40px;
+  width: 40px;
+  /*background: $off-white;*/
+  font-size: 48px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* line 267, ../sass/style.scss */
+.lightbox .modal-close:hover {
+  /*background: rgba(100, 20, 20, 1);*/
+}
+
+/* line 271, ../sass/style.scss */
+.lightbox .modal-close img {
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+/* line 279, ../sass/style.scss */
+.lightbox .modal-close:hover img {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/* line 284, ../sass/style.scss */
+.grid .modal-close {
+  display: none;
+}
+
+/* line 288, ../sass/style.scss */
+.lightbox .more-info-btn {
+  margin-top: 20px;
+  border-radius: 2px;
+  background: #384670;
+  font-family: 'Roboto Condensed';
+  font-size: 20px;
+  border: 1px solid #283650;
+}
+
+/* line 297, ../sass/style.scss */
+.grid .more-info-btn {
+  display: none;
+}
+
+/* line 301, ../sass/style.scss */
+.lightbox figure {
+  margin-bottom: 100px;
+}
+
+/* line 305, ../sass/style.scss */
+.grid .more-info {
+  display: none;
+}
+
+/* line 309, ../sass/style.scss */
+.lightbox figure .more-info {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto Mono';
+  background: rgba(0, 0, 0, 0.4);
+}
+/* line 317, ../sass/style.scss */
+.lightbox figure .more-info form {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  display: block;
+  position: absolute;
+  border-radius: 2px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #f4f4f4;
+  font-size: 16px;
+  overflow-y: auto;
+}
+/* line 328, ../sass/style.scss */
+.lightbox figure .more-info form input, .lightbox figure .more-info form select {
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 2px;
+}
+/* line 334, ../sass/style.scss */
+.lightbox figure .more-info form > div {
+  position: relative;
+  margin: 25px 20px;
+}
+/* line 337, ../sass/style.scss */
+.lightbox figure .more-info form > div.info-checkboxes {
+  margin: 10px;
+}
+/* line 341, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field::before {
+  content: '';
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 2px);
+  background: #aaa;
+  transition: all 0.2s ease;
+}
+/* line 351, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 2px);
+  background: #384670;
+  transition: all 0.2s ease;
+}
+/* line 361, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field {
+  transition: all 0.15s ease;
+}
+/* line 364, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field:not(.active-field) {
+  opacity: 0;
+}
+/* line 367, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field input[type=text], .lightbox figure .more-info form > div.input-field input[type=number] {
+  padding: 2px;
+  padding-left: 10px;
+  width: 300px;
+}
+/* line 372, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field input[type=number]::-webkit-outer-spin-button,
+.lightbox figure .more-info form > div.input-field input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* line 378, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field.filled label {
+  color: #aaa;
+  top: -12px;
+  font-size: 11px;
+}
+/* line 384, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field span {
+  display: none;
+}
+/* line 387, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field.invalid {
+  color: #C0392B;
+}
+/* line 388, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field.invalid label {
+  color: #C0392B;
+}
+/* line 391, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field.invalid::before {
+  background: #C0392B;
+  opacity: 0.5;
+}
+/* line 395, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field.invalid::after {
+  background: #C0392B;
+}
+/* line 399, ../sass/style.scss */
+.lightbox figure .more-info form > div.input-field.invalid span {
+  display: block;
+  position: absolute;
+  font-size: 11px;
+  bottom: -18px;
+  right: 10px;
+}
+/* line 408, ../sass/style.scss */
+.lightbox figure .more-info form > div label {
+  cursor: text;
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  font-family: 'Roboto Mono';
+  transition: all 0.2s ease;
+}
+/* line 419, ../sass/style.scss */
+.lightbox figure .more-info form > div.focused::after {
+  width: 100%;
+  left: 0;
+}
+/* line 423, ../sass/style.scss */
+.lightbox figure .more-info form > div.focused.text-field label {
+  top: -12px;
+  font-size: 11px;
+  color: #384670;
+}
+/* line 430, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field {
+  height: 40px;
+  z-index: 1;
+}
+/* line 434, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+/* line 439, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field .select-list {
+  position: absolute;
+  cursor: default;
+  right: 5px;
+  top: 5px;
+  outline: none;
+  background: #e5e5e5;
+  width: 13ch;
+  border-radius: 2px;
+  transition: box-shadow 0.2s ease;
+}
+/* line 451, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field .select-list div:not(.selected) {
+  display: none;
+}
+/* line 454, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field .select-list .selected {
+  padding: 5px;
+}
+/* line 458, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field em {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+}
+/* line 464, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field.focused .select-list {
+  background: #d5d5d5;
+}
+/* line 469, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field.open {
+  z-index: 2;
+}
+/* line 471, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field.open label {
+  color: #384670;
+}
+/* line 474, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field.open .select-list {
+  z-index: 2;
+}
+/* line 478, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field.open .select-list div {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+/* line 486, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field.open .select-list div:hover {
+  background: #bbb;
+}
+/* line 489, ../sass/style.scss */
+.lightbox figure .more-info form div.select-field.open .select-list .selected {
+  background: #ccc;
+}
+/* line 496, ../sass/style.scss */
+.lightbox figure .more-info form div.checkbox-field label {
+  outline: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+/* line 503, ../sass/style.scss */
+.lightbox figure .more-info form div.checkbox-field label span {
+  position: absolute;
+  left: 30px;
+  transition: inherit;
+}
+/* line 508, ../sass/style.scss */
+.lightbox figure .more-info form div.checkbox-field label input[type=checkbox] {
+  display: none;
+}
+/* line 511, ../sass/style.scss */
+.lightbox figure .more-info form div.checkbox-field label div {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  border-radius: 50%;
+  border: 3px solid #555;
+  transition: inherit;
+}
+/* line 519, ../sass/style.scss */
+.lightbox figure .more-info form div.checkbox-field label div::after {
+  content: '';
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  background: #555;
+  transition: inherit;
+  opacity: 0;
+}
+/* line 532, ../sass/style.scss */
+.lightbox figure .more-info form div.checkbox-field label input:checked + div::after {
+  opacity: 1;
+}
+/* line 537, ../sass/style.scss */
+.lightbox figure .more-info form div.checkbox-field.focused span, .lightbox figure .more-info form div.checkbox-field:hover span {
+  color: black;
+}
+/* line 540, ../sass/style.scss */
+.lightbox figure .more-info form div.checkbox-field.focused div, .lightbox figure .more-info form div.checkbox-field:hover div {
+  border-color: black;
+}
+/* line 542, ../sass/style.scss */
+.lightbox figure .more-info form div.checkbox-field.focused div::after, .lightbox figure .more-info form div.checkbox-field:hover div::after {
+  background: black;
+}
+/* line 548, ../sass/style.scss */
+.lightbox figure .more-info form div.submit {
+  position: relative;
+  outline: none;
+  border-radius: 2px;
+  width: 170px;
+  height: 36px;
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+  left: 0;
+  box-shadow: 0 0 0 1px #aaa;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  cursor: pointer;
+}
+@media (max-height: 1135px) {
+  /* line 548, ../sass/style.scss */
+  .lightbox figure .more-info form div.submit {
+    margin-bottom: 20px;
+  }
+}
+/* line 565, ../sass/style.scss */
+.lightbox figure .more-info form div.submit input {
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s ease;
+}
+/* line 570, ../sass/style.scss */
+.lightbox figure .more-info form div.submit:hover, .lightbox figure .more-info form div.submit:focus {
+  box-shadow: 0 0 0 2px #384670;
+}
+/* line 572, ../sass/style.scss */
+.lightbox figure .more-info form div.submit:hover input, .lightbox figure .more-info form div.submit:focus input {
+  color: #384670;
+}
+/* line 576, ../sass/style.scss */
+.lightbox figure .more-info form div.submit.pending {
+  height: 36px;
+  width: 36px;
+  border-radius: 20%;
+  -webkit-animation: rotation 2s 1 linear;
+}
+/* line 581, ../sass/style.scss */
+.lightbox figure .more-info form div.submit.pending input {
+  transition-delay: 0s;
+  opacity: 0;
+}
+/* line 586, ../sass/style.scss */
+.lightbox figure .more-info form div.submit.success {
+  box-shadow: 0 0 0 1px #2ECC71;
+}
+/* line 588, ../sass/style.scss */
+.lightbox figure .more-info form div.submit.success input {
+  transition-delay: 0.2s;
+  color: #2ECC71;
+}
+/* line 593, ../sass/style.scss */
+.lightbox figure .more-info form div.submit.error {
+  box-shadow: 0 0 0 1px #C0392B;
+}
+/* line 595, ../sass/style.scss */
+.lightbox figure .more-info form div.submit.error input {
+  transition-delay: 0.2s;
+  color: #D91E18;
+}
+/* line 600, ../sass/style.scss */
+.lightbox figure .more-info form div.submit.shaking {
+  -webkit-animation: shaker 0.25s 2 ease;
+}
+@-webkit-keyframes shaker {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(-5deg);
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform: rotate(0);
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+/* line 655, ../sass/style.scss */
+.lightbox figure:nth-child(1) .more-info {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  display: block;
+  position: absolute;
+  border-radius: 2px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #f4f4f4;
+  font-size: 16px;
+  font-family: 'Helvetica Neue';
+}
+
+/* line 670, ../sass/style.scss */
+.lightbox figure:nth-child(2) .more-info {
+  font-family: 'Helvetica Neue';
+}
+
+/* line 676, ../sass/style.scss */
+.lightbox figure:nth-child(3) .more-info {
+  font-family: 'Roboto Mono';
+}
