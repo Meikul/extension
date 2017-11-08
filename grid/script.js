@@ -1,7 +1,33 @@
-$(document).ready(function() { // This function is 319 lines long... I'm so sorry
+$(document).ready(function() {
 
   $(window).resize(function() {
     $('.lightbox .img-container').height($('.lightbox figure').height() - $('.lightbox figcaption').outerHeight());
+  });
+
+  // var imgCont = $('.grid-gallery figure .img-container');
+  // console.log(imgCont.css('background-color'));
+  //
+  // if(imgCont.css('background-color') !== 'rgba(0, 0, 0, 0)'){
+  //   console.log('not supported');
+  // }
+
+  $(window).on('load', function(){
+    $('#grid-0 > .msn-grid').masonry();
+    $({blurRadius: 20}).animate({blurRadius: 0}, {
+        duration: 600,
+        easing: 'swing', // or "linear"
+                         // use jQuery UI or Easing plugin for more options
+        start: disableScroll,
+        complete: enableScroll,
+        step: function() {
+          console.log(this.blurRadius);
+            $('.msn-item .img-container img').css({
+                "-webkit-filter": "blur("+this.blurRadius+"px)",
+                "filter": "blur("+this.blurRadius+"px)"
+            });
+        }
+    });
+    // $('.msn-item .img-container img').addClass('img-loaded');
   });
 
   $('.grid-wrap:not(.active-grid)').css('display', 'none');
@@ -19,25 +45,24 @@ $(document).ready(function() { // This function is 319 lines long... I'm so sorr
 
   $('.grid figure').click(openModal);
 
-  function sizeModalImg() {
-    var $lightbox = $('.lightbox');
-    $lightbox.find('.img-container').height(
-      $lightbox.find('figure').height() - $lightbox.find('figcaption').outerHeight()
-    );
-  }
-
   function openModal(e) {
     var fig = $(e.target).closest('figure');
     fig.clone().appendTo('.lightbox');
-    $('.lightbox').fadeIn(500);
-    $('.lightbox .img-container').height($('.lightbox figure').height() - $('.lightbox figcaption').outerHeight());
-    $('.modal-close>img').click(closeModal);
-    $('.lightbox .more-info-btn').click(function() {
-      disableScroll();
-      $('.more-info').clone().appendTo($(this).closest('figure'));
-      $('.lightbox .more-info').css('top', $('.lightbox figure').scrollTop());
-      $('.lightbox .more-info').fadeIn(300, setFormEvents);
-      $('.lightbox .more-info form').animate({
+    var $lightbox = $('.lightbox');
+    $lightbox.fadeIn(500);
+    $lightbox.find('.img-container').height($lightbox.find('figure').height() - $lightbox.find('figcaption').outerHeight());
+    $lightbox.find('.modal-close>img').click(closeModal);
+    $lightbox.find('.more-info-btn').click(function() {
+      var $moreInfo = $('.more-info');
+      // disableScroll();
+      $moreInfo.clone().appendTo($lightbox.find('figure'));
+      $moreInfo = $lightbox.find('figure .more-info');
+      // $moreInfo.css('top', $lightbox.scrollTop());
+      $lightbox.find('.img-container, figcaption').append('<div class="cover"></div>');
+      $lightbox.find('.cover').fadeTo(300, 0.3);
+      $lightbox.animate({scrollTop: 0}, 300);
+      $moreInfo.fadeIn(300, setFormEvents);
+      $moreInfo.find('form').animate({
         left: '0'
       }, 300);
     });
@@ -55,21 +80,27 @@ $(document).ready(function() { // This function is 319 lines long... I'm so sorr
     $('.lightbox .apply-now').fadeIn(500);
   }
 
+  function closeForm(){
+    var $lightbox = $('.lightbox');
+    $lightbox.find('.more-info').find('form').animate({
+      left: '-350px'
+    }, 300);
+    $lightbox.find('.cover').fadeOut(300,function(){
+      $lightbox.find('.cover').remove();
+    });
+    $lightbox.find('.more-info').fadeOut(300, function() {
+      $lightbox.find('.more-info').remove();
+      // enableScroll($lightbox.find('figure').get());
+    });
+  }
+
   function setFormEvents() {
-    $lightbox = $('.lightbox');
+    var $lightbox = $('.lightbox');
     $lightbox.find('.submit').click(submit);
     $lightbox.find('.select-field').click(selectUpdate);
     $lightbox.find('input[type=number]').keydown(checkInput);
 
-    $lightbox.find('.more-info').click(function() {
-      $(this).find('form').animate({
-        left: '-350px'
-      }, 300);
-      $(this).fadeOut(300, function() {
-        $(this).remove();
-        enableScroll($lightbox.find('figure').get());
-      });
-    });
+    $lightbox.find('.more-info, em.close-form, .cover').click(closeForm);
 
     $lightbox.find('form').click(function(e) {
       return false;
@@ -289,7 +320,7 @@ $(document).ready(function() { // This function is 319 lines long... I'm so sorr
 
   // Close Modal
   function closeModal(callback = undefined) {
-    enableScroll();
+    // enableScroll();
     if (typeof callback === 'function') {
       $('.lightbox figure').fadeOut(500, function() {
         $('.lightbox').children().remove();
@@ -324,7 +355,7 @@ function openGrid(id) {
       $('#' + id).addClass('active-grid');
       $('.active-grid').show();
       $('.active-grid').css('opacity', 1);
-      $('.active-grid .msn-grid').masonry(); // Re init masonry in case of a window resize
+      $('.active-grid .msn-grid').masonry();
       $('.active-grid .msn-grid').children('li').each(function(i, elem) {
         $(elem).css('display', 'none');
         $(elem).stop().delay(100 * i).fadeIn(300);
