@@ -4,30 +4,25 @@ $(document).ready(function() {
     $('.lightbox .img-container').height($('.lightbox figure').height() - $('.lightbox figcaption').outerHeight());
   });
 
-  // var imgCont = $('.grid-gallery figure .img-container');
-  // console.log(imgCont.css('background-color'));
-  //
-  // if(imgCont.css('background-color') !== 'rgba(0, 0, 0, 0)'){
-  //   console.log('not supported');
-  // }
 
-  $(window).on('load', function(){
-    $('#grid-0 > .msn-grid').masonry();
-    $({blurRadius: 20}).animate({blurRadius: 0}, {
-        duration: 600,
-        easing: 'swing', // or "linear"
-                         // use jQuery UI or Easing plugin for more options
-        start: disableScroll,
-        complete: enableScroll,
-        step: function() {
-          console.log(this.blurRadius);
-            $('.msn-item .img-container img').css({
-                "-webkit-filter": "blur("+this.blurRadius+"px)",
-                "filter": "blur("+this.blurRadius+"px)"
-            });
-        }
-    });
-    // $('.msn-item .img-container img').addClass('img-loaded');
+  if($('.grid-gallery figure .img-container img').css('opacity') == 0){
+    console.log('not supported');
+    var noBlur = true;
+  }
+
+  $('.msn-item .img-container img').each(function(){
+    if(this.complete){
+      var $img = $(this);
+      if(noBlur) $img.animate({opacity: 1}, 600);
+      else $img.sharpen(600);
+    }
+  });
+
+  $('.msn-item .img-container img').load(function(){
+    var $img = $(this);
+    if(noBlur) $img.animate({opacity: 1}, 600);
+    else $img.sharpen(600);
+    $img.closest('.msn-grid').masonry();
   });
 
   $('.grid-wrap:not(.active-grid)').css('display', 'none');
@@ -137,11 +132,11 @@ $(document).ready(function() {
     checkboxes.click(function() {
       var checked = $lightbox.find('.checkbox-field[data-required] input:checked').closest('.checkbox-field');
       var parentForm = $(this).closest('form');
-      parentForm.children('.input-field').removeClass('active-field').children('input, .select-list').attr('tabindex', '-1'); //.each(function(){this.disabled=true;});
+      parentForm.children('.input-field').removeClass('input-field').children('input, .select-list').attr('tabindex', '-1'); //.each(function(){this.disabled=true;});
       checked.each(function() {
         var required = $(this).attr('data-required').split(' ');
         required.forEach(function(reqGroup) {
-          this.children('.' + reqGroup).addClass('active-field').children('input, .select-list').attr('tabindex', '0'); //.each(function(){this.disabled=false;});
+          this.children('.' + reqGroup).addClass('input-field').children('input, .select-list').attr('tabindex', '0'); //.each(function(){this.disabled=false;});
         }, parentForm);
       });
     });
@@ -222,7 +217,7 @@ $(document).ready(function() {
   function shakeButton(btn) {
     var $btn = $(btn);
     $btn.addClass('shaking');
-    $btn.find('input').val('Fix Problems');
+    $btn.find('input').val('Some Problems');
     setTimeout(function() {
       $btn.removeClass('shaking');
     }, 1000);
@@ -232,9 +227,8 @@ $(document).ready(function() {
   }
 
   function validate($form) {
-    if ($form.find('.checkbox-field[data-required] input:checked').length === 0) return false;
     var allValid = true;
-    $form.find('.active-field.text-field').each(function() {
+    $form.find('.input-field.text-field').each(function() {
       if (!$(this).hasClass('filled')) {
         invalid($(this), 'Required');
         allValid = false;
@@ -242,7 +236,7 @@ $(document).ready(function() {
         valid($(this));
       }
     });
-    $form.find('.active-field input[name=zipcode]').each(function() {
+    $form.find('.input-field input[name=zipcode]').each(function() {
       var length = $(this).val().length;
       if (length === 0) {
         invalid($(this), 'Required');
@@ -252,7 +246,7 @@ $(document).ready(function() {
         allValid = false;
       }
     });
-    $form.find('.active-field input[name=phonenumber]').each(function() {
+    $form.find('.input-field input[name=phonenumber]').each(function() {
       var $input = $(this);
       var length = $input.val().length;
       if (length == 10 || length == 11) valid($input);
@@ -263,7 +257,7 @@ $(document).ready(function() {
         else invalid($input, 'Invalid phone number');
       }
     });
-    var $emailInput = $form.find('.active-field input[name=email]');
+    var $emailInput = $form.find('.input-field input[name=email]');
     if ($emailInput.val().length == 0) {
       invalid($emailInput, 'Required');
       allValid = false;
@@ -272,6 +266,21 @@ $(document).ready(function() {
       allValid = false;
     } else {
       valid($emailInput);
+    }
+    var $birthdayInput = $form.find('.birthday input[name=birthday]');
+    var date = $birthdayInput.val();
+    if(date.length == 0){
+      invalid($birthdayInput, 'Required');
+      allValid = false;
+    } else{
+      var year = parseInt(date.split('-')[0]);
+      var age = new Date().getFullYear() - year;
+      if(age > 100 || age < 12){
+        invalid($birthdayInput, 'Invalid Date');
+        allValid = false;
+      } else{
+        valid($birthdayInput);
+      }
     }
     return allValid;
   }
@@ -347,6 +356,29 @@ $(document).ready(function() {
   });
 });
 
+jQuery.fn.extend({
+  sharpen: function(duration){
+    var loadedImg = $(this);
+    $({blurRadius: 20}).animate({blurRadius: 0}, {
+      duration: duration,
+      easing: 'swing', // or "linear"
+      // use jQuery UI or Easing plugin for more options
+      complete: function(){
+        loadedImg.css({
+          "-webkit-filter": "blur(0px)",
+          "filter": "blur(0px)"
+        });
+      },
+      step: function(now) {
+        loadedImg.css({
+          "-webkit-filter": "blur("+now+"px)",
+          "filter": "blur("+now+"px)"
+        });
+      }
+    });
+  }
+});
+
 function openGrid(id) {
   if ($('.active-grid')[0].id !== id) {
     $('.active-grid').animate({opacity: 0}, {complete: function() {
@@ -363,7 +395,6 @@ function openGrid(id) {
     }});
   }
 }
-
 
 // Functions for preventing modal scroll when more info form is open.
 
@@ -389,6 +420,7 @@ function preventDefault(e) {
 }
 
 function disableScroll() {
+  $(window).scrollTop($(window).scrollTop());
   window.addEventListener('DOMMouseScroll', preventDefault, false);
   window.onwheel = preventDefault; // modern standard
   window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE

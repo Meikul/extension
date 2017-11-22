@@ -80,7 +80,11 @@ span.nowrap{
 	margin: 0;
 }
 
-@supports (filter: blur(15px)) {
+.grid-gallery figure .img-container{
+	background: #bbb;
+}
+
+@supports (filter: blur(50px)) {
 	.grid-gallery figure .img-container img{
 		filter: blur(20px);
 	}
@@ -95,6 +99,9 @@ span.nowrap{
 	}
 }
 
+.grid-gallery figure .img-container{
+	/*background: #bbb;*/
+}
 
 .grid-gallery figure .img-container img {
 	width: 100%;
@@ -415,6 +422,10 @@ span.nowrap{
 	}
 }
 
+.lightbox figure .more-info form{
+	padding-top: 20px;
+}
+
 .lightbox figure .more-info form input, .lightbox figure .more-info form select {
   border: none;
   outline: none;
@@ -468,10 +479,6 @@ span.nowrap{
 
 .lightbox figure .more-info form > div.input-field {
   transition: all 0.15s ease;
-}
-
-.lightbox figure .more-info form > div.input-field:not(.active-field) {
-  opacity: 0;
 }
 
 .lightbox figure .more-info form > div.input-field input[type=text], .lightbox figure .more-info form > div.input-field input[type=number] {
@@ -542,6 +549,16 @@ span.nowrap{
   color: #384670;
 }
 
+.lightbox figure .more-info form .birthday{
+	margin-top: 10px;
+}
+
+.lightbox figure .more-info form .input-field input[type=date]{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
 .lightbox figure .more-info form div.select-field {
   height: 40px;
   z-index: 1;
@@ -564,6 +581,19 @@ span.nowrap{
   border-radius: 2px;
   transition: box-shadow 0.2s ease;
 }
+
+/*.lightbox figure .more-info form .birthday .select-list:nth-last-of-type(1) {
+	width: 3ch;
+	right: calc(5px + 9ch);
+}
+.lightbox figure .more-info form .birthday .select-list:nth-last-of-type(2) {
+	width: 3ch;
+	right: calc(5px + 6ch);
+}
+.lightbox figure .more-info form .birthday .select-list:nth-last-of-type(3) {
+	width: 6ch;
+	right: 5px;
+}*/
 
 .lightbox figure .more-info form div.select-field .select-list div:not(.selected) {
   display: none;
@@ -681,6 +711,7 @@ span.nowrap{
   margin: auto;
   padding: 5px;
   left: 0;
+	margin-top: 30px;
   box-shadow: 0 0 0 1px #aaa;
   transition: all 0.3s ease;
   transition-delay: 0.1s;
@@ -691,6 +722,11 @@ span.nowrap{
   .lightbox figure .more-info form div.submit {
     margin-bottom: 20px;
   }
+}
+
+.lightbox figure .more-info form .form-title{
+	font-size: 30px;
+	margin-bottom: 0;
 }
 
 .lightbox figure .more-info form div.submit input {
