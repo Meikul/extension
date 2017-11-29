@@ -40,6 +40,11 @@ html{
 	margin-right: 40px;
 }
 
+#grid-selectors{
+	margin: 10px;
+	margin-top: 20px;
+}
+
 span.nowrap{
 	white-space: nowrap;
 	margin-top: 5px;
@@ -48,15 +53,21 @@ span.nowrap{
 .grid-selector{
 	display: inline;
 	font-size: 17px;
-	padding: 10px;
 	cursor: pointer;
-	color: #38b;
+	color: #05283D;
+	padding: 12px 20px;
+	background: #eee;
+	transition: all 0.5s ease;
 	/*border: 1px solid #ddd;*/
 }
 
-.active-grid-selector, .grid-selector:hover{
-	text-decoration: underline;
-	color: black;
+.grid-selector:hover{
+
+}
+
+.active-grid-selector{
+	background: #05283D;
+	color: white;
 }
 
 .main-content > h2{
@@ -393,6 +404,7 @@ span.nowrap{
   font-family: 'Roboto Condensed';
   /*background: rgba(0, 0, 0, 0.4);*/
 	display: none;
+	z-index: 2;
 }
 
 .lightbox figure .more-info form {
@@ -581,19 +593,6 @@ span.nowrap{
   border-radius: 2px;
   transition: box-shadow 0.2s ease;
 }
-
-/*.lightbox figure .more-info form .birthday .select-list:nth-last-of-type(1) {
-	width: 3ch;
-	right: calc(5px + 9ch);
-}
-.lightbox figure .more-info form .birthday .select-list:nth-last-of-type(2) {
-	width: 3ch;
-	right: calc(5px + 6ch);
-}
-.lightbox figure .more-info form .birthday .select-list:nth-last-of-type(3) {
-	width: 6ch;
-	right: 5px;
-}*/
 
 .lightbox figure .more-info form div.select-field .select-list div:not(.selected) {
   display: none;
