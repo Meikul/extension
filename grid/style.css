@@ -724,7 +724,7 @@ span.nowrap{
 	cursor: pointer;
 }
 
-.lightbox figure .more-info form.download>*:not(.submit){
+.lightbox figure .more-info form.download>*:not(.submit):not(.bookBtn):not(.download-title){
 	transition: all 0.3s ease;
 	opacity: 0;
 }
@@ -767,7 +767,7 @@ span.nowrap{
 	margin: none;
 	width: calc(100% - 40px);
 	text-align: center;
-	top: 200px;
+	top: 220px;
 }
 
 .lightbox figure .more-info form.download .download-title{
@@ -780,13 +780,6 @@ span.nowrap{
 	opacity: 1;
 }*/
 
-.lighbox figure .more-info form div{
-	height: 200px;
-	width: 150px;
-	background: #aaa;
-	margin-top: 10px;
-	margin: auto;
-}
 /*
 .lightbox figure .more-info form.download div.submit {
 	background: none;
@@ -794,9 +787,38 @@ span.nowrap{
 	color: #05283D;
 }*/
 
+.lightbox figure .more-info form .bookBtn{
+	display: none;
+	background: #2ECC71;
+	color: white;
+	outline: none;
+	border-radius: 6px;
+	width: 170px;
+	height: 36px;
+	text-align: center;
+	margin: auto;
+	padding: 7px;
+	margin-top: 30px;
+	box-shadow: 0 0 0 1px #1EBC61;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+
+
 .lightbox figure .more-info form div.submit input {
 	cursor: pointer;
 	color: white;
+}
+
+.lightbox figure .more-info form .description{
+	text-align: left;
+	font-size: 14px;
+	margin-top: 5px;
+}
+
+.lightbox form .sheet-links a{
+	display: none;
 }
 
 /*.lightbox figure .more-info form.download div.submit input{
@@ -832,7 +854,7 @@ span.nowrap{
 }
 
 .lightbox figure .more-info form div.submit.success {
-	/*box-shadow: 0 0 0 1px #2ECC71;*/
+	box-shadow: 0 0 0 1px #1EBC61;
 	background: #2ECC71;
 }
 

@@ -1,9 +1,13 @@
 $(document).ready(function() {
 
-	$(window).resize(function() {
-		$('.lightbox .img-container').height($('.lightbox figure').height() - $('.lightbox figcaption').outerHeight());
-	});
+	$(window).resize(sizeImgContainer);
 
+	function sizeImgContainer(){
+		var $fig = $('.lightbox figure');
+		var $figCaption = $fig.find('figcaption');
+		var containerHeight = $fig.height() - $figCaption.outerHeight();
+		$('.lightbox .img-container').height(containerHeight);
+	}
 
 	if($('.grid-gallery figure .img-container img').css('opacity') == 0){
 		console.log('not supported');
@@ -49,7 +53,7 @@ $(document).ready(function() {
 		fig.clone().appendTo('.lightbox');
 		var $lightbox = $('.lightbox');
 		$lightbox.fadeIn(500);
-		$lightbox.find('.img-container').height($lightbox.find('figure').height() - $lightbox.find('figcaption').outerHeight());
+		sizeImgContainer();
 		$lightbox.find('.modal-close>img').click(closeModal);
 		$lightbox.find('.more-info-btn').click(function() {
 			var $moreInfo = $('.more-info');
@@ -98,7 +102,6 @@ $(document).ready(function() {
 		$lightbox.find('.submit').click(submit);
 		$lightbox.find('.select-field').click(selectUpdate);
 		$lightbox.find('input[type=number]').keydown(checkInput);
-
 		$lightbox.find('.more-info, em.close-form, .cover').click(closeForm);
 		$lightbox.find('#req-more-info .close-form').click(function(){
 			$lightbox.find('.more-info').click();
@@ -214,11 +217,12 @@ $(document).ready(function() {
 
 	function submit() {
 		var $form = $(this).closest('form');
-		// forSub if (validate($form)) {
-		if(true){
-			send($form);
-		} else {
-			shakeButton(this);
+		if (validate($form)) {
+			if(true){
+				send($form);
+			} else {
+				shakeButton(this);
+			}
 		}
 	}
 
@@ -316,35 +320,20 @@ $(document).ready(function() {
 		$form.find('input[name=department]').val(department);
 		$btn.removeClass('success error');
 		$btn.addClass('pending');
-		// forSub
-		setTimeout(function(){
-			var $btn = $('.lightbox form .submit');
-			$btn.off('click');
-			$btn.click(function(){window.location.href='https://www.google.com'})
-			$btn.html('<em class="fa fa-download"></em><input type="button" value="Get 4 Year Plan"/>');
-			$btn.removeClass('pending');
-			$btn.addClass('success');
-			$btn.find('*').delay(100).fadeIn(300);
-			showDownload();
-		}, 2000);
-		// $.ajax({
-		// 	type: "POST",
-		// 	cache: false,
-		// 	url: "https://ouresources.usu.edu/_assets/forms/forms.php", //form_submit.aspx
-		// 	data: $form.serialize(),
-		// 	success: function(data) {
-		// 		$btn.off('click');
-		// 		$btn.find('input').val('Thank You');
-		// 		$btn.removeClass('pending');
-		// 		$btn.addClass('success');
-		// 		showDownload();
-		// 	},
-		// 	error: function(data) {
-		// 		$btn.find('input').val("Couldn't Submit");
-		// 		$btn.removeClass('pending');
-		// 		$btn.addClass('error');
-		// 	}
-		// });
+		$.ajax({
+			type: "POST",
+			cache: false,
+			url: "https://ouresources.usu.edu/_assets/forms/forms.php", //form_submit.aspx
+			data: $form.serialize(),
+			success: function(data) {
+				showDownload();
+			},
+			error: function(data) {
+				$btn.find('input').val("Couldn't Submit");
+				$btn.removeClass('pending');
+				$btn.addClass('error');
+			}
+		});
 	}
 
 	$.easing.easeInOutCubic = function (x, t, b, c, d) {
@@ -353,14 +342,52 @@ $(document).ready(function() {
   }
 
 	function showDownload() {
-		var $form = $('.lightbox form');
+		var $modal = $('.lightbox figure');
+		var $form = $modal.find('form');
 		var $btn = $form.find('.submit');
-		var $link = $form.find('.sheet-link');
+		var $bookBtn = $form.find('.bookBtn');
 		$form.addClass('download');
+		$btn.off('click');
+		$btn.html('<em class="fa fa-download"></em><input type="button" value="Get 4 Year Plan"/>');
+		$btn.removeClass('pending');
+		$btn.addClass('success');
+		$btn.find('*').delay(100).fadeIn(300);
+		// Inserting degree name;
+		var degreeName = $modal.find('figcaption h3').html();
+		if(degreeName){
+			var $desc = $form.find('.description');
+			var descText = $desc.html();
+			descText = descText.replace('this degree', degreeName);
+			$desc.html(descText);
+		}
+
+		var sheetURL = $modal.find('figcaption .sheet-link').html();
+		var viewBookURL = "https://caas.usu.edu/ou-files/USU-2017-Viewbook.pdf";
+		$bookBtn.fadeIn(300);
+		$bookBtn.click(function(){
+			var newTab = window.open(viewBookURL, '_blank');
+			newTab.focus();
+		})
+		if(isURL(sheetURL)){
+			$btn.click(function(){
+				window.location.href=sheetURL;
+			});
+		}
+		else{
+			$btn.fadeOut(10);
+		}
+
 		// $form.animate({top: '-320px'}, 600, 'easeInOutCubic');
 		// TODO: Make button morph to title
 		// fade in download link
 		// href setter
+	}
+
+	function isURL(str){
+		if(typeof str === 'string'){
+			if(str.indexOf('http') >= 0) return true;
+		}
+		return false;
 	}
 
 	// Close Modal
