@@ -2,6 +2,9 @@ $(document).ready(function() {
 
 	$(window).resize(sizeImgContainer);
 
+	/**
+	 * Sizes modal image container
+	 */
 	function sizeImgContainer(){
 		var $fig = $('.lightbox figure');
 		var $figCaption = $fig.find('figcaption');
@@ -9,11 +12,29 @@ $(document).ready(function() {
 		$('.lightbox .img-container').height(containerHeight);
 	}
 
+	/**
+	 * Checks to see if css @support failed for blur and sets noBlur if it did
+	 */
 	if($('.grid-gallery figure .img-container img').css('opacity') == 0){
 		console.log('not supported');
 		var noBlur = true;
 	}
 
+	/**
+	 * Deblurs grid images when they've loaded, or fades them in if blur isn't supported
+	 */
+	$('.msn-item .img-container img').load(function(){
+		var $img = $(this);
+		if(noBlur) $img.animate({opacity: 1}, 600);
+		else $img.sharpen(600);
+		$img.closest('.msn-grid').masonry();
+	});
+
+	//
+	/**
+	 * Does final check for all blurry images and deblurs them. Also, sets image conatainer
+	 * background from color loading to same color as modal.
+	 */
 	$('.msn-item .img-container img').each(function(){
 		if(this.complete){
 			var $img = $(this);
@@ -26,15 +47,14 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.msn-item .img-container img').load(function(){
-		var $img = $(this);
-		if(noBlur) $img.animate({opacity: 1}, 600);
-		else $img.sharpen(600);
-		$img.closest('.msn-grid').masonry();
-	});
-
+	/**
+	 * Hides non-active grids (for grid selector tabs)
+	 */
 	$('.grid-wrap:not(.active-grid)').css('display', 'none');
 
+	/**
+	 * Request Info button handler
+	 */
 	$('#req-info').click(function() {
 		$('#req-more-info').clone().appendTo('.lightbox');
 		$('.lightbox .more-info').css({
@@ -46,8 +66,14 @@ $(document).ready(function() {
 		});
 	});
 
+	/**
+	 * Open modal on grid item click
+	 */
 	$('.grid figure').click(openModal);
 
+	/**
+	 * Opens modal
+	 */
 	function openModal(e) {
 		var fig = $(e.target).closest('figure');
 		fig.clone().appendTo('.lightbox');
@@ -57,10 +83,8 @@ $(document).ready(function() {
 		$lightbox.find('.modal-close>img').click(closeModal);
 		$lightbox.find('.more-info-btn').click(function() {
 			var $moreInfo = $('.more-info');
-			// disableScroll();
 			$moreInfo.clone().appendTo($lightbox.find('figure'));
 			$moreInfo = $lightbox.find('figure .more-info');
-			// $moreInfo.css('top', $lightbox.scrollTop());
 			$lightbox.find('.img-container, figcaption').append('<div class="cover"></div>');
 			$lightbox.find('.cover').fadeTo(300, 0.3);
 			$lightbox.animate({scrollTop: 0}, 300);
@@ -75,14 +99,28 @@ $(document).ready(function() {
 		$('.lightbox').click(function(e) {
 			if (e.target === this) closeModal();
 		});
+		// Inserting degree name
+		var degreeName = $modal.find('figcaption h3').html();
+		if(degreeName){
+			var $desc = $form.find('.form-desc');
+			var descText = $desc.html();
+			descText = descText.replace('this degree', degreeName);
+			$desc.html(descText);
+		}
 	}
 
+	/**
+	 * Opens video modal
+	 */
 	function openVideo() {
 		var vidWindow = $('#grid-gallery>.apply-now');
 		vidWindow.clone().appendTo('.lightbox');
 		$('.lightbox .apply-now').fadeIn(500);
 	}
 
+	/**
+	 * Closes moreInfo form
+	 */
 	function closeForm(){
 		var $lightbox = $('.lightbox');
 		$lightbox.find('.more-info').find('.form-container').animate({
@@ -93,10 +131,12 @@ $(document).ready(function() {
 		});
 		$lightbox.find('.more-info').fadeOut(300, function() {
 			$lightbox.find('.more-info').remove();
-			// enableScroll($lightbox.find('figure').get());
 		});
 	}
 
+	/**
+	 * Sets up event listeners for more info form
+	 */
 	function setFormEvents() {
 		var $lightbox = $('.lightbox');
 		$lightbox.find('.submit').click(submit);
@@ -107,6 +147,7 @@ $(document).ready(function() {
 			$lightbox.find('.more-info').click();
 		});
 
+		// Stop click even propogating to lightbox to prevent closing modal
 		$lightbox.find('form').click(function(e) {
 			return false;
 		});
@@ -130,15 +171,15 @@ $(document).ready(function() {
 		var selectLists = $lightbox.find('.select-list');
 		var selectListItems = selectLists.children('div');
 
+		$lightbox.find('.submit').keydown(function(e) {
+			enterClick.call($(this).children('input'), e);
+		});
+		checkboxes.keydown(enterClick);
 		function enterClick(e) {
 			if (e.which === 13) {
 				$(this).click();
 			}
 		}
-		$lightbox.find('.submit').keydown(function(e) {
-			enterClick.call($(this).children('input'), e);
-		});
-		checkboxes.keydown(enterClick);
 		checkboxes.click(function() {
 			var checked = $lightbox.find('.checkbox-field[data-required] input:checked').closest('.checkbox-field');
 			var parentForm = $(this).closest('form');
@@ -198,7 +239,7 @@ $(document).ready(function() {
 		});
 	}
 
-
+	// Bans problematic number keys
 	function checkInput(e) {
 		switch (e.which) {
 			case 69:
@@ -215,6 +256,9 @@ $(document).ready(function() {
 		field.find('input[type=hidden]').val(value);
 	}
 
+	/**
+	 * Validates more info form
+	 */
 	function submit() {
 		var $form = $(this).closest('form');
 		if (validate($form)) {
@@ -226,6 +270,9 @@ $(document).ready(function() {
 		}
 	}
 
+	/**
+	 * User notification of invalid form
+	 */
 	function shakeButton(btn) {
 		var $btn = $(btn);
 		$btn.addClass('shaking');
@@ -238,6 +285,9 @@ $(document).ready(function() {
 		}, 2000);
 	}
 
+	/**
+	 * Validates more info form
+	 */
 	function validate($form) {
 		var allValid = true;
 		$form.find('.input-field.text-field').each(function() {
@@ -297,12 +347,18 @@ $(document).ready(function() {
 		return allValid;
 	}
 
+	/**
+	 * Displays error message under invalid field
+	 */
 	function invalid(...args) {
 		$elem = $(args[0]);
 		$elem.closest('.input-field').addClass('invalid');
 		if (args[1]) $elem.next('span').text(args[1]);
 	}
 
+	/**
+	 * Removes error message under fields
+	 */
 	function valid($elem) {
 		$elem.closest('.input-field').removeClass('invalid');
 	}
@@ -312,6 +368,37 @@ $(document).ready(function() {
 		return re.test(email);
 	}
 
+	/**
+	 * Defines cubic easeing function
+	 */
+	$.easing.easeInOutCubic = function (x, t, b, c, d) {
+        if ((t/=d/2) < 1) return c/2*t*t*t + b;
+        return c/2*((t-=2)*t*t + 2) + b;
+  }
+
+	/**
+	 * Closes modal on escape key
+	 */
+	$(document).keydown(function(e) {
+		if (e.keyCode == 27) closeModal();
+	});
+
+	/**
+	 * Handles grid selector tab clicks
+	 */
+	$('.grid-selector').click(function() {
+		$('.active-grid-selector').removeClass('active-grid-selector');
+		$link = $(this);
+		$link.addClass('active-grid-selector');
+
+		var index = $link.attr('id').split('-')[1];
+		openGrid('grid-' + index);
+	});
+
+	/**
+	 * Does ajax to send form. Uses OUcampus's form infrastructure by POSTing a string
+	 * identical to what an actual instance of the "More Info" form would POST.
+	 */
 	function send($form) {
 		var $btn = $form.find('.submit');
 		var programTitle = $form.closest('figure').find('figcaption h3').text();
@@ -336,11 +423,9 @@ $(document).ready(function() {
 		});
 	}
 
-	$.easing.easeInOutCubic = function (x, t, b, c, d) {
-        if ((t/=d/2) < 1) return c/2*t*t*t + b;
-        return c/2*((t-=2)*t*t + 2) + b;
-  }
-
+	/**
+	 * Shows major sheet and viewbook pdf download links when form successfully submits
+	 */
 	function showDownload() {
 		var $modal = $('.lightbox figure');
 		var $form = $modal.find('form');
@@ -352,14 +437,6 @@ $(document).ready(function() {
 		$btn.removeClass('pending');
 		$btn.addClass('success');
 		$btn.find('*').delay(100).fadeIn(300);
-		// Inserting degree name;
-		var degreeName = $modal.find('figcaption h3').html();
-		if(degreeName){
-			var $desc = $form.find('.description');
-			var descText = $desc.html();
-			descText = descText.replace('this degree', degreeName);
-			$desc.html(descText);
-		}
 
 		var sheetURL = $modal.find('figcaption .sheet-link').html();
 		var viewBookURL = "https://caas.usu.edu/ou-files/USU-2017-Viewbook.pdf";
@@ -376,13 +453,10 @@ $(document).ready(function() {
 		else{
 			$btn.fadeOut(10);
 		}
-
-		// $form.animate({top: '-320px'}, 600, 'easeInOutCubic');
-		// TODO: Make button morph to title
-		// fade in download link
-		// href setter
 	}
-
+	/**
+	 * Checks if string is a valid url (used to check if the major sheet pdf url is valid)
+	 */
 	function isURL(str){
 		if(typeof str === 'string'){
 			if(str.indexOf('http') >= 0) return true;
@@ -390,9 +464,10 @@ $(document).ready(function() {
 		return false;
 	}
 
-	// Close Modal
+	/**
+	 * Closes modal
+	 */
 	function closeModal(callback = undefined) {
-		// enableScroll();
 		if (typeof callback === 'function') {
 			$('.lightbox figure').fadeOut(500, function() {
 				$('.lightbox').children().remove();
@@ -404,21 +479,11 @@ $(document).ready(function() {
 			});
 		}
 	}
-	// $('.lightbox').click(closeModal);
-	$(document).keydown(function(e) {
-		if (e.keyCode == 27) closeModal();
-	});
-
-	$('.grid-selector').click(function() { // Not firing
-		$('.active-grid-selector').removeClass('active-grid-selector');
-		$link = $(this);
-		$link.addClass('active-grid-selector');
-
-		var index = $link.attr('id').split('-')[1];
-		openGrid('grid-' + index);
-	});
 });
 
+/**
+ * Adds sharpen function to animate blur radius to 0
+ */
 jQuery.fn.extend({
 	sharpen: function(duration){
 		var loadedImg = $(this);
@@ -442,6 +507,9 @@ jQuery.fn.extend({
 	}
 });
 
+/**
+ * Hides old and shows new active when grid selector tab is clicked
+ */
 function openGrid(id) {
 	if ($('.active-grid')[0].id !== id) {
 		$('.active-grid').animate({opacity: 0}, {complete: function() {
@@ -457,44 +525,4 @@ function openGrid(id) {
 			});
 		}});
 	}
-}
-
-// Functions for preventing modal scroll when more info form is open.
-
-var keys = {
-	37: 1,
-	38: 1,
-	39: 1,
-	40: 1
-};
-
-function preventDefaultForScrollKeys(e) {
-	if (keys[e.keyCode]) {
-		preventDefault(e);
-		return false;
-	}
-}
-
-function preventDefault(e) {
-	e = e || window.event;
-	if (e.preventDefault)
-		e.preventDefault();
-	e.returnValue = false;
-}
-
-function disableScroll() {
-	$(window).scrollTop($(window).scrollTop());
-	window.addEventListener('DOMMouseScroll', preventDefault, false);
-	window.onwheel = preventDefault; // modern standard
-	window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-	window.ontouchmove = preventDefault; // mobile
-	document.onkeydown = preventDefaultForScrollKeys;
-}
-
-function enableScroll() {
-	window.removeEventListener('DOMMouseScroll', preventDefault, false);
-	window.onmousewheel = document.onmousewheel = null;
-	window.onwheel = null;
-	window.ontouchmove = null;
-	document.onkeydown = null;
 }
