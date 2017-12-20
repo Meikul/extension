@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-	$(window).resize(sizeImgContainer);
-
 	/**
 	 * Sizes modal image container
 	 */
+	$(window).resize(sizeImgContainer);
+
 	function sizeImgContainer(){
 		var $fig = $('.lightbox figure');
 		var $figCaption = $fig.find('figcaption');
@@ -30,9 +30,8 @@ $(document).ready(function() {
 		$img.closest('.msn-grid').masonry();
 	});
 
-	//
 	/**
-	 * Does final check for all blurry images and deblurs them. Also, sets image conatainer
+	 * Does final check for all blurry images in grid and lightbox and deblurs them. Also, sets image conatainer
 	 * background from color loading to same color as modal.
 	 */
 	$('.msn-item .img-container img').each(function(){
@@ -100,13 +99,20 @@ $(document).ready(function() {
 			if (e.target === this) closeModal();
 		});
 		// Inserting degree name
-		var degreeName = $modal.find('figcaption h3').html();
+		var degreeName = $lightbox.find('figcaption h3').html();
 		if(degreeName){
-			var $desc = $form.find('.form-desc');
+			var $desc = $lightbox.find('.form-desc');
 			var descText = $desc.html();
-			descText = descText.replace('this degree', degreeName);
+			// replace this degree with degree name if it's defined
+			descText = descText ? descText.replace('this degree', degreeName) : descText;
 			$desc.html(descText);
 		}
+		// Deblurring image when loaded
+		$lightbox.find('.img-container img').load(function(){
+			var $img = $lightbox.find('.img-container img');
+			if(noBlur) $img.css('opacity', 1);
+			else $img.css('filter','blur(0px)');
+		});
 	}
 
 	/**
@@ -479,12 +485,46 @@ $(document).ready(function() {
 			});
 		}
 	}
+	// Calls function for
+	urlDegTabParam();
 });
+
+/**
+ * URL parameteres
+ */
+function urlDegTabParam(){
+	var fullReturn = false;
+	var tabArg = getURLParam('tab');
+	var $tab = $('#grid-'+tabArg+'-link');
+	var degArg = getURLParam('deg');
+	if(degArg){
+		degArg = degArg.split('+').join(' ').toUpperCase();
+		$('.grid-wrap').each(function(i){
+			$(this).find('figure').each(function(){
+				var $fig = $(this);
+				var degName = $fig.find('figcaption>h3').html().toUpperCase();
+				if(degName == degArg) {
+					if(!tabArg){
+						$('#grid-'+i+'-link').click();
+					}
+					$fig.click();
+					// break out of both loops
+					fullReturn = true;
+					return false;
+				}
+			});
+			if(fullReturn) return false;
+		});
+	}
+	if($tab){
+		$tab.click();
+	}
+}
 
 /**
  * Adds sharpen function to animate blur radius to 0
  */
-jQuery.fn.extend({
+ jQuery.fn.extend({
 	sharpen: function(duration){
 		var loadedImg = $(this);
 		$({blurRadius: 20}).animate({blurRadius: 0}, {
@@ -526,3 +566,19 @@ function openGrid(id) {
 		}});
 	}
 }
+
+/**
+ * Returns url parameter if it is defined
+ */
+ function getURLParam(sParam) {
+   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+       sURLVariables = sPageURL.split('&'),
+       sParameterName,
+       i;
+   for (i = 0; i < sURLVariables.length; i++) {
+       sParameterName = sURLVariables[i].split('=');
+       if (sParameterName[0] === sParam) {
+           return sParameterName[1] === undefined ? true : sParameterName[1];
+       }
+   }
+ }
