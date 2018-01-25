@@ -1,0 +1,22 @@
+.photo-slider{
+  position: absolute;
+  width: 300px;
+}
+
+.photo-slider .left, .photo-slider .right{
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.photo-slider .right{
+  width: 100%;
+}
+
+.photo-slider .side img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

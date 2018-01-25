@@ -1,0 +1,32 @@
+.grid-selectors{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 45vh;
+}
+
+.grid-selector{
+  display: inline;
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  margin: 0;
+  background: #eee;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #05283D;
+  transition: all 0.2s ease;
+}
+
+.active-grid-selector{
+  background: #05283D;
+  color: white;
+}
+
+/*.highlighter{
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: red;
+}*/

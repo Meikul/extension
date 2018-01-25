@@ -1,0 +1,36 @@
+
+$aggie-blue: #0F2538;
+
+@font-face {
+	font-family: 'BebasNeue Bold';
+	src: url("https://caas.usu.edu/_resources/fonts/BebasNeue Bold.otf") format("opentype");
+}
+
+.main-container-wide .main-content .row{
+  margin: 0;
+}
+
+
+#section-1{
+  background: $aggie-blue;
+  width: 100%;
+
+  .side-heading{
+    margin-top: 40px;
+    text-align: center;
+    h1{
+      color: #f0f0f0;
+      font-size: 30pt;
+      margin: 15px;
+      font-family: 'BebasNeue Bold';
+      letter-spacing: 1px;
+    }
+  }
+
+  .logo-wrapper{
+    img{
+      margin: 50px auto;
+      width: 100%;
+    }
+  }
+}

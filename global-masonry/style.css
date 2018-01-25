@@ -2,6 +2,7 @@ body{
   padding: 0;
   margin: 0;
   width: 100vw;
+  font-family: helvetica;
 }
 
 .grid{
@@ -15,11 +16,13 @@ body{
 }
 
 .num1{
+  width: 600px;
   background: #eee;
 }
 
 .num1 .msn-item{
   background: white;
+  width: 200px;
 }
 
 .num2{
@@ -27,6 +30,7 @@ body{
 }
 .num2 .item{
   background: #bcf;
+  min-width: 200px;
 }
 
 .num3{
@@ -64,4 +68,14 @@ body{
 .demo .grid{
   width: 70%;
   float: right;
+}
+
+code{
+  /*background: #ddd;*/
+}
+
+.ex-code{
+  margin: auto;
+  background: #ddd;
+  width: auto;
 }

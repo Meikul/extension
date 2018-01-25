@@ -66,6 +66,13 @@ $(document).ready(function() {
 	});
 
 	/**
+	 * View Degrees button handler
+	 */
+	 $('#view-degrees').click(function(){
+		 $('html, body').animate({scrollTop: '730px'}, 600, 'easeInOutCubic');
+	 });
+
+	/**
 	 * Open modal on grid item click
 	 */
 	$('.grid figure').click(openModal);
@@ -92,11 +99,21 @@ $(document).ready(function() {
 				left: '0'
 			}, 300);
 		});
-		$('.lightbox .apply-now-btn').click(function() {
+		$lightbox.find('.apply-now-btn').click(function() {
 			closeModal(openVideo);
 		});
-		$('.lightbox').click(function(e) {
+		$lightbox.click(function(e) {
 			if (e.target === this) closeModal();
+		});
+		// title click for direct degree url
+		$lightbox.find('figcaption h3').click(function(){
+			var title = $(this).html();
+			title = encodeURIComponent(title);
+			var url = window.location.href;
+			// cutting of any previous http parameters
+			url = url.substring(0, url.indexOf('?'));
+			// directing page to direct link to degree
+			window.location.href = url+"?deg="+title;
 		});
 		// Inserting degree name
 		var degreeName = $lightbox.find('figcaption h3').html();
@@ -403,7 +420,8 @@ $(document).ready(function() {
 
 	/**
 	 * Does ajax to send form. Uses OUcampus's form infrastructure by POSTing a string
-	 * identical to what an actual instance of the "More Info" form would POST.
+	 * identical to what an actual instance of the "More Info" form would POST
+	 * to their forms.php.
 	 */
 	function send($form) {
 		var $btn = $form.find('.submit');
@@ -492,34 +510,39 @@ $(document).ready(function() {
 /**
  * URL parameteres
  */
-function urlDegTabParam(){
-	var fullReturn = false;
-	var tabArg = getURLParam('tab');
-	var $tab = $('#grid-'+tabArg+'-link');
-	var degArg = getURLParam('deg');
-	if(degArg){
-		degArg = degArg.split('+').join(' ').toUpperCase();
-		$('.grid-wrap').each(function(i){
-			$(this).find('figure').each(function(){
-				var $fig = $(this);
-				var degName = $fig.find('figcaption>h3').html().toUpperCase();
-				if(degName == degArg) {
-					if(!tabArg){
-						$('#grid-'+i+'-link').click();
-					}
-					$fig.click();
-					// break out of both loops
-					fullReturn = true;
-					return false;
-				}
-			});
-			if(fullReturn) return false;
-		});
-	}
-	if($tab){
-		$tab.click();
-	}
-}
+ function urlDegTabParam(){
+ 	var fullReturn = false;
+ 	var tabArg = getURLParam('tab');
+ 	var $tab = $('#grid-'+tabArg+'-link');
+ 	var degArg = getURLParam('deg');
+ 	if(degArg){
+		console.log(degArg);
+		degArg = decodeURIComponent(degArg).toUpperCase();
+		console.log(degArg);
+ 		// degArg = degArg.split('+').join(' ').toUpperCase();
+ 		$('.grid-wrap').each(function(i){
+ 			$(this).find('figure').each(function(){
+ 				var $fig = $(this);
+ 				var degName = $fig.find('figcaption>h3').html().toUpperCase();
+ 				if(degName == degArg) {
+ 					if(!tabArg){
+ 						$('#grid-'+i+'-link').click();
+ 					}
+ 					$fig.click();
+ 					// Scroll down so degree is in view
+ 					scrollToDegrees();
+ 					// break out of both loops
+ 					fullReturn = true;
+ 					return false;
+ 				}
+ 			});
+ 			if(fullReturn) return false;
+ 		});
+ 	}
+ 	if($tab){
+ 		$tab.click();
+ 	}
+ }
 
 /**
  * Adds sharpen function to animate blur radius to 0
