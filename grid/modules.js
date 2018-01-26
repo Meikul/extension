@@ -11,7 +11,7 @@ function initPage(){
 	/**
 	 * View Degrees button handler
 	 */
-	$('#view-degrees').click(function(){
+	$('#view-deg-btn').click(function(){
 		$('html, body').animate({scrollTop: '730px'}, 600, 'easeInOutCubic');
 	});
 }
@@ -62,21 +62,12 @@ var grid = (function(){
 		});
 	};
 	/**
-	 * Checks if string is a valid url (used to check if the major sheet pdf url is valid)
-	 */
-	var _isURL = function(str){
-		if(typeof str === 'string'){
-			if(str.indexOf('http') >= 0) return true;
-		}
-		return false;
-	}
-	/**
 	 * URL parameteres
 	 */
 	var _urlDegTabParam = function(){
 		var fullReturn = false;
 		var tabArg = _getURLParam('tab');
-		var $tab = _$gridGal.find('#grid-'+tabArg+'-link');
+		var $tab = $('#grid-'+tabArg+'-link');
 		var degArg = _getURLParam('deg');
 		if(degArg){
 			console.log(degArg);
@@ -88,12 +79,15 @@ var grid = (function(){
 					var $fig = $(this);
 					var degName = $fig.find('figcaption>h3').html().toUpperCase();
 					if(degName == degArg) {
-						if(!tabArg){
-							_$gridGal.find('#grid-'+i+'-link').click();
+						if(!tabArg && $('#grid-'+i+'-link').length !== 0){
+							changeGrid(i);
 						}
-						$fig.click();
+						modal.open.call($fig);
 						// Scroll down so degree is in view
-						scrollToDegrees();
+						var $page = $('html, body');
+						if($page.scrollTop()<730){
+							$page.animate({scrollTop: '730px'}, 600, 'easeInOutCubic');
+						}
 						// break out of both loops
 						fullReturn = true;
 						return false;
@@ -102,8 +96,8 @@ var grid = (function(){
 				if(fullReturn) return false;
 			});
 		}
-		if($tab){
-			$tab.click();
+		if($tab.length !== 0){
+			changeGrid(tabArg);
 		}
 	}
 	/**
@@ -123,9 +117,9 @@ var grid = (function(){
 				$activeGrid.find('.msn-grid').children('li').each(function(i, elem) {
 					var $elem = $(elem);
 					$elem.css('display', 'none');
-					$elem.stop().delay(100 * i).fadeIn(300);
+					$elem.stop().delay(70 * i).fadeIn(300);
 				});
-			}});
+			}, duration: 400});
 		}
 	}
 	/**
@@ -167,15 +161,13 @@ var grid = (function(){
 		/**
 		 * Handles grid selector tab clicks
 		 */
-		$('.grid-selector').click();
+		$('.grid-selector').click(changeGrid);
 
 		// Hides non-active grids (for grid selector tabs). Can't be "display:none" before now because of masonry.
 		_$gridGal.find('.grid-wrap:not(.active-grid)').css('display', 'none');
 
 		// Opens modal on click
 		_$gridGal.find('figure').click(modal.open);
-
-		//
 
 		// Does degree specific url stuff
 		_urlDegTabParam();
@@ -193,15 +185,17 @@ var grid = (function(){
 	/**
 	 * Opens a grid
 	 */
- var changeGrid = function(index = undefined) {
+ var changeGrid = function(index) {
+	 console.log(typeof index);
 	 var $selectors = $('#grid-selectors');
 	 $selectors.find('.active-grid-selector').removeClass('active-grid-selector');
 	 var $link = $(this);
-	 if(index === undefined){
-		 index = $link.attr('id').split('-')[1];
+	 if(typeof index === 'number' || typeof index === 'string'){
+		 console.log('#grid-'+index+'-link');
+		 var $link = $selectors.find('#grid-'+index+'-link');
 	 }
 	 else{
-		 var $link = $selectors.find('#grid-'+index+'-link');
+		 index = $link.attr('id').split('-')[1];
 	 }
 	 $link.addClass('active-grid-selector');
 	 _openGrid('grid-' + index);
@@ -217,17 +211,14 @@ var grid = (function(){
 var modal = (function(){
 	// Private
 	/**
-	 * lightbox element
-	 */
-	var _$lightbox = $('.lightbox');
-	/**
 	 * resizes modal image container
 	 */
 	var _sizeImgContainer = function(){
-		var $fig = _$lightbox.find('figure');
+		var $lightbox = $('.lightbox');
+		var $fig = $lightbox.find('figure');
 		var $figCaption = $fig.find('figcaption');
 		var containerHeight = $fig.height() - $figCaption.outerHeight();
-		_$lightbox.find('.img-container').height(containerHeight);
+		$lightbox.find('.img-container').height(containerHeight);
 	}
 
 	var _getUrl = function(){
@@ -241,7 +232,8 @@ var modal = (function(){
 	}
 
 	var _deblur = function(){
-		var $img = _$lightbox.find('.img-container img');
+		var $lightbox = $('.lightbox');
+		var $img = $lightbox.find('.img-container img');
 		if(grid.getNoBlur()) $img.css('opacity', 1);
 		else $img.css('filter','blur(0px)');
 	}
@@ -250,21 +242,21 @@ var modal = (function(){
 	 * sets events for modal buttons and other things
 	 */
 	var _setEvents = function(){
-		_$lightbox = $('.lightbox');
+		var $lightbox = $('.lightbox');
 		// close modal by clicking x icon
-		_$lightbox.find('.modal-close>img').click(close);
+		$lightbox.find('.modal-close>img').click(close);
 		// close modal by clicking background
-		_$lightbox.click(function(event){
+		$lightbox.click(function(event){
 			if(event.target === this) close();
 		});
 		// open form by clicking "request info"
-		_$lightbox.find('.more-info-btn').click(form.open);
+		$lightbox.find('.more-info-btn').click(form.open);
 		// open video by clicking "apply now"
-		_$lightbox.find('.apply-now-btn').click(close.bind(this, video.open));
+		$lightbox.find('.apply-now-btn').click(close.bind(this, video.open));
 		// get direct degree url by clicking degree name
-		_$lightbox.find('figcaption h3').click(_getUrl);
+		$lightbox.find('figcaption h3').click(_getUrl);
 		// deblur modal image when it loads
-		_$lightbox.find('.img-container img').load(_deblur);
+		$lightbox.find('.img-container img').load(_deblur);
 	}
 
 	// Public
@@ -272,11 +264,16 @@ var modal = (function(){
 	 * opens modal in lightbox
 	 */
 	var open = function(e){
-		_$lightbox = $('.lightbox');
-		var $fig = $(e.target).closest('figure');
-		$fig.clone().appendTo(_$lightbox);
-		console.log('opening ', $fig.html());
-		_$lightbox.fadeIn(500);
+		var $fig;
+		if(e != undefined){
+			$fig = $(e.target).closest('figure');
+		}
+		else{
+			$fig = $(this);
+		}
+		var $lightbox = $('.lightbox');
+		$fig.clone().appendTo($lightbox);
+		$lightbox.fadeIn(500);
 		_sizeImgContainer();
 		_setEvents();
 	}
@@ -285,14 +282,15 @@ var modal = (function(){
 	 * closes modal and calls callback if one is passed
 	 */
 	var close = function(callback = undefined){
+		var $lightbox = $('.lightbox');
 		if (typeof callback === 'function') {
-			_$lightbox.find('figure').fadeOut(500, function() {
+			$lightbox.find('figure').fadeOut(500, function() {
 				$('.lightbox').children().remove();
 				callback();
 			});
 		} else {
-			_$lightbox.fadeOut(500, function() {
-				_$lightbox.children().remove();
+			$lightbox.fadeOut(500, function() {
+				$lightbox.children().remove();
 			});
 		}
 	}
@@ -305,10 +303,6 @@ var modal = (function(){
 
 var form = (function(){
 	// Private
-	/**
-	 * lightbox element
-	 */
-	var _$lightbox;
 	/**
 	 * trigger click if enter was pressed
 	 */
@@ -417,7 +411,7 @@ var form = (function(){
 		$form.find('.input-field input[name=phonenumber]').each(function() {
 			var $input = $(this);
 			var length = $input.val().length;
-			if (length == 10 || length == 11) valid($input);
+			if (length == 10 || length == 11) _valid($input);
 			else {
 				allValid = false;
 				if (length == 7) _invalid($input, 'Please include your area code');
@@ -492,7 +486,7 @@ var form = (function(){
 			url: "https://ouresources.usu.edu/_assets/forms/forms.php", //form_submit.aspx
 			data: $form.serialize(),
 			success: function(data) {
-				showDownload();
+				_showDownload();
 			},
 			error: function(data) {
 				$btn.find('input').val("Couldn't Submit");
@@ -523,7 +517,7 @@ var form = (function(){
 			var newTab = window.open(viewBookURL, '_blank');
 			newTab.focus();
 		})
-		if(isURL(sheetURL)){
+		if(_isURL(sheetURL)){
 			$btn.click(function(){
 				window.location.href=sheetURL;
 			});
@@ -533,24 +527,34 @@ var form = (function(){
 		}
 	}
 	/**
+	 * Checks if string is a valid url (used to check if the major sheet pdf url is valid)
+	 */
+	var _isURL = function(str){
+		if(typeof str === 'string'){
+			if(str.indexOf('http') >= 0) return true;
+		}
+		return false;
+	}
+	/**
 	 * set events for form
 	 */
 	var _setEvents = function(){
-		_$lightbox = $('.lightbox');
+		console.log('setting');
+		var $lightbox = $('.lightbox');
 		// submit form by clicking submit
-		_$lightbox.find('.submit').click(_submit);
+		$lightbox.find('.submit').click(_submit);
 		// change select field by clicking it
-		_$lightbox.find('.select-field').click(_selectUpdate);
+		$lightbox.find('.select-field').click(_selectUpdate);
 		// ignore some lame keystrokes in number fields
-		_$lightbox.find('input[type=number]').keydown(_checkInput);
+		$lightbox.find('input[type=number]').keydown(_checkInput);
 		// close form by clicking off form or close icon
-		_$lightbox.find('.more-info, em.close-form, .cover').click(close);
+		$lightbox.find('.more-info, em.close-form, .cover').click(close);
 		// Stop click even propogating to lightbox to prevent closing modal
-		_$lightbox.find('form').click(function(e) {
+		$lightbox.find('form').click(function(e) {
 			return false;
 		});
 
-		_$lightbox.find('.select-field').focus(function() {
+		$lightbox.find('.select-field').focus(function() {
 			$(this).children('.select-list').focus();
 		});
 
@@ -561,7 +565,7 @@ var form = (function(){
 
 		// submit form by pressing enter on submit button
 		$lightbox.find('.submit').keydown(function(e) {
-			enterClick.call($(this).children('input'), e);
+			_enterClick.call($(this).children('input'), e);
 		});
 
 		// open select list by clicking it
@@ -595,11 +599,30 @@ var form = (function(){
 
 	// Public
 	var open = function(){
-
+		var $lightbox = $('.lightbox');
+		var $moreInfo = $('.more-info');
+		$moreInfo.clone().appendTo($lightbox.find('figure'));
+		$moreInfo = $lightbox.find('figure .more-info');
+		$lightbox.find('.img-container, figcaption').append('<div class="cover"></div>');
+		$lightbox.find('.cover').fadeTo(300, 0.3);
+		$lightbox.animate({scrollTop: 0}, 300);
+		$moreInfo.fadeIn(300, _setEvents);
+		$moreInfo.find('.form-container').animate({
+			left: '0'
+		}, 300);
 	}
 
 	var close = function(){
-
+		var $lightbox = $('.lightbox');
+		$lightbox.find('.more-info').find('.form-container').animate({
+			left: '-350px'
+		}, 300);
+		$lightbox.find('.cover').fadeOut(300,function(){
+			$lightbox.find('.cover').remove();
+		});
+		$lightbox.find('.more-info').fadeOut(300, function() {
+			$lightbox.find('.more-info').remove();
+		});
 	}
 
 	return{
@@ -611,9 +634,10 @@ var form = (function(){
 var video = (function(){
 	// Public
 	var open = function(){
+		var $lightbox = $('.lightbox');
 		var $vidWindow = $('#grid-gallery>.apply-now');
-		vidWindow.clone().appendTo(_$lightbox);
-		_$lightbox.find('.apply-now').fadeIn(500);
+		$vidWindow.clone().appendTo($lightbox);
+		$lightbox.find('.apply-now').fadeIn(500);
 	}
 
 	return {
