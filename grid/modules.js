@@ -70,14 +70,11 @@ var grid = (function(){
 		var $tab = $('#grid-'+tabArg+'-link');
 		var degArg = _getURLParam('deg');
 		if(degArg){
-			console.log(degArg);
 			degArg = decodeURIComponent(degArg).toUpperCase();
-			console.log(degArg);
-			// degArg = degArg.split('+').join(' ').toUpperCase();
 			_$gridGal.find('.grid-wrap').each(function(i){
 				$(this).find('figure').each(function(){
 					var $fig = $(this);
-					var degName = $fig.find('figcaption>h3').html().toUpperCase();
+					var degName = $fig.find('figcaption .degree-name').html().toUpperCase();
 					if(degName == degArg) {
 						if(!tabArg && $('#grid-'+i+'-link').length !== 0){
 							changeGrid(i);
@@ -221,14 +218,18 @@ var modal = (function(){
 		$lightbox.find('.img-container').height(containerHeight);
 	}
 
-	var _getUrl = function(){
-		var title = $(this).html();
-		title = encodeURIComponent(title);
+	var _getUrl = function(fig){
+		var $fig = $(fig);
 		var url = window.location.href;
 		// cutting of any previous http parameters
 		url = url.substring(0, url.indexOf('?'));
-		// directing page to direct link to degree
-		window.location.href = url+"?deg="+title;
+		// if function was passed a figure add degree name parameter onto base page url
+		if($fig.is('figure')){
+			var title = $fig.find('.degree-name').html();
+			title = encodeURIComponent(title);
+			url = url+"?deg="+title;
+		}
+		return url;
 	}
 
 	var _deblur = function(){
@@ -253,8 +254,6 @@ var modal = (function(){
 		$lightbox.find('.more-info-btn').click(form.open);
 		// open video by clicking "apply now"
 		$lightbox.find('.apply-now-btn').click(close.bind(this, video.open));
-		// get direct degree url by clicking degree name
-		$lightbox.find('figcaption h3').click(_getUrl);
 		// deblur modal image when it loads
 		$lightbox.find('.img-container img').load(_deblur);
 	}
@@ -271,6 +270,10 @@ var modal = (function(){
 		else{
 			$fig = $(this);
 		}
+		// Adding degree name parameter to url so degree can be linked to by copying
+		// current url. replaceState is used so history is not changed
+		var degreeName = $fig.find('.degree-name').html();
+		window.history.replaceState({modalOpen: true}, degreeName, _getUrl($fig));
 		var $lightbox = $('.lightbox');
 		$fig.clone().appendTo($lightbox);
 		$lightbox.fadeIn(500);
@@ -282,6 +285,8 @@ var modal = (function(){
 	 * closes modal and calls callback if one is passed
 	 */
 	var close = function(callback = undefined){
+		// Removing degree parameter from url.
+		window.history.replaceState({modalOpen: false}, 'STEM Degrees', _getUrl('html'));
 		var $lightbox = $('.lightbox');
 		if (typeof callback === 'function') {
 			$lightbox.find('figure').fadeOut(500, function() {
@@ -474,7 +479,7 @@ var form = (function(){
 	 */
 	var _send = function($form) {
 		var $btn = $form.find('.submit');
-		var programTitle = $form.closest('figure').find('figcaption h3').text();
+		var programTitle = $form.closest('figure').find('figcaption .degree-name').text();
 		var department = $('#degrees-header h2').text();
 		$form.find('input[name=program]').val(programTitle);
 		$form.find('input[name=department]').val(department);
