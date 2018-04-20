@@ -1,14 +1,14 @@
 $(document).ready(function(){
   var urls = [
-	  ["{{f:18731661}}","A PLANT SCIENTIST"],
-	  ["{{f:18731662}}","AN OUTDOOR PRODUCT DESIGNER"],
-	  ["{{f:18731663}}","A VETERINARIAN"],
-	  ["{{f:18731664}}","A FACS TEACHER"],
-	  ["{{f:18731665}}","A LANDSCAPE ARCHITECT"],
-	  ["{{f:18731666}}","A SMALL BUSINESS OWNER"],
-	  ["{{f:18731667}}","A PILOT"],
-	  ["{{f:18731668}}","A REPORTER"],
-	  ["{{f:18731669}}","A DIETICIAN"]
+	  ["https://caas.usu.edu/ou-images/caas-web-banner-2.jpg","A PLANT SCIENTIST"],
+	  ["https://caas.usu.edu/ou-images/caas-web-banner-1.jpg","AN OUTDOOR PRODUCT DESIGNER"],
+	  ["https://caas.usu.edu/ou-images/caas-web-banner-4.jpg","A VETERINARIAN"],
+	  ["https://caas.usu.edu/ou-images/caas-web-banner-9.jpg","A FACS TEACHER"],
+	  ["https://caas.usu.edu/ou-images/caas-web-banner-3.jpg","A LANDSCAPE ARCHITECT"],
+	  ["https://caas.usu.edu/ou-images/caas-web-banner-8.jpg","A SMALL BUSINESS OWNER"],
+	  ["https://caas.usu.edu/ou-images/caas-web-banner-5.jpg","A PILOT"],
+	  ["https://caas.usu.edu/ou-images/caas-web-banner-6.jpg","A REPORTER"],
+	  ["https://caas.usu.edu/ou-images/caas-web-banner-7.jpg","A DIETICIAN"]
   ];
   var index = Math.floor(Math.random() * urls.length);
   $banner = $('.banner');

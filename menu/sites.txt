@@ -1,0 +1,348 @@
+ ---------------- Counties ----------------
+1 Beaver
+https://extension.usu.edu/beaver/
+2 BoxElder
+https://extension.usu.edu/boxelder/
+3 Cache
+https://extension.usu.edu/cache/
+4 Carbon
+https://extension.usu.edu/carbon/
+5 Davis
+https://extension.usu.edu/davis/
+6 Duchesne
+https://extension.usu.edu/duchesne/
+7 Emery
+https://extension.usu.edu/emery/
+8 Garfield
+https://extension.usu.edu/garfield/
+9 Grand
+https://extension.usu.edu/grand/
+10 Juab
+https://extension.usu.edu/juab/
+11 Kane
+https://extension.usu.edu/kane/
+12 Millard
+https://extension.usu.edu/millard/
+13 Morgan
+https://extension.usu.edu/morgan/
+14 Piute
+https://extension.usu.edu/piute/
+15 Rich
+https://extension.usu.edu/rich/
+16 SaltLake
+https://extension.usu.edu/saltlake/
+17 SanJuan
+https://extension.usu.edu/sanjuan/
+18 Sanpete
+https://extension.usu.edu/sanpete/
+19 Sevier
+https://extension.usu.edu/sevier/
+20 Summit
+https://extension.usu.edu/summit/
+21 Tooele
+https://extension.usu.edu/tooele/
+22 Uintah
+https://extension.usu.edu/uintah/
+23 Utah
+https://extension.usu.edu/utah/
+24 Iron
+https://extension.usu.edu/iron/
+25 Washington
+https://extension.usu.edu/washington/
+26 Wasatch
+https://extension.usu.edu/wasatch/
+27 Wayne
+https://extension.usu.edu/wayne/
+28 Weber
+https://extension.usu.edu/weber/
+
+
+
+---------------- Information & Resources ----------------
+2 Aging
+https://extension.usu.edu/aging/
+4 Agribusiness
+https://extension.usu.edu/agribusiness/
+
+
+---------------- Specific Programs ----------------
+1 AdoptSageGrouse
+https://adoptasagegrouse.usu.edu/
+3 AgrAbility
+https://agrability.usu.edu/
+
+
+
+---------------- Events ----------------
+27 Conference
+https://extension.usu.edu/conference/
+
+
+
+---------------- 4-H ----------------
+16 BoxElder4-H
+https://boxelder4h.usu.edu/
+
+
+
+---------------- Internal ----------------
+41 Employee
+https://extension.usu.edu/employee/
+
+
+
+---------------- Organization ----------------
+66 IORT
+https://extension.usu.edu/iort/
+
+
+
+---------------- Regions ----------------
+131 WasatchFront
+https://extension.usu.edu/wasatchfront/
+
+
+
+
+
+
+
+5 AgWasteManagement
+https://extension.usu.edu/agwastemanagement/
+6 AnimalHealth
+https://extension.usu.edu/animalhealth/
+7 APECExtension
+https://apecextension.usu.edu/
+8 Awards
+https://extension.usu.edu/awards/
+9 AWARE
+https://aware.usu.edu/
+
+11 Beekeeping
+https://beekeeping.usu.edu/
+12 BeetleKill
+https://extension.usu.edu/beetlekill/
+13 BeetleKillTimer
+https://beetlekill.usu.edu/
+14 Behave
+https://extension.usu.edu/behave/
+
+
+17 BuildingStrongChildren
+https://buildingstrongchildren.usu.edu/
+
+19 Canning
+https://extension.usu.edu/canning/
+20 CAPS
+https://utahpests.usu.edu/caps/
+
+22 CarbonCounty4-H
+https://carboncounty4-h.org/
+23 ChangeMakesSense
+https://extension.usu.edu/changemakessense/
+24 Chicken
+https://poultry.usu.edu/
+25 Clone
+https://extension.usu.edu/clone/
+26 CloneSubdomain
+https://subdomain.ou-ext.usu.edu/
+
+28 CreateBetterHealth
+http://createbetterhealth.usu.edu/
+29 CWEL
+https://cwel.usu.edu/
+30 CyberLivestock
+https://extension.usu.edu/cyberlivestock/
+31 Dairy
+https://extension.usu.edu/dairy/
+
+33 DirtDiggersDigest
+https://extension.usu.edu/dirtdiggersdigest/
+34 Diverse_Ag
+https://diverseag.org/
+35 diversity
+https://extension.usu.edu/diversity/
+36 Divorce
+https://divorce.usu.edu/
+37 Dixie4h
+https://dixie4h.org/
+38 DixieGardener
+https://dixiegardener.org/
+
+
+42 Equine
+https://extension.usu.edu/equine/
+43 ESP
+https://extension.usu.edu/esp/
+44 Espanol
+https://extension.usu.edu/Espanol/
+45 Experts
+https://extensiondev.usu.edu/experts/
+46 extension
+https://extension.usu.edu/
+47 FieldGuides
+https://extension.usu.edu/fieldguides/
+48 Finance
+https://extension.usu.edu/finance/
+49 Food
+https://extension.usu.edu/food/
+50 Food_Biz
+https://extension.usu.edu/foodbiz/
+51 FoodPreservation
+https://extension.usu.edu/foodpreservation/
+52 FoodSafety
+https://extension.usu.edu/foodsafety/
+53 FoodSense
+https://extension.usu.edu/foodsense/
+54 FoodStorage
+https://extension.usu.edu/foodstorage/
+55 Forestry
+https://forestry.usu.edu/
+56 fscreate
+https://extension.usu.edu/fscreate/
+
+59 HBE
+https://extension.usu.edu/hbe/
+60 HealthWellness
+https://extension.usu.edu/healthwellness/
+61 HealthyFamilyFun
+https://extension.usu.edu/healthyfamilyfun/
+62 HealthyRelationshipsUtah
+https://healthyrelationshipsutah.org/
+63 HowToUtah
+https://howtoutah.org/
+64 HungerSolutions
+https://extension.usu.edu/hsi/
+65 IGPLive
+https://extension.usu.edu/igp/
+
+67 IPM
+https://utahpests.usu.edu/ipm/
+69 ironmg
+https://extension.usu.edu/ironmg/
+70 Irrigation
+https://extension.usu.edu/irrigation/
+
+73 KidsCamps
+https://kidscamps.usu.edu/
+74 Marketing
+https://extension.usu.edu/marketing/
+75 MarriageSurvival
+https://marriagesurvival.org/
+76 MasterGardener
+https://extension.usu.edu/mastergardener/
+77 Media
+https://extension.usu.edu/pressroom/
+
+80 MPR
+https://extension.usu.edu/mpr/
+81 NACAA2017
+https://extension.usu.edu/nacaa2017/
+82 NatureHighCamp
+https://naturehighcamp.org/
+83 OgdenBotanicalGardens
+https://ogdenbotanicalgardens.org/
+84 OUCampus
+https://extension.usu.edu/ou-campus/
+85 Permaculture
+https://permaculture.ou-ext.usu.edu/
+86 PesticideLicensing
+https://extension.usu.edu/pesticidecert/
+87 pesticidetrial
+https://extension.usu.edu/pesticidetrial/
+
+89 ProductionHort
+https://extension.usu.edu/productionhort/
+90 Range-Plants-of-Utah
+https://extension.usu.edu/rangeplants/
+91 rangelands
+https://extension.usu.edu/rangelands/
+92 Relationships
+https://extension.usu.edu/relationships/
+
+94 RRA
+https://extensiondev.usu.edu/rra/
+95 RuralTax
+https://ruraltax.org/
+
+97 SaltLake4-H
+http://saltlakecounty4-h.org/
+
+100 SBDC
+https://sbdc.usu.edu/
+101 SchoolIPM
+https://utahpests.usu.edu/schoolipm/
+
+103 SevierCounty4-H
+https://seviercounty4-h.org/
+104 Sewing
+https://extension.usu.edu/sewing/
+105 SmallFarms
+https://smallfarms.usu.edu/
+106 Soaper_Hero
+https://soaperhero.org/
+107 Spanish
+https://extension.usu.edu/spanish/
+108 staging_xsl
+https://dev01.usu.edu/
+109 StreamSideScience
+https://streamsidescience.usu.edu/
+
+111 Swaner
+http://swanerecocenter.org/
+
+113 Turfgrass
+https://turfgrass.usu.edu/
+114 UACAA
+https://extension.usu.edu/uacaa/
+115 UAE4-HW
+https://extension.usu.edu/uae4hw/
+116 UEDEN
+https://extension.usu.edu/ueden/
+
+118 UPPDL
+https://utahpests.usu.edu/uppdl/
+119 USUBotanicalCenter
+https://usubotanicalcenter.org/
+
+121 utah4-H
+https://utah4-h.org/
+122 UtahBiomassResources
+https://utahbiomassresources.org/
+123 utahcbcp
+https://utahcbcp.org/
+124 UtahCounty4-H
+https://utahcounty4h.org/
+125 UtahEFNEP
+https://utahefnep.org/
+126 UtahPests
+https://utahpests.usu.edu/
+127 UtahVegetableVarietiesReview
+https://extension.usu.edu/vegetablereview/
+128 UtahWaterWatch
+https://extension.usu.edu/utahwaterwatch/
+129 VetFeed
+https://vetfeed.usu.edu/
+
+133 Water
+https://extension.usu.edu/water/
+134 Water_maps
+https://watermaps.usu.edu/
+135 WaterQuality
+https://extension.usu.edu/waterquality/
+138 WeberCounty4-h
+https://webercounty4-h.org/
+139 Webinars
+https://extension.usu.edu/webinars/
+140 WildlifeConflicts
+https://extension.usu.edu/wildlifeconflicts/
+141 WRDC
+https://wrdc.usu.edu/
+142 WROAM
+https://extension.usu.edu/wraom/
+143 xsl
+https://dev01.usu.edu/
+144 YardAndGarden
+https://extension.usu.edu/yardandgarden/
+145 YouthCanCook
+https://extension.usu.edu/youthcancook/

@@ -1,5 +1,3 @@
-
-
 #spacer{
   height: 2000px;
 }
@@ -80,6 +78,10 @@ ul.navbar-right > li > form > div > input {
   /*background: inherit;*/
 }
 
+/* ul.nav li.dropdown:hover > ul.dropdown-menu{
+  display: block;
+} */
+
 .dropdown.yamm-fw .dropdown-menu{
   left: 0;
   right: 0;
@@ -98,16 +100,4 @@ ul.navbar-nav > li > a{
 
 nav.navbar{
   margin: 0;
-}
-
-.dropdown-toggle > .fa-angle-down{
-  transform: rotate(0deg);
-  transform-origin: 39% 45%;
-  transition: transform .25s ease-in-out;
-}
-
-.dropdown-toggle > .fa-angle-down.up-angle{
-  transform: rotate(-180deg);
-  transform-origin: 39% 45%;
-  transition: transform .25s ease-in-out;
 }

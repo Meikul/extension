@@ -10,14 +10,17 @@
 	margin-bottom: 0;
 }
 
-.main-navigation + .main-container-wide .main-containter-wrapper{
-	width: 100%;
+.main-navigation + .main-container-wide .main-container-wrapper,
+.main-navigation + .main-container-wide .main-container-wrapper #content,
+.main-navigation + .main-container-wide .main-container-wrapper .main-content{
+	max-width: none;
+	width: 100vw;
 	margin: 0;
 }
 
-.top-full-wide.full-width{
-	/* width: 100vw; */
-}
+/* .top-full-wide.full-width{
+	width: 100vw;
+} */
 
 .grid .msn-item{
 	text-align: center;
@@ -89,13 +92,17 @@
 	bottom: 32px;
 }
 
+.grid-wrap{
+	padding: 0 40px;
+}
+
 .msn-item h3::before {
 	content: '';
 	display: block;
 	height: 20px;
 	width: 19px;
 	background: no-repeat center;
-	background-image: url(https://caas.usu.edu/ou-images/hover-image-bottomleft-triangle.png);
+	background-image: url(https://caas.usu.edu/images/hover-image-bottomleft-triangle.png);
 	position: absolute;
 	bottom: -20px;
 	left: 0px
@@ -122,11 +129,10 @@ font-size: 300%;
 }
 
 .banner{
-	margin-bottom: -15px;
-	position: relative;
 	min-height: 200px;
 	max-height: 400px;
 	height: 40vh;
+	position: relative;
 	overflow: hidden;
 }
 
