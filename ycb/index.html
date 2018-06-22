@@ -1,0 +1,2329 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <base href="https://caas.usu.edu">
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script type="text/javascript">
+    window.NREUM || (NREUM = {}), __nr_require = function (e, t, n) {
+      function r(n) {
+        if (!t[n]) {
+          var o = t[n] = {
+            exports: {}
+          };
+          e[n][0].call(o.exports, function (t) {
+            var o = e[n][1][t];
+            return r(o || t)
+          }, o, o.exports)
+        }
+        return t[n].exports
+      }
+      if ("function" == typeof __nr_require) return __nr_require;
+      for (var o = 0; o < n.length; o++) r(n[o]);
+      return r
+    }({
+      1: [function (e, t, n) {
+        function r() {}
+
+        function o(e, t, n) {
+          return function () {
+            return i(e, [f.now()].concat(u(arguments)), t ? null : this, n), t ? void 0 : this
+          }
+        }
+        var i = e("handle"),
+          a = e(2),
+          u = e(3),
+          c = e("ee").get("tracer"),
+          f = e("loader"),
+          s = NREUM;
+        "undefined" == typeof window.newrelic && (newrelic = s);
+        var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace",
+            "inlineHit", "addRelease"
+          ],
+          d = "api-",
+          l = d + "ixn-";
+        a(p, function (e, t) {
+            s[t] = o(d + t, !0, "api")
+          }), s.addPageAction = o(d + "addPageAction", !0), s.setCurrentRouteName = o(d + "routeName", !0), t.exports =
+          newrelic, s.interaction = function () {
+            return (new r).get()
+          };
+        var m = r.prototype = {
+          createTracer: function (e, t) {
+            var n = {},
+              r = this,
+              o = "function" == typeof t;
+            return i(l + "tracer", [f.now(), e, n], r),
+              function () {
+                if (c.emit((o ? "" : "no-") + "fn-start", [f.now(), r, o], n), o) try {
+                  return t.apply(this, arguments)
+                } catch (e) {
+                  throw c.emit("fn-err", [arguments, this, e], n), e
+                } finally {
+                  c.emit("fn-end", [f.now()], n)
+                }
+              }
+          }
+        };
+        a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (e, t) {
+          m[t] = o(l + t)
+        }), newrelic.noticeError = function (e) {
+          "string" == typeof e && (e = new Error(e)), i("err", [e, f.now()])
+        }
+      }, {}],
+      2: [function (e, t, n) {
+        function r(e, t) {
+          var n = [],
+            r = "",
+            i = 0;
+          for (r in e) o.call(e, r) && (n[i] = t(r, e[r]), i += 1);
+          return n
+        }
+        var o = Object.prototype.hasOwnProperty;
+        t.exports = r
+      }, {}],
+      3: [function (e, t, n) {
+        function r(e, t, n) {
+          t || (t = 0), "undefined" == typeof n && (n = e ? e.length : 0);
+          for (var r = -1, o = n - t || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[t + r];
+          return i
+        }
+        t.exports = r
+      }, {}],
+      4: [function (e, t, n) {
+        t.exports = {
+          exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" !=
+            typeof window.performance.timing.navigationStart
+        }
+      }, {}],
+      ee: [function (e, t, n) {
+        function r() {}
+
+        function o(e) {
+          function t(e) {
+            return e && e instanceof r ? e : e ? c(e, u, i) : i()
+          }
+
+          function n(n, r, o, i) {
+            if (!d.aborted || i) {
+              e && e(n, r, o);
+              for (var a = t(o), u = m(n), c = u.length, f = 0; f < c; f++) u[f].apply(a, r);
+              var p = s[y[n]];
+              return p && p.push([b, n, r, a]), a
+            }
+          }
+
+          function l(e, t) {
+            v[e] = m(e).concat(t)
+          }
+
+          function m(e) {
+            return v[e] || []
+          }
+
+          function w(e) {
+            return p[e] = p[e] || o(n)
+          }
+
+          function g(e, t) {
+            f(e, function (e, n) {
+              t = t || "feature", y[n] = t, t in s || (s[t] = [])
+            })
+          }
+          var v = {},
+            y = {},
+            b = {
+              on: l,
+              emit: n,
+              get: w,
+              listeners: m,
+              context: t,
+              buffer: g,
+              abort: a,
+              aborted: !1
+            };
+          return b
+        }
+
+        function i() {
+          return new r
+        }
+
+        function a() {
+          (s.api || s.feature) && (d.aborted = !0, s = d.backlog = {})
+        }
+        var u = "nr@context",
+          c = e("gos"),
+          f = e(2),
+          s = {},
+          p = {},
+          d = t.exports = o();
+        d.backlog = s
+      }, {}],
+      gos: [function (e, t, n) {
+        function r(e, t, n) {
+          if (o.call(e, t)) return e[t];
+          var r = n();
+          if (Object.defineProperty && Object.keys) try {
+            return Object.defineProperty(e, t, {
+              value: r,
+              writable: !0,
+              enumerable: !1
+            }), r
+          } catch (i) {}
+          return e[t] = r, r
+        }
+        var o = Object.prototype.hasOwnProperty;
+        t.exports = r
+      }, {}],
+      handle: [function (e, t, n) {
+        function r(e, t, n, r) {
+          o.buffer([e], r), o.emit(e, t, n)
+        }
+        var o = e("ee").get("handle");
+        t.exports = r, r.ee = o
+      }, {}],
+      id: [function (e, t, n) {
+        function r(e) {
+          var t = typeof e;
+          return !e || "object" !== t && "function" !== t ? -1 : e === window ? 0 : a(e, i, function () {
+            return o++
+          })
+        }
+        var o = 1,
+          i = "nr@id",
+          a = e("gos");
+        t.exports = r
+      }, {}],
+      loader: [function (e, t, n) {
+        function r() {
+          if (!x++) {
+            var e = h.info = NREUM.info,
+              t = d.getElementsByTagName("script")[0];
+            if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && t)) return s.abort();
+            f(y, function (t, n) {
+              e[t] || (e[t] = n)
+            }), c("mark", ["onload", a() + h.offset], null, "api");
+            var n = d.createElement("script");
+            n.src = "https://" + e.agent, t.parentNode.insertBefore(n, t)
+          }
+        }
+
+        function o() {
+          "complete" === d.readyState && i()
+        }
+
+        function i() {
+          c("mark", ["domContent", a() + h.offset], null, "api")
+        }
+
+        function a() {
+          return E.exists && performance.now ? Math.round(performance.now()) : (u = Math.max((new Date).getTime(),
+            u)) - h.offset
+        }
+        var u = (new Date).getTime(),
+          c = e("handle"),
+          f = e(2),
+          s = e("ee"),
+          p = window,
+          d = p.document,
+          l = "addEventListener",
+          m = "attachEvent",
+          w = p.XMLHttpRequest,
+          g = w && w.prototype;
+        NREUM.o = {
+          ST: setTimeout,
+          SI: p.setImmediate,
+          CT: clearTimeout,
+          XHR: w,
+          REQ: p.Request,
+          EV: p.Event,
+          PR: p.Promise,
+          MO: p.MutationObserver
+        };
+        var v = "" + location,
+          y = {
+            beacon: "bam.nr-data.net",
+            errorBeacon: "bam.nr-data.net",
+            agent: "js-agent.newrelic.com/nr-1071.min.js"
+          },
+          b = w && g && g[l] && !/CriOS/.test(navigator.userAgent),
+          h = t.exports = {
+            offset: u,
+            now: a,
+            origin: v,
+            features: {},
+            xhrWrappable: b
+          };
+        e(1), d[l] ? (d[l]("DOMContentLoaded", i, !1), p[l]("load", r, !1)) : (d[m]("onreadystatechange", o), p[
+          m]("onload", r)), c("mark", ["firstbyte", u], null, "api");
+        var x = 0,
+          E = e(4)
+      }, {}]
+    }, {}, ["loader"]);
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="author" content="Utah State Unversity">
+
+  <meta name="robots" content="follow, all">
+
+  <meta name="revisit-after" content="5 days">
+
+  <meta name="language" content="en">
+
+
+  <meta name="Description" content="Whether you want to work on a farm or ranch, or you want to medically treat animals, a degree from USU will get you on the right track today.">
+
+
+
+
+
+
+  <link href="//ajax.googleapis.com" rel="dns-prefetch">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://www.usu.edu/style/classic-full-15.min.css">
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://ouresources.usu.edu/_resources/css/global-custom.css">
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://ouresources.usu.edu/_resources/css/profile-page-v0-classic.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>Work With Plants and Animals as a Professional | CAAS | USU</title>
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
+
+
+  <script src="https://www.usu.edu/assets/bootstrap/3.3.2/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- please don't remove, not pushed to production -->
+
+  <link rel="icon" href="/_resources/global_includes/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/_resources/caas-css/custom.css">
+
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="/_resources/global_includes/masonryInit.js"></script>
+  <script src="file:///Users/michael/Projects/extension/ycb/drip-header.js"></script>
+  <!-- Drip -->
+  <!-- <script type="text/javascript">
+    var _dcq = _dcq || [];
+    var _dcs = _dcs || {};
+    _dcs.account = '6932252';
+    (function () {
+      var dc = document.createElement('script');
+      dc.type = 'text/javascript';
+      dc.async = true;
+      dc.src = '//tag.getdrip.com/6932252.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(dc, s);
+    })();
+  </script> -->
+  <!-- end Drip -->
+
+  <meta name="google-site-verification" content="AQ7FlR0rjEaMgMWQHNN-4fLQFp8GJuAysmYnxNSa02o" />
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window,
+      document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1204353742936523'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1204353742936523&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- DO NOT MODIFY -->
+  <!-- End Facebook Pixel Code -->
+
+</head>
+
+<body class="">
+  <a href="#content" class="sr-only">Skip to main content</a>
+  <div id="global-header">
+    <div id="global-header-wrapper">
+      <div class="row">
+        <div class="brand">
+          <a href="/index.php">
+            <img class="img-responsive" title="College of Agriculture and Applied Sciences" src="/_resources/includes/CAAS-White-Tower-Site-Header.png"
+              alt="Utah State University Logo">
+          </a>
+        </div>
+        <div class="header-right">
+          <div class="row">
+            <div class="header-navigation pull-right" role="navigation">
+              <ul class="header-links">
+                <li>
+                  <a href="http://www.usu.edu/">
+                    <span class="fa fa-home fa-lg"></span>
+                    <span class="sr-only">USU Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://usu.edu/azindex/">A-Z Index</a>
+                </li>
+                <li>
+                  <a href="http://usu.edu/myusu/">MyUSU</a>
+                </li>
+                <li>
+                  <a href="http://directory.usu.edu/">Directory</a>
+                </li>
+              </ul>
+            </div>
+            <div class="header-search pull-right">
+              <form method="get" role="form" name="search" id="search" action="https://www.usu.edu/search/">
+                <div class="input-group pull-right">
+                  <label class="sr-only" for="gsearch">Search</label>
+                  <input id="gsearch" name="q" type="text" class="form-control" placeholder="" value="">
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn" tabindex="-1">
+                      <span class="glyphicon glyphicon-search"></span>
+                      <span class="sr-only">Search USU</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="header-support pull-right"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-navigation gray-nav">
+    <div class="main-navigation-wrapper">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="main-navigation-collapse">
+          <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
+              <li class="dropdown yamm-fw">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Students&nbsp;
+                  <em class="fa fa-caret-down" aria-hidden="true">&nbsp;</em>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <div class="container">
+                      <!-- Yamm Content Container -->
+                      <div class="yamm-content">
+                        <div class="row">
+                          <div class="col-md-3 col-sm-6">
+                            <h2>Student Involvement</h2>
+                            <ul class="list-unstyled">
+                              <li>
+                                <a href="/students/ambassadors.php">Ambassadors</a>
+                              </li>
+                              <li>
+                                <a title="CAAS Council" href="/students/council.php">Council</a>
+                              </li>
+                              <li>
+                                <a href="/students/clubs.php">Clubs</a>
+                              </li>
+                              <li>
+                                <a href="/students/index.php">Get Involved</a>
+                              </li>
+                              <li>
+                                <a title="Undergraduate Research" href="/students/undergrad-research.php">Undergraduate Research</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-3 col-sm-6">
+                            <h2>Student Resources</h2>
+                            <ul class="list-unstyled">
+                              <li>
+                                <a title="Internships" href="/students/internships.php">Internship</a>
+                              </li>
+                              <li>
+                                <a href="/students/scholarships/index.php">Scholarships</a>
+                              </li>
+                              <li>
+                                <a href="https://scheduling.usu.edu/" target="_new">Reserve a Study Room</a>
+                              </li>
+                              <li title="CAAS Awards">
+                                <a title="CAAS Awards" href="/awards/index.php">Awards</a>
+                              </li>
+                              <li>
+                                <a title="Student Travel Reimbursement" href="/students/travel-reimbursement.php">Travel Reimbursement</a>
+                              </li>
+                              <li>
+                                <a title="Student Graduation" href="/graduation.php">Graduation Information</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-3 col-sm-6">
+                            <h2>Advising</h2>
+                            <ul class="list-unstyled">
+                              <li>
+                                <a title="CAAS Advisors" href="/advising/index.php">Find My Advisor/Schedule An Appointment</a>
+                              </li>
+                              <li>
+                                <a title="Prepare for your Advsing Visit" href="/advising/prepare.php">Prepare For Your Appointment</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-md-3 col-xs-6">
+                            <h2>Follow us</h2>
+                            <ul class="list-unstyled">
+                              <li>
+                                <a href="https://www.facebook.com/usucaas/?fref=ts" target="_blank">
+                                  <em class="fa fa-facebook-square" aria-hidden="true">&nbsp;</em>Facebook</a>
+                              </li>
+                              <li>
+                                <a href="https://www.instagram.com/usucaas/" target="_blank">
+                                  <em class="fa fa-instagram" aria-hidden="true">&nbsp;</em>Instagram</a>
+                              </li>
+                              <li>
+                                <a href="https://twitter.com/usucaas" target="_blank">
+                                  <em class="fa fa-twitter-square" aria-hidden="true">&nbsp;</em>Twitter</a>
+                              </li>
+                              <li>
+                                <a href="https://www.youtube.com/channel/UCVGnMZa6UNlIhUjRJ6tElMg" target="_blank">
+                                  <em class="fa fa-youtube-play" aria-hidden="true">&nbsp;</em>YouTube</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Yamm Content Container -->
+                  </li>
+                </ul>
+              </li>
+              <li class="yamm">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Highlights&nbsp;
+                  <em class="fa fa-caret-down" aria-hidden="true">&nbsp;</em>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a title="Student Highlights" href="/news/student-highlight.php">Student Highlights</a>
+                  </li>
+                  <li>
+                    <a title="CAAS News" href="/news/index.php">CAAS News</a>
+                  </li>
+                  <li>
+                    <a title="CAAS in the News" href="/media-mentions.php">CAAS in the News</a>
+                  </li>
+                  <li>
+                    <a title="Research" href="/news/research-highlights.php">Research Highlights</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="yamm">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Departments
+                  <em class="fa fa-caret-down" aria-hidden="true">&nbsp;</em>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a title="Animal, Dairy and Veterinary Sciences" href="https://advs.usu.edu/" target="_blank">Animal, Dairy Veterinary Sciences (ADVS)</a>
+                  </li>
+                  <li>
+                    <a href="https://ndfs.usu.edu/" target="_blank">Nutrition, Dietetics Food Sciences (NDFS)</a>
+                  </li>
+                  <li>
+                    <a title="Applied Economics" href="https://apec.usu.edu/" target="_blank">Applied Economics (APEC)</a>
+                  </li>
+                  <li>
+                    <a title="Plants, Soils and Climate" href="https://psc.usu.edu" target="_blank">Plants, Soils Climate (PSC)</a>
+                  </li>
+                  <li>
+                    <a title="Applied Sciences, Technology &nbsp; Education" href="https://aste.usu.edu" target="_blank">Applied Sciences, Technology Education (ASTE)</a>
+                  </li>
+                  <li>
+                    <a title="School of Veterinary Medicine Home" href="https://vetmed.usu.edu/" target="_blank">Veterinary Medicine (SVM)</a>
+                  </li>
+                  <li>
+                    <a title="Landscape Architecture &nbsp; Environmental Planning" href="https://laep.usu.edu" target="_blank">Landscape Architecture Environmental Planning (LAEP)</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="yamm">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Areas of Study&nbsp;
+                  <em class="fa fa-caret-down" aria-hidden="true">&nbsp;</em>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="https://aste.usu.edu/aviation/index.php">Aviation</a>
+                  </li>
+                  <li>
+                    <a href="/business.php">Business</a>
+                  </li>
+                  <li>
+                    <a href="/design.php">Design</a>
+                  </li>
+                  <li>
+                    <a href="/farm-ranch.php">Farm &amp; Ranch</a>
+                  </li>
+                  <li>
+                    <a href="/food-nutrition.php">Food &amp; Nutrition</a>
+                  </li>
+                  <li>
+                    <a href="/land-environment.php">Land &amp; Environment</a>
+                  </li>
+                  <li>
+                    <a href="/plants-animals.php">Plants &amp; Animals</a>
+                  </li>
+                  <li>
+                    <a href="/stem.php">STEM</a>
+                  </li>
+                  <li>
+                    <a href="/teaching.php">Teaching</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="/degrees.php">Degrees</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown yamm-fw">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Alumni&nbsp;
+                  <em class="fa fa-caret-down" aria-hidden="true">&nbsp;</em>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <div class="container">
+                      <!-- Yamm Content Container -->
+                      <div class="yamm-content">
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-3">
+                            <h3>Who are Alumni?</h3>
+                            <p>Your alumni experience in CAAS begins when you enroll. Our current and former students, graduates,
+                              staff, faculty and donors are all considered alumni.</p>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-2 col-md-push-1">
+                            <h3>Alumni Association</h3>
+                            <p>If you graduated from Utah State University, then you are part of this alumni association.
+                              <a class="btn btn-default btn-block" style="margin-top: 20px;" title="Learn About Alumni Association" href="/alumni/association.php">Learn More</a>
+                            </p>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-2 col-md-push-1">
+                            <h3>Cultivate Magazine</h3>
+                            <p>
+                              <em>Cultivate Magazine</em> is available to all alumni and friends of the college.&nbsp;
+                              <a class="btn btn-default btn-block" style="margin-top: 20px;" title="Cultivate Magazine Issues" href="/alumni/cultivate/index.php">View Cultivate Issues</a>
+                            </p>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-2 col-md-push-1">
+                            <h3>Giving Back</h3>
+                            Donors to CAAS make a world of difference to students who will solve tomorrow's world problems.&nbsp;
+                            <a class="btn btn-default btn-block" title="Giving to CAAS" href="/giving.php">Give Today</a>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-2 col-md-push-1">
+                            <h3>Ag Products BBQ</h3>
+                            Featuring the best of what Utah agriculture offers. Bring your family and friends and enjoy this Aggie tradition.&nbsp;
+                            <a class="btn btn-default btn-block" title="Giving to CAAS" href="/alumni/ag-bbq.php">Learn More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Yamm Content Container -->
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown yamm-fw">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">About CAAS&nbsp;
+                  <em class="fa fa-caret-down" aria-hidden="true">&nbsp;</em>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <div class="container">
+                      <!-- Yamm Content Container -->
+                      <div class="yamm-content">
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-6 col-md-3">
+                            <h3>Map &amp; Directions</h3>
+
+                            <p>Locate CAAS headquarters, receive step-by-step directions and learn how to obtain a visitor parking
+                              permit.
+                            </p>
+                            <a class="btn btn-default btn-block" style="margin-top: 16px;" title="Map &nbsp; Directions" href="/about/map-directions.php">Map &amp; Directions</a>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-3">
+                            <h3>Virtual Tours</h3>
+
+                            <p>Visit classrooms, conference rooms and more using 360� photos of the College of Agriculture and
+                              Applied Science.</p>
+                            <a class="btn btn-default btn-block" style="margin-top: 21px;" title="CAAS Virtual Tours" href="/facilities/index.php">Take a Tour</a>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-3">
+                            <h3>History</h3>
+
+                            <p>Over the past 100 years, CAAS has played a leading role as agriculture has changed from horse-powered
+                              plows to science-driven innovations.
+                              <a class="btn btn-default btn-block" title="CAAS History" href="/about/history.php">View our history</a>
+                            </p>
+                          </div>
+                          <div class="col-xs-12 col-sm-6 col-md-3">
+                            <h3>Message from the Dean</h3>
+
+
+                            <p>Our college is unique. We have a diverse range of academic offerings and are able to honestly
+                              say, we have something for everyone...
+                              <a class="btn btn-default btn-block" title="Dean's Message" href="/about/dean.php">View the full message</a>
+                            </p>
+                          </div>
+                        </div>
+                        <blockquote>
+                          <div class="col-blue-bg">
+                            <h2>
+                              <strong>Our Mission
+                                <br />
+                              </strong>
+                            </h2>
+                            <p>The mission of the College of Agriculture and Applied Sciences is to enhance the lives of people
+                              through education, discovery and outreach, which collectively guide the ethical and sustainable
+                              use of land, food, water, and economic resources, thereby improving the health and well-being
+                              of humans, plants, animals and the environment.</p>
+                          </div>
+                        </blockquote>
+                      </div>
+                    </div>
+                    <!-- Yamm Content Container -->
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown yamm-fw">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Faculty/Staff&nbsp;
+                  <em class="fa fa-caret-down" aria-hidden="true">&nbsp;</em>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <div class="container">
+                      <!-- Yamm Content Container -->
+                      <div class="yamm-content">
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <h2>Administration</h2>
+                            <ul class="list-unstyled">
+                              <li>
+                                <a href="/faculty.php">CAAS Administration</a>
+                              </li>
+                              <li>
+                                <a title="CAAS/Extension/UAES Organizational Chart" href="https://usu.box.com/shared/static/yk1b72cli2ykda5rcoo3qkjvm4bu16h0.pdf"
+                                  target="_blank">Organizational Chart</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-sm-3 hidden-xs">
+                            <h2>Departments</h2>
+                            <ul class="list-unstyled">
+                              <li>
+                                <a href="https://advs.usu.edu/directory/" target="_blank">ADVS</a>
+                              </li>
+                              <li>
+                                <a href="https://apec.usu.edu/directory/" target="_blank">APEC</a>
+                              </li>
+                              <li>
+                                <a href="https://aste.usu.edu/directory/" target="_blank">ASTE</a>
+                              </li>
+                              <li>
+                                <a href="https://laep.usu.edu/directory/" target="_blank">LAEP</a>
+                              </li>
+                              <li>
+                                <a href="https://ndfs.usu.edu/directory/" target="_blank">NDFS</a>
+                              </li>
+                              <li>
+                                <a href="https://psc.usu.edu/directory/" target="_blank">PSC</a>
+                              </li>
+                              <li>
+                                <a href="https://vetmed.usu.edu/directory/" target="_blank">SVM</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-sm-3 visible-xs-block">
+                            <h2>Departments</h2>
+                            <ul class="list-unstyled">
+                              <li>
+                                <a href="https://advs.usu.edu/directory/" target="_blank">ADVS</a>
+                              </li>
+                              <li>
+                                <a href="https://apec.usu.edu/directory/" target="_blank">APEC</a>
+                              </li>
+                              <li>
+                                <a href="https://aste.usu.edu/directory/" target="_blank">ASTE</a>
+                              </li>
+                              <li>
+                                <a href="https://laep.usu.edu/directory/" target="_blank">LAEP</a>
+                              </li>
+                              <li>
+                                <a href="https://ndfs.usu.edu/directory/" target="_blank">NDFS</a>
+                              </li>
+                              <li>
+                                <a href="https://psc.usu.edu/directory/" target="_blank">PSC</a>
+                              </li>
+                              <li>
+                                <a href="https://vetmed.usu.edu/directory/" target="_blank">SVM</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-sm-3">
+                            <h2>Divisions</h2>
+                            <ul class="list-unstyled">
+                              <li>
+                                <a href="https://directory.usu.edu/department/5183/" target="_blank">Business Services</a>
+                              </li>
+                              <li>
+                                <a href="http://directory.usu.edu/department/1782/" target="_blank">Development</a>
+                              </li>
+                              <li>
+                                <a href="https://directory.usu.edu/department/1783/" target="_blank">Marketing and Communications</a>
+                              </li>
+                              <li>
+                                <a title="Utah Agricultural Experiment Station" href="https://directory.usu.edu/department/555/" target="_blank">UAES</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-sm-3">
+                            <h2>Advising and Student Services</h2>
+                            <ul class="list-unstyled">
+                              <li>
+                                <a href="/advising/index.php">Student Service Center</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/giving.php">
+                <i class="fa fa-gift" aria-hidden="true">&nbsp;</i>Donate</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;main-container-wide&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+    <div class="parallax-row">
+      <div class="parallax-inner">
+        <div class="parallax" alt="" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image:url('https://caas.usu.edu//images/clusters/banner-animal-horse.jpg');&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+          <div class="caption-overlay1">
+            <span class="border1">
+
+
+
+
+
+              <link rel="stylesheet" href="/_resources/program-grid/modal-grid/modalGridStyle.css">
+              <script src="file:///Users/michael/Projects/extension/ycb/script.js"></script>
+              <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+
+              <div class="row">
+
+                <div class="col-md-5 pull-right" style="padding-top: 1em;">
+
+                  <h1 class="parallaxbannerh1">Work with Plants and Animals</h1>
+                  <a id="view-deg-btn" class="btn btn-info btn-block btn-lg" href="javascript:void(0)">VIEW DEGREES</a>
+
+                </div>
+
+              </div>
+
+
+
+
+
+
+
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;main-container-wide&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; blue-bg">
+    <div class="main-container-wrapper">
+      <div class="row" id="content">
+        <div class="main-content" role="main">
+
+
+
+
+
+
+
+
+          <blockquote style="margin-top: 25px;">
+
+            <h2 style="font-size: 2em;">Master The Science of Life</h2>
+
+            <p>Working with plants and animals can mean everything from understanding plant and animal genetics to growing crops,
+              running a greenhouse, raising healthy animals, discovering ways to treat diseases, or managing land for plants,
+              animals and people. It’s the science of life, and we’ve been exploring and teaching it since the university
+              began. We provide students with valuable hands-on experiences in the field, on the farm, and in the laboratory.
+              Whether you want life at the speed of chemical reactions and cell division, a trotting horse or a growing plant,
+              we have a program for you.</p>
+
+          </blockquote>
+
+          <div id="degrees-header">
+
+            <h2 style="font-size: 2em;">Plant and Animal Specialist Degrees</h2>
+
+            <div id="grid-selectors">
+
+              <div id="grid-0-selector" class="grid-selector active-grid-selector">Majors</div>
+
+              <div id="grid-1-selector" class="grid-selector">Graduate</div>
+
+              <div id="grid-2-selector" class="grid-selector">Minors</div>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+
+
+            <div id="grid-gallery" class="grid-gallery">
+
+
+              <section class="grids-wrap">
+
+                <div id="grid-0" class="active-grid grid-wrap">
+
+                  <ul class="grid msn-grid msn-fill">
+
+                    <li class="grid-sizer"></li>
+
+                    <!-- for Masonry column width -->
+
+                    <li class="msn-item">
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+
+                          <img src="/images/clusters/pod-plant-science.jpg" alt="Plant Science">
+
+                        </div>
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Plant Science</h3>
+
+                          <p class="short-text">Learn to manage and produce the plants that are critical to the success of the agricultural industry.</p>
+
+                          <p class="modal-text">Customize your education in plant science by choosing an emphasis in either horticulture (growing
+                            fruits, vegetables and flowers) and cropping systems or research. The horticulture and cropping
+                            systems emphasis is designed for those who are interested in applying their knowledge to crop
+                            production in the field, nursery, orchard or greenhouse. Through coursework, you will get hands-on
+                            experience producing safe, affordable and nutritious food. The research emphasis prepares students
+                            to enter graduate school. In this emphasis, students participate in hands-on research and gain
+                            knowledge to develop new, plant- related technologies and innovative methods of food production.
+                            <br>
+                            <br> A degree in plant science is ideal for people interested in sustainable agriculture. Depending
+                            on the emphasis you choose, you will study biology, chemistry, plant production and management,
+                            soil science and biotechnology. All students have opportunities to get hands-on experience working
+                            side-by-side with faculty research scientists in laboratories, greenhouses and fields. Career
+                            opportunities include positions with agricultural research companies, jobs in state, local and
+                            national government and owning or managing farms and other production operations.
+
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+                            <a href="javascript:void(0)" class="bottom-btn apply-now-btn btn btn-info btn-block btn-lg">Apply Now</a>
+
+                          </div>
+
+                          <div class="sheet-link hidden">https://usu.box.com/shared/static/c4als0vrmljkwu4znvgrr5617vv1n1mx.pdf</div>
+
+                        </figcaption>
+
+                      </figure>
+
+                    </li>
+
+                    <li class="msn-item">
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+
+                          <img src="/images/clusters/pod-land-plant.jpg" alt="Land Plant">
+
+                        </div>
+
+                        <figcaption>
+
+                          <h3>Land, Plant and Climate Systems</h3>
+
+                          <p class="short-text">Explore the physical, chemical and biological processes occurring at the Earth’s surface.</p>
+
+                          <p class="modal-text">This degree is focused on sustainability and helps students develop an understanding of current
+                            and potential environmental issues. Studying the interactions between soils, plants and the atmosphere
+                            will equip you with the skills to evaluate urban and rural land use questions, understand agricultural
+                            ecology, manage soil and water resources, and understand issues of climate change and soil nutrient
+                            cycling. You will have opportunities to work alongside professors in the lab and in the field
+                            to gain valuable research experience.
+                            <br>
+                            <br> Students can choose to emphasize either environmental soil science, sustainable food production
+                            or applied climatology. You will be prepared for a career as a farmer with a sustainable operation,
+                            soil scientist, conservationist, resource manager, water quality specialist, sports field manager,
+                            environmental consultant and more. Wherever you decide to take your career, you can play a role
+                            in ensuring that high-quality soil and clean water are available to current and future generations.
+
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+                            <a href="javascript:void(0)" class="bottom-btn apply-now-btn btn btn-info btn-block btn-lg">Apply Now</a>
+
+                          </div>
+
+                          <div class="sheet-link hidden">https://usu.box.com/shared/static/regvl7595inhltnhgm6u1rtyyab4hxup.pdf</div>
+
+                        </figcaption>
+
+                      </figure>
+
+                    </li>
+
+                    <li class="msn-item">
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/horse_window.jpg" alt="Equine Science">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Equine Science and Management</h3>
+
+                          <p class="short-text">Transform your passion for horses into a successful equine industry career.</p>
+
+                          <p class="modal-text">
+                            Students in this program actively participate in the day-to-day activities at USU’s Equine Education Center and gain experience
+                            with feeding, breeding and medical care. You will develop exceptional management and handling
+                            techniques through lecture, laboratory and on-the-farm instruction. Faculty members carry both
+                            industry and show credentials, and coursework covers areas such as nutrition, riding fundamentals,
+                            colt starting and equine evaluation. USU is home to a strong Extension equine program, and students
+                            are encouraged to attend and assist with programs held across the state, providing excellent
+                            opportunities to meet and network with professionals in the equine industry.
+                            <br>
+                            <br> This program requires students to complete an internship with a professional in their chosen
+                            area of interest to gain industry experience before graduation. Career options include managing
+                            horse breeding farms, working for breed associations, managing equine competitions and events,
+                            and working in the equine marketing and equine health industries.
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+                            <a href="javascript:void(0)" class="bottom-btn apply-now-btn btn btn-info btn-block btn-lg">Apply Now</a>
+
+                          </div>
+
+                          <div class="sheet-link hidden">https://usu.box.com/shared/static/1vmncqmrjko13i4nmfl7yb7vsuiomyz9.pdf</div>
+
+                        </figcaption>
+
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/pod-animal-science.jpg" alt="img01">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3>Animal and Dairy Science</h3>
+
+                          <p class="short-text">Gain experience working directly with livestock and learn how to run a successful animal production
+                            business.
+                          </p>
+
+                          <p class="modal-text">The animal and dairy science emphasis provides students with practical, hands-on learning in the
+                            science of animal production. By completing coursework in production cost and profitability,
+                            animal health and well-being, animal nutrition, environmental stewardship and bioethics, you
+                            will develop the ability to manage a successful animal production operation. Primarily taught
+                            in a non-traditional setting, you will gain hands-on experience with beef and dairy cattle, horses,
+                            sheep, goats and swine at world-class facilities.
+                            <br>
+                            <br> USU’s Department of Animal, Dairy and Veterinary Sciences is one of the top institutions for
+                            research in animal sciences. Students graduating from this program are prepared for careers in
+                            animal and dairy production and management, state and federal government agricultural agencies,
+                            marketing and sales or animal product processing.
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+                            <a href="javascript:void(0)" class="bottom-btn apply-now-btn btn btn-info btn-block btn-lg">Apply Now</a>
+
+                          </div>
+
+                          <div class="sheet-link hidden">https://usu.box.com/shared/static/aq6iv0svsngho48v8103xwhqnxydd8qj.pdf</div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/pod-vetmed.jpg" alt="Vet Student with Professor and Dog">
+
+                        </div>
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Bioveterinary Science</h3>
+
+                          <p class="short-text">Students prepare for research and medical careers and have daily opportunities to work directly
+                            with animal health professionals.</p>
+
+                          <p class="modal-text">This degree is designed primarily for students pursuing admission to schools of veterinary medicine
+                            or life science graduate programs. Many faculty members in the Department of Animal, Dairy and
+                            Veterinary Sciences also teach in the USU’s School of Veterinary Medicine. This provides opportunities
+                            for students to gain experience learning from veterinarians and working with animals.
+                            <br>
+                            <br> You will explore topics and issues in animal biology, companion and production animal diseases,
+                            and animal management. This program provides opportunities for students to participate in cutting-edge
+                            research at state-of-the-art facilities. The degree program can be individually tailored to maximize
+                            your chance of getting accepted into a school of veterinary medicine. In addition to careers
+                            in veterinary medicine, graduates from this program find employment opportunities in animal and
+                            human biomedical research, drug development and testing and at diagnostic laboratories.
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+                            <a href="javascript:void(0)" class="bottom-btn apply-now-btn btn btn-info btn-block btn-lg">Apply Now</a>
+
+                          </div>
+
+                          <div class="sheet-link hidden">https://usu.box.com/shared/static/foup6c5adzavwby74ggx3u1gqyrc2yb8.pdf</div>
+
+                        </figcaption>
+
+                      </figure>
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/pod-biovet.jpg" alt="BioTechnology">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3>Biotechnology</h3>
+
+                          <p class="short-text">Prepare to make innovations in science and agriculture by working directly with animals and gaining
+                            laboratory experience.</p>
+
+                          <p class="modal-text">Biotechnology provides a hands-on education for those pursuing science-related careers. Students
+                            apply scientific and engineering methods related to animal genetics and breeding, animal cloning,
+                            trait mapping, and developmental and molecular biology.
+                            <br>
+                            <br> The Department of Animal, Dairy and Veterinary Sciences encourages students to supplement their
+                            coursework by working with faculty members to explore research opportunities. Students pursue
+                            research in molecular genetics, parasitology, toxicology and virology. Upon graduation, you will
+                            be prepared for careers in basic animal research, drug development and testing, and laboratory
+                            technical support.
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+                            <a href="javascript:void(0)" class="bottom-btn apply-now-btn btn btn-info btn-block btn-lg">Apply Now</a>
+
+                          </div>
+
+                          <div class="sheet-link hidden">https://usu.box.com/shared/static/8p5qjqa53qhrkakrchxd6tndfw05r3o3.pdf</div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div id="grid-1" class="grid-wrap">
+
+                  <ul class="grid msn-grid msn-fill">
+
+                    <li class="grid-sizer"></li>
+
+                    <!-- for Masonry column width -->
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/animal_health.jpg" alt="animal health specialist">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Animal Health and Disease (MS, PhD)</h3>
+
+                          <p class="short-text">Focus on molecular biology, pathology, and disease detection using conventional and advanced molecular
+                            technologies, epidemiology, parasitology, pharmacology, and microbiology.</p>
+
+                          <p class="modal-text">
+                            Focus on molecular biology, pathology, and disease detection using conventional and advanced molecular technologies, epidemiology,
+                            parasitology, pharmacology, and microbiology.
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/cow-handling.jpg" alt="student handling cow">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Animal Management (MS, PhD)</h3>
+
+                          <p class="short-text">For students seeking careers in production animal agriculture, this specialization prepares students
+                            for the challenges facing the animal industry and commodity groups in the 21st century.</p>
+
+                          <p class="modal-text">For students seeking careers in production animal agriculture, this specialization prepares students
+                            for the challenges facing the animal industry and commodity groups in the 21st century.</p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/sheepgoat.jpg" alt="genetically modified sheep">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Animal Molecular Genetics (MS, PhD)</h3>
+
+                          <p class="short-text">This specialization involves technologies in genome analyses, whole genome scanning, marker assisted
+                            selection, and the identification of economically important trait loci in food-producing animals.</p>
+
+                          <p class="modal-text">This specialization involves technologies in genome analyses, whole genome scanning, marker assisted
+                            selection, and the identification of economically important trait loci in food-producing animals.</p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/animal_nutrition.jpg" alt="goat eating brush">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Animal Nutrition (MS, PhD)</h3>
+
+                          <p class="short-text">Study innovations in new feed additives, grazing practices, approaches for sustainable agriculture,
+                            and more.</p>
+
+                          <p class="modal-text">
+                            Students in this specialization have the opportunity to study things like the development of new feed additives that improve
+                            animal performance, innovations in grazing practices that optimize ruminant production, the development
+                            of feasible approaches for sustainable agriculture, and more.
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/cow-tongue.jpg" alt="cows">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Reproduction and Development (MS, PhD)</h3>
+
+                          <p class="short-text">Work with faculty exploring aspects of early embryo development, differentiation, gene regulation,
+                            embryonic stem cell characteristics and applications, reproductive immunology, and more.</p>
+
+                          <p class="modal-text">
+                            Work with faculty exploring aspects of early embryo development, differentiation, gene regulation, embryonic stem cell characteristics
+                            and applications, reproductive immunology, and more.
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/toxicology.jpg" alt="vials of chemicals">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Toxicology (MS, PhD)</h3>
+
+                          <p class="short-text">Focus your research on the important study of the effects of harmful chemicals with support from
+                            multiple departments.</p>
+
+                          <p class="modal-text">
+                            Study the effects of harmful chemicals. Your research can involve many areas of toxicology, but USU especially excels in
+                            the following two:
+                            <br> Molecular and Biomedical Toxicology: Research how external agents affect the genetic structure
+                            of cells. Toxicologists at USU are developing research on the genomics of disease, cancer prevention,
+                            the mechanisms of air pollution, and more.
+                            <br> Environmental Toxicology: Study toxins that affect the environment. Do research that aims to
+                            restore ecosystems, remove toxic waste, and reduce human and animal exposure to environmental
+                            toxins. Additionally, USU scientists were among the first to use a naturally occurring fungus
+                            to digest and detoxify chemical waste.
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/plant_science.jpg" alt="plant scientist doing research">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Plant Science (MS, PhD)</h3>
+
+                          <p class="short-text">
+                            Work closely with faculty to study the biology, genetics, and management of plants and other issues related to agricultural
+                            and horticultural production.
+                          </p>
+
+                          <p class="modal-text">
+                            USU is home to the only agriculturally focused plant science degrees in the state. The plant science graduate degrees are
+                            centered on the biology, genetics, and management of plants and other issues related to agricultural
+                            and horticultural production. In particular, USU’s plant science programs focus on regional issues
+                            pertaining to the West and current environmental issues, such as the management of invasive weed
+                            species, specifically the weed problems of the Intermountain West, and the challenges of organic
+                            and sustainable agriculture in the West’s arid climate.
+                            <br>
+                            <br> Each graduate student in the department follows a unique and completely customized plan of study.
+                            Students work closely with faculty on research projects and receive individual attention and
+                            mentoring as they complete their research. Students can focus their research in a variety of
+                            areas as they develop solutions to current problems. Those areas may include environmental plant
+                            physiology, genetics, molecular biology, plant breeding, crop production, sustainable and organic
+                            crop and forage production systems, weed science, urban landscape management, and water management
+                            in agricultural and horticultural crops, including turf and other ornamentals.
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/pre-vet.jpeg" alt="vet student checking calf">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Veterinary Medicine (DVM)</h3>
+
+                          <p class="short-text">
+                            Recieve your pre-clinical training from internationally recognized faculty at USU's state-of-the-art teaching, animal, and
+                            research facilities.
+                          </p>
+
+                          <p class="modal-text">
+                            USU has access to lab facilities and equipment, allowing research in animal reproduction, nutrition, and disease. Its Center
+                            for Integrated Biosystems was the first to clone a hybrid animal and has been recognized for
+                            its cloning expertise twice by Popular Science magazine.
+                            <br>
+                            <br> The doctor of veterinary medicine program admits 20 students from Utah and 10 nonresident students
+                            per year. It's a joint program with Washington State University. After recieving preclinical
+                            training students complete their clinical training at WSU's College of Veterinary Medicine in
+                            Pullman, Washington.
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/horticulture1.jpg" alt="student planting seeds in a greenhouse">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Horticulture (MPSH)</h3>
+
+                          <p class="short-text">
+                            Learn to design, construct and maintain water-efficient landscapes.
+                          </p>
+
+                          <p class="modal-text">
+                            This online, professional, graduate degree addresses the need for landscapes that are designed to conserve water. The courses
+                            build students’ skills and expertise in all aspects of landscape water conservation. You will
+                            gain a thorough understanding of plant science, irrigation technologies, landscape design and
+                            human behavior related to landscape use and maintenance.
+                            <br>
+                            <br> As a graduate of the only professional master’s degree focused on urban landscape water conservation,
+                            your skills will be in high demand. Your future career could involve water conservation with
+                            government agencies, private consulting, or designing and maintaining landscapes.
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div id="grid-2" class="grid-wrap">
+
+                  <ul class="grid msn-grid msn-fill">
+
+                    <li class="grid-sizer"></li>
+
+                    <!-- for Masonry column width -->
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img src="/images/clusters/jean-and-horse.jpg" alt="person with horse">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3 class="degree-header">Equine Assistive Therapy (Minor)</h3>
+
+                          <p class="short-text">Gain a strong professional education in the core principles of facilitating equine experiential
+                            learning, therapies, and recreation.</p>
+
+                          <p class="modal-text">
+                            The Equine Assisted Activities and Therapies Minor at Utah State University provides students with a strong professional
+                            education in the core principles of facilitating equine experiential learning, therapies, and
+                            recreation.
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+                            <a href="javascript:void(0)" class="bottom-btn apply-now-btn btn btn-info btn-block btn-lg">Apply Now</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                    <li class="msn-item">
+
+
+                      <figure>
+
+                        <div class="modal-close">
+                          <img src="/_resources/program-grid/modal-grid/close.svg" alt="close">
+
+                        </div>
+
+                        <div class="img-container">
+                          <img xmlns:ouc="http://omniupdate.com/XSL/Variables" src="/images/clusters/ag_sci.jpg" alt="">
+
+                        </div>
+
+
+                        <figcaption>
+
+                          <h3>Agricultural Science (Associate Degree)</h3>
+
+                          <p class="short-text">Learn to design and apply technologies to guide the ethical use of land, food, water, and economic
+                            resources thereby improving the health and well-being of humans, plants, animals and the environment.</p>
+
+                          <p class="modal-text">
+                            Residents in all areas with in Utah can benefit from a degree program focused on helping graduates learn to design and apply
+                            technologies to guide the ethical use of land, food, water, and economic resources thereby improving
+                            the health and well-being of humans, plants, animals and the environment. The Associate of Science
+                            in Agricultural Science degree will train students for growing jobs in agriculture, and prepare
+                            them for transfer to a university to complete a bachelor’s degree in the College of Agriculture
+                            & Applied Sciences.
+                            <br>
+                            <br> The associate degree integrates breadth of knowledge and applied learning in agriculture and
+                            natural sciences. Students will choose from general education, agricultural science, and general
+                            elective courses. Courses will be offered through a combination of online, IVC broadcast and
+                            face-to-face formats. Assessment will employ distance education techniques, including but not
+                            limited to, online testing, proctored examinations, and individual project portfolios. Upon completion,
+                            students will have entry level knowledge of agricultural science and be prepared to start a career
+                            in the diverse agricultural industry or enter a four-year degree program.
+
+                          </p>
+
+                          <div class="bottom-btn-group">
+                            <a href="javascript:void(0)" class="bottom-btn more-info-btn btn btn-info btn-block btn-lg">Request Info</a>
+
+                          </div>
+
+                        </figcaption>
+
+                      </figure>
+
+
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </section>
+
+              <div class="apply-now">
+                <iframe src="https://www.youtube.com/embed/ygHyBkjlEgU?rel=0&amp;showinfo=0" frameborder="0"></iframe>
+                <span data-toggle="tooltip" data-placement="auto bottom" aria-haspopup="true" data-html="true" title="This link will open in a new window."
+                  class="classic-tooltip">
+                  <a xmlns:ouc="http://omniupdate.com/XSL/Variables" href="https://applynow.usu.edu/Ellucian.ERecruiting.Web.External/Pages/Welcome.aspx"
+                    target="_blank" class="bottom-btn btn btn-info btn-block btn-lg">Apply Now</a>
+                </span>
+
+              </div>
+
+              <figure id="req-more-info">
+
+
+                <div class="more-info">
+
+
+                  <div class="form-container">
+
+
+                    <form id="form_f2976806-34b6-4959-afae-b0c344cb311c" method="post">
+                      <em class="fa fa-times close-form hidden-lg hidden-md hidden-sm"> </em>
+
+                      <div class="form-title">Info Request</div>
+
+                      <div class="form-desc description">
+                        Upon submission you will receive a 4-year plan and a brochure all about Utah State University. On top of that, we'd love
+                        to reach out and see what other questions you may have!
+                      </div>
+
+
+                      <div class="nameEmail text-field active-field input-field">
+                        <label>First name</label>
+                        <input name="firstname" type="text">
+                        <span>Required</span>
+
+                      </div>
+
+
+
+                      <div class="nameEmail text-field active-field input-field">
+                        <label>Last name</label>
+                        <input type="text" name="lastname">
+                        <span>Required</span>
+
+                      </div>
+
+
+
+                      <div class="nameEmail text-field active-field input-field">
+                        <label>Email</label>
+                        <input name="email" type="text">
+                        <span>Invalid email</span>
+
+                      </div>
+
+
+
+                      <div class="phone text-field active-field input-field">
+                        <label>Phone number</label>
+                        <input name="phonenumber" type="number">
+                        <span>Required</span>
+
+                      </div>
+
+
+                      <div class="birthday input-field select-field">
+                        <label>Birthday</label>
+                        <input type="date" name="birthday">
+                        <span>Required</span>
+
+                      </div>
+
+                      <input name="program" type="hidden" value="not found">
+                      <input name="page" type="hidden" value="not found">
+                      <input name="degree-type" type="hidden" value="not found">
+
+                      <div class="download-title">
+
+                        <h1>Thank You</h1>
+
+                        <div class="description">
+                          You’ve done great! Now, kick your feet up and take a look at this four-year plan to get an idea of what kind of classes you’ll
+                          be taking. Let’s talk soon! Go Aggies!
+                        </div>
+
+                      </div>
+
+
+                      <div class="submit" tabindex="0">
+                        <input type="button" value="Submit Request">
+
+                      </div>
+
+                      <div class="bookBtn">
+                        <em class="fa fa-download"></em>
+                        <input type="button" value="More About USU">
+
+                      </div>
+
+
+                      <div class="sheet-links">
+                        <a id="viewbook-link" href="/files/USU-2017-Viewbook.pdf"></a>
+                        <a id="majorsheet-link" href="#"></a>
+
+                      </div>
+
+                    </form>
+
+
+                  </div>
+
+                </div>
+
+              </figure>
+
+              <section class="lightbox">
+
+                <!-- modal is generated and stuck in here -->
+
+              </section>
+
+              <!-- // grids-wrap -->
+
+            </div>
+
+            <!-- // grid-gallery -->
+            <script src="https://caas.usu.edu/_resources/scripts/photo-gallery/imagesloaded.pkgd.min.js"></script>
+            <script src="https://caas.usu.edu/_resources/scripts/photo-gallery/masonry.pkgd.min.js"></script>
+            <script src="https://caas.usu.edu/_resources/scripts/photo-gallery/classie.js"></script>
+          </div>
+
+          <div id="grad-minor-list" class="hidden">
+
+            <ul class="list-left">
+
+              <li>
+                <h1>Graduate Degrees</h1>
+              </li>
+
+              <li>
+                <a href="https://www.usu.edu/degrees/index.cfm?id=197">Animal Health & Disease (MS, PhD)</a>
+              </li>
+
+              <li>
+                <a href="https://www.usu.edu/degrees/index.cfm?id=197">Animal Management (MS, PhD)</a>
+              </li>
+
+              <li>
+                <a href="https://www.usu.edu/degrees/index.cfm?id=197">Animal Molecular Genetics (MS, PhD)</a>
+              </li>
+
+              <li>
+                <a href="https://www.usu.edu/degrees/index.cfm?id=197">Animal Nutrition (MS, PhD)</a>
+              </li>
+
+              <li>
+                <a href="https://www.usu.edu/degrees/index.cfm?id=197">Reproduction & Development (MS, PhD)</a>
+              </li>
+
+              <li>
+                <a href="https://www.usu.edu/degrees/index.cfm?id=179">Toxicology (PhD)</a>
+              </li>
+
+              <li>
+                <a href="https://www.usu.edu/degrees/index.cfm?id=57">Plant Science (MS, PhD)</a>
+              </li>
+
+              <li>
+                <a href="https://www.usu.edu/degrees/index.cfm?id=211">Veterinary Medicine (DVM)</a>
+              </li>
+
+            </ul>
+
+            <ul class="list-right">
+
+              <li>
+                <h1>Minors & Associates</h1>
+              </li>
+
+              <li>
+                <a href="http://catalog.usu.edu/preview_program.php?catoid=12&amp;poid=15584&amp;returnto=3800">Equine Assistive Therapy</a>
+              </li>
+
+              <li>
+                <a href="https://www.usu.edu/degrees/index.cfm?id=1156">Agricultural Science</a>
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div id="footer-wrapper">
+      <div class="contentFooter">
+        <div class="footer-navigation">
+          <div class="col-sm-5" style="position: static;">
+            <h4>CAAS CALENDAR</h4>
+            <script type="text/javascript" src="https://www.trumba.com/scripts/spuds.js"></script>
+            <script type="text/javascript">
+              // <![CDATA[
+              $Trumba.addSpud({
+                    webName: "CAAS",
+                    spudType: "eventslider",
+                    teaserBase: "
+
+                    // ]]>/calendar.php" });
+                    // ]]>
+            </script>
+            <div class="row">
+              <div class="col-md-6" style="color: #0f2439;">
+                <a class="btn btn-default btn-block btn-sm" style="color: #0f2439;" href="/calendar.php" role="button"> View Calendar</a>
+              </div>
+              <div class="col-md-6">
+                <a class="btn btn-default btn-block btn-sm" style="color: #0f2439;" href="#" role="button" data-toggle="modal" data-target="#submitModal">
+                Submit Event</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3" style="position: static;">
+            <h4>CAAS QUICK LINKS</h4>
+            <ul>
+              <li>
+                <a title="CAAS Service Center" href="https://caas.usu.edu/teachingacademy/index.php">CAAS Teaching Academy</a>
+              </li>
+              <li>
+                <a title="CAAS Service Center" href="/service-center/index.php">CAAS Business Service Center</a>
+              </li>
+              <li>
+                <a title="Make CAAS Marketing Requests and Find Resources" href="/marketing/index.php">CAAS Marketing</a>
+              </li>
+              <li>
+                <a title="CAAS Media Mentions" href="/media-mentions.php">CAAS Media Mentions</a>
+              </li>
+              <li>
+                <a href="https://scheduling.usu.edu" target="_blank">Reserve AGRS Study Rooms</a>
+              </li>
+            </ul>
+            <h4>USU QUICK LINKS</h4>
+            <ul>
+              <li>
+                <a title="USU Degrees" href="http://www.usu.edu/degrees">USU Degree Finder</a>
+              </li>
+              <li>
+                <a href="http://www.usu.edu/academics/colleges/">USU Colleges and Schools</a>
+              </li>
+              <li>
+                <a href="http://www.usu.edu/academics/departments/">USU Academic Departments</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-4" style="position: static;">
+            <h4>CONTACT CAAS</h4>
+            <div class="list-group">
+              <a class="list-group-item" style="color: #0f2439;" href="/contact.php" role="button">
+                <em class="fa fa-phone" aria-hidden="true">&nbsp;</em>Contact Us</a>
+              <a class="list-group-item" style="color: #0f2439;" href="#" role="button" data-toggle="modal" data-target="#newsSignUp">
+                <em class="fa fa-envelope" aria-hidden="true">&nbsp;</em>Student Newsletter Signup</a>
+            </div>
+            <a style="color: #fff; font-size: 3.5em;" href="https://www.facebook.com/usucaas" target="_blank">
+              <span class="sr-only">Facebook</span>
+            </a>
+            <a style="color: #fff; font-size: 3.5em;" href="http://instagram.com/usucaas" target="_blank">
+              <span class="sr-only">Instagram</span>
+            </a>
+            <a style="color: #fff; font-size: 3.5em;" href="https://twitter.com/USUCAAS" target="_blank">
+              <span class="sr-only">Twitter</span>
+            </a>
+            <a style="color: #fff; font-size: 3.5em;" href="https://www.youtube.com/channel/UCVGnMZa6UNlIhUjRJ6tElMg" target="_blank">
+              <span class="sr-only">YouTube</span>
+            </a>
+          </div>
+          <!-- /Footer Navigation -->
+          <!-- Request Info Modal -->
+          <div id="newsSignUp" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-body">
+                  <!--Begin CTCT Sign-Up Form-->
+                  <!-- EFD 1.0.0 [Tue Sep 13 13:56:08 EDT 2016] -->
+                  <div class="ctct-embed-signup" style="font: 1rem Helvetica Neue, Arial, sans-serif; line-height: 1.5; -webkit-font-smoothing: antialiased;">
+                    <div style="color: #5b5b5b; background-color: #ffffff; border-radius: 5px;">
+                      <div style="text-align: center;">
+                        <div class="alert alert-success">
+                          <span style="font-size: 20pt;">Thanks for signing up
+                            <em class="fa fa-smile-o" aria-hidden="true">&nbsp;</em>
+                          </span>
+                        </div>
+                      </div>
+                      <form class="ctct-custom-form Form" action="https://visitor2.constantcontact.com/api/signup" method="POST" name="embedded_signup"
+                        data-id="embedded_signup:form">
+                        <img style="margin-left: auto; display: block; margin-right: auto;" src="/images/USU-aggie-up-newsletter-header-thirsty.png"
+                          alt="Aggie Up Logo" />
+                        <h1 style="text-align: center;">Don't Miss a Thing in CAAS!</h1>
+                        <p>&nbsp;</p>
+                        <!-- The following code must be included to ensure your sign-up form works properly. -->
+                        <input type="hidden" name="ca" value="6d00d28e-93e2-4b79-8f66-55fe09fd70ff" data-id="ca:input" />
+                        <input type="hidden" name="list" value="1195622634" data-id="list:input" />
+                        <input type="hidden" name="source" value="EFD" data-id="source:input" />
+                        <input type="hidden" name="required" value="list,email" data-id="required:input" />
+                        <input type="hidden" name="url" value="" data-id="url:input" />
+                        <p data-id="Email Address:p">
+                          <label class="ctct-form-required" data-id="Email Address:label" data-name="email">Email Address</label>
+                          <input type="text" name="email" value="" maxlength="80" data-id="Email Address:input" />
+                        </p>
+                        <p data-id="First Name:p">
+                          <label data-id="First Name:label" data-name="first_name">First Name</label>
+                          <input type="text" name="first_name" value="" maxlength="50" data-id="First Name:input" />
+                        </p>
+                        <p data-id="Birthday:p">
+                          <label data-id="Birthday:label" data-name="birthday_day,birthday_month">Birthday</label>
+                          <input style="width: 75px;" type="text" name="birthday_month" value="" maxlength="2" data-id="Birthday:input" /> /
+                          <input style="width: 75px;" type="text" name="birthday_day" value="" maxlength="2" data-id="Birthday:input" />
+                        </p>
+                        <button class="btn btn-primary btn-block btn-lg" data-enabled="enabled">
+                          <em class="fa fa-envelope" aria-hidden="true">&nbsp;</em> Sign Up</button>
+                        <div>
+                          <p class="ctct-form-footer">By submitting this form, you are granting USU College of Agriculture and Applied Sciences,
+                            <a>caas.usu.edu</a>, permission to email you. You may unsubscribe via the link found at the bottom
+                            of every email.
+                            <br />(See our
+                            <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</p>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <script type="text/javascript">
+                    // <![CDATA[
+                    var localizedErrMap = {};
+                    localizedErrMap['required'] = 'This field is required.';
+                    localizedErrMap['ca'] = 'An unexpected error occurred while attempting to send email.';
+                    localizedErrMap['email'] = 'Please enter your email address in name@email.com format.';
+                    localizedErrMap['birthday'] = 'Please enter birthday in MM/DD format.';
+                    localizedErrMap['anniversary'] = 'Please enter anniversary in MM/DD/YYYY format.';
+                    localizedErrMap['custom_date'] = 'Please enter this date in MM/DD/YYYY format.';
+                    localizedErrMap['list'] = 'Please select at least one email list.';
+                    localizedErrMap['generic'] = 'This field is invalid.';
+                    localizedErrMap['shared'] =
+                      'Sorry, we could not complete your sign-up. Please contact us to resolve this.';
+                    localizedErrMap['state_mismatch'] = 'Mismatched State/Province and Country.';
+                    localizedErrMap['state_province'] = 'Select a state/province';
+                    localizedErrMap['selectcountry'] = 'Select a country';
+                    var postURL = 'https://visitor2.constantcontact.com/api/signup';
+                    // ]]>
+                  </script>
+                  <script type="text/javascript" src="https://static.ctctcdn.com/h/contacts-embedded-signup-assets/1.0.2/js/signup-form.js"></script>
+                  <!--End CTCT Sign-Up Form-->
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-warning btn-sm" data-dismiss="modal">
+                    <em class="fa fa-times-circle" aria-hidden="true">&nbsp;</em>Close Signup</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Submit Event Modal -->
+          <div id="submitModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button class="close" data-dismiss="modal"></button>
+                  <h2 class="modal-yeah">Submit Event Info</h2>
+                </div>
+                <div class="modal-body">
+                  <script id="trumbaSubmitEventJS" type="text/javascript" src="https://www.trumba.com/ea/scripts/submitevent.js"></script>
+                  <script type="text/javascript">
+                    // <![CDATA[
+                    trumbaInsertSubmitEventForm({
+                      code: "wpdpbx39sm57c48y953c8vgdam",
+                      width: 385,
+                      height: 775,
+                      backgroundColor: "white"
+                    });
+                    // ]]>
+                  </script>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="global-footer">
+        <div class="col-xs-12">
+          <ul>
+            <li>
+              <a href="https://www.usu.edu/copyright">© Utah State University</a>
+            </li>
+            <li>
+              <a href="https://www.usu.edu/privacy/">Privacy</a>
+            </li>
+            <li>
+              <a href="https://www.usu.edu/campus-life/safety">Safety</a>
+            </li>
+            <li>
+              <a href="https://accessibility.usu.edu/">Accessibility</a>
+            </li>
+            <li>
+              <a href="https://aaeo.usu.edu/non-discrimination">Non-discrimination</a>
+            </li>
+            <li>
+              <a href="https://it.usu.edu/web/feedback">Website Feedback</a>
+            </li>
+            <li>
+              <a id="de" href="http://a.cms.omniupdate.com/10?skin=usu&amp;account=usu&amp;site=CAAS&amp;action=de&amp;path=/plants-animals.pcf">Admin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    /*for disqus comments*/
+    var page_id = "https://caas.usu.edu/plants-animals.php";
+  </script>
+  <script src="https://ouresources.usu.edu/_resources/assets/js/bootstrap-tabcollapse/init.js"></script>
+  <script src="https://ouresources.usu.edu/_resources/assets/components/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
+  <script src="https://ouresources.usu.edu/_resources/assets/components/bootstrap-jasny/js/fileinput.min.js"></script>
+  <script src="https://ouresources.usu.edu/_resources/assets/components/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="https://ouresources.usu.edu/_resources/js/passwordProtect.js"></script>
+  <script src="https://ouresources.usu.edu/_resources/js/accordionSnippet.js"></script>
+  <script src="https://ouresources.usu.edu/_resources/js/tabSnippet.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.selectpicker').selectpicker();
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+  <script src="https://ouresources.usu.edu/_resources/assets/components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+      format: 'mm-dd-yyyy H:ii P',
+      autoclose: 1,
+      showMeridian: 1
+    });
+    $(".form_date").datetimepicker({
+      format: 'mm-dd-yyyy',
+      autoclose: 1,
+      showMeridian: 1,
+      minView: 2,
+      forceParse: 0
+    });
+    $(".form_time").datetimepicker({
+      format: 'H:ii P',
+      autoclose: 1,
+      showMeridian: 1,
+      startView: 1,
+      minView: 0,
+      maxView: 1,
+      forceParse: 0
+    });
+  </script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-45551551-1', 'usu.edu');
+    ga('send', 'pageview');
+
+    ga('create', 'UA-90863005-5', 'site', {
+      'name': 'allsites'
+    });
+    ga('allsites.send', 'pageview');
+
+    ga('create', 'UA-23001462-5', 'allcaas', {
+      'name': 'allcaas'
+    });
+    ga('allcaas.send', 'pageview');
+
+    ga('create', 'UA-23001462-1', 'caasonly', {
+      'name': 'caasonly'
+    });
+    ga('caasonly.send', 'pageview');
+  </script>
+  <script type="text/javascript" src="https://ouresources.usu.edu/_assets/forms/ouforms.js"></script>
+  <script type="text/javascript" src="https://ouresources.usu.edu/_assets/forms/jquery.datetimepicker.full.min.js"></script>
+  <div id="hidden" style="display:none;">
+
+
+  </div>
+  <script type="text/javascript">
+    window.NREUM || (NREUM = {});
+    NREUM.info = {
+      "beacon": "bam.nr-data.net",
+      "licenseKey": "bab786ce59",
+      "applicationID": "39467101",
+      "transactionName": "ZAZQYEoCCBBXAkxdX11MZ0ZRTBYPVw9MRx1SDVtZWQ8VTUYJSA==",
+      "queueTime": 0,
+      "applicationTime": 7,
+      "atts": "SEFTFgIYGx4=",
+      "errorBeacon": "bam.nr-data.net",
+      "agent": ""
+    }
+  </script>
+</body>
+
+</html>
