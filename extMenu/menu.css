@@ -1,0 +1,33 @@
+.main-navigation.gray-nav:nth-of-type(3) {
+  background: #3f5469 !important;
+}
+
+.main-navigation.gray-nav:nth-of-type(3) nav{
+  height: 54px !important;
+  background: #3f5469 !important;
+  overflow-y: hidden;
+}
+
+.main-navigation.gray-nav:nth-of-type(3) a{
+  color: white !important;
+  background: transparent !important;
+  border-left: none !important;
+}
+
+.main-navigation.gray-nav:nth-of-type(3) a:hover{
+  /* border-left: 1px solid transparent !important; */
+  border-left: none !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.main-navigation.gray-nav:nth-of-type(3) button.navbar-toggle>span.icon-bar {
+  background: white !important;
+}
+/* 
+.main-navigation.gray-nav:nth-of-type(3) a {
+  background: white !important;
+} */
+
+.main-navigation.gray-nav:nth-of-type(3) .navbar-brand{
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}

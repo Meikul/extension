@@ -7723,7 +7723,7 @@ button.close {
 @media (min-width:768px) and (max-width:991px) {
 	.hidden-sm {
 		display: none!important
-	}
+  }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
@@ -13142,7 +13142,6 @@ fieldset[disabled] #global-header .header-search .input-group-btn>.btn.active {
 }
 
 .main-navigation .main-navigation-wrapper .navbar.navbar-default .navbar-nav>li>a {
-	background-color: #fff;
 	font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
 	font-size: 1.3em;
 	padding-top: 17px;
@@ -13166,7 +13165,6 @@ fieldset[disabled] #global-header .header-search .input-group-btn>.btn.active {
 .main-navigation .main-navigation-wrapper .navbar.navbar-default .navbar-nav>li>a:hover {
 	color: #2e4676;
 	background-color: #eff2f7;
-	border-left: 1px solid #ebebeb
 }
 
 .main-navigation .main-navigation-wrapper .navbar.navbar-default .navbar-nav>li>a:hover .fa {
@@ -13228,7 +13226,6 @@ fieldset[disabled] #global-header .header-search .input-group-btn>.btn.active {
 .main-navigation.blue-nav .main-navigation-wrapper .navbar.navbar-default .navbar-nav>li>a:hover {
 	color: #2e4676;
 	background-color: #eff2f7;
-	border-left: 1px solid #eff2f7
 }
 
 .main-navigation.blue-nav .main-navigation-wrapper .navbar.navbar-default .navbar-nav>li>a:focus {
@@ -13252,26 +13249,19 @@ fieldset[disabled] #global-header .header-search .input-group-btn>.btn.active {
 }
 
 .main-navigation.gray-nav {
-	background-color: white;
-	border-top: 1px solid #ebebeb
+	border-bottom: 1px solid #ebebeb;
 }
 
 .main-navigation.gray-nav .main-navigation-wrapper .navbar.navbar-default {
 	background-color: white
 }
 
-.main-navigation.gray-nav .main-navigation-wrapper .navbar.navbar-default .navbar-nav>li>a {
-	background-color: white
-}
-
 .main-navigation.gray-nav .main-navigation-wrapper .navbar.navbar-default .navbar-nav>li>a:hover {
-	background-color: #eff2f7;
-	border-left: 1px solid #eff2f7
+	background: rgba(219, 232, 237, 0.3);
 }
 
 .main-navigation.gray-nav .main-navigation-wrapper .navbar.navbar-default .navbar-nav>li>a:focus {
-	background-color: #eff2f7;
-	border-left: 1px solid #eff2f7
+	background: rgba(219, 232, 237, 0.3);
 }
 
 .main-navigation.gray-nav .main-navigation-wrapper .navbar.navbar-default .navbar-toggle {

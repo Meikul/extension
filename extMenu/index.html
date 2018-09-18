@@ -290,8 +290,10 @@
 
 
 
+  <!-- <link rel="stylesheet" type="text/css" href="file:///Users/michael/Projects/extension/extMenu/extension.css"> -->
+  <link rel="stylesheet" href="https://kirksalisbury.ou.usu.edu/_resources/css/extension.css">
+  <link rel="stylesheet" href="file:///Users/michael/Projects/extension/extMenu/menu.css">
 
-  <link rel="stylesheet" type="text/css" href="file:///Users/michael/Projects/extension/pairedDownMenu/extension.css">
 
 
 
@@ -350,7 +352,7 @@
     <div id="global-header-wrapper" style="min-height: 90px;">
       <div class="row">
         <div class="brand"><a href="//extension.usu.edu">
-					<img class="img-responsive" src="/_resources/includes/Extension-4H-Logo.png" alt="USU Extension Logo" /></a>
+					<img class="img-responsive" src="https://extension.usu.edu/_resources/images/Extension-4H-Logo.png" alt="USU Extension Logo" /></a>
         </div>
         <div class="header-right">
           <div class="row">
@@ -375,46 +377,57 @@
       </div>
     </div>
   </div>
-  <div class="main-navigation gray-nav" style="border-top: none;">
+  <div class="main-navigation gray-nav">
     <!-- Main Navigation Wrapper -->
     <div class="main-navigation-wrapper">
       <!-- Navbar -->
       <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#global-navigation-collapse">
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-          <div class="navbar-support"><a class="sr-only" title="Questions?" target="_blank">Questions?</a>
-            <button class="btn btn-help" onclick="location.href='/questions/'">Questions?</button>
-          </div>
         </div>
-        <div class="collapse navbar-collapse" id="main-navigation-collapse">
+        <div class="collapse navbar-collapse" id="global-navigation-collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown yamm-fw">
-              <a data-toggle="dropdown" class="dropdown-toggle" data-hover="dropdown" href="#">4-H <i class="fa fa-chevron-down"></i></a>
+              <a class="visible-xs">4-H</a>
+              <a data-toggle="dropdown" class="dropdown-toggle hidden-xs" data-hover="dropdown" href="#">4-H <i class="fa fa-chevron-down"></i></a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="container">
                     <!-- Yamm Content Container -->
                     <div class="yamm-content">
                       <div class="row">
-                        <ul class="list-unstyled">
-                          <li><a href="https://utah4-h.org/">Utah 4-h</a></li>
-                          <li><a href="http://saltlakecounty4-h.org/">Salt Lake County</a></li>
-                          <li><a href="https://boxelder4h.usu.edu/">Box Elder</a></li>
-                          <li><a href="https://carboncounty4-h.org/">Carbon County</a></li>
-                          <li><a href="https://dixie4h.org/">Dixie</a></li>
-                          <li><a href="https://extension.usu.edu/uae4hw/">UAE4-HW</a></li>
-                          <li><a href="https://seviercounty4-h.org/">Sevier County</a></li>
-                          <li><a href="https://utahcounty4h.org/">Utah County</a></li>
-                          <li><a href="https://webercounty4-h.org/">Weber County</a></li>
-                          <li><a href="https://extension.usu.edu/cyberlivestock/">Cyber Livestock</a></li>
-                          <li><a href="https://kidscamps.usu.edu/">Kids Camps</a></li>
-                          <li><a href="https://naturehighcamp.org/">Nature High Summer Camp</a></li>
-                        </ul>
+                        <div class="col-sm-4">
+                          <h1>4-H</h1>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                            in reprehenderit in voluptate velit esse.
+                          </p>
+                        </div>
+                        <div class="col-sm-4">
+                          <ul class="list-unstyled">
+                            <li><a href="https://utah4-h.org/">Utah 4-h</a></li>
+                            <li><a href="http://saltlakecounty4-h.org/">Salt Lake County</a></li>
+                            <li><a href="https://boxelder4h.usu.edu/">Box Elder</a></li>
+                            <li><a href="https://carboncounty4-h.org/">Carbon County</a></li>
+                            <li><a href="https://dixie4h.org/">Dixie</a></li>
+                            <li><a href="https://seviercounty4-h.org/">Sevier County</a></li>
+                            <li><a href="https://utahcounty4h.org/">Utah County</a></li>
+                            <li><a href="https://webercounty4-h.org/">Weber County</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-4">
+                          <ul class="list-unstyled">
+                            <li><a href="https://extension.usu.edu/uae4hw/">UAE4-HW</a></li>
+                            <li><a href="https://extension.usu.edu/cyberlivestock/">Cyber Livestock</a></li>
+                            <li><a href="https://kidscamps.usu.edu/">Kids Camps</a></li>
+                            <li><a href="https://naturehighcamp.org/">Nature High Summer Camp</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                     <!-- /Yamm Content Container -->
@@ -423,23 +436,42 @@
               </ul>
             </li>
             <li class="dropdown yamm-fw">
-              <a data-toggle="dropdown" class="dropdown-toggle" data-hover="dropdown" href="#">Food <i class="fa fa-chevron-down"></i></a>
+              <a class="visible-xs">Food</a>
+              <a data-toggle="dropdown" class="dropdown-toggle hidden-xs" data-hover="dropdown" href="#">Food <i class="fa fa-chevron-down"></i></a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="container">
                     <!-- Yamm Content Container -->
                     <div class="yamm-content">
                       <div class="row">
-                        <ul class="list-unstyled">
-                          <li><a href="https://extension.usu.edu/food/">Food</a></li>
-                          <li><a href="https://extension.usu.edu/foodbiz/">Food Biz</a></li>
-                          <li><a href="https://extension.usu.edu/foodsafety/">Food Safety</a></li>
-                          <li><a href="https://extension.usu.edu/youthcancook/">Youth Can Cook</a></li>
-                          <li><a href="https://extension.usu.edu/foodsense/">Food $ense</a></li>
-                          <li><a href="https://extension.usu.edu/foodpreservation/">Food Preservation</a></li>
-                          <li><a href="https://extension.usu.edu/foodstorage/">Food Storage</a></li>
-                          <li><a href="https://extension.usu.edu/canning/">Canning</a></li>
-                        </ul>
+                        <div class="col-sm-3">
+                          <h1>Food</h1>
+                          <p>This is a short paragraph to balance the window and fill negative space under the title.</p>
+                          <a href="#">Accent Link</a>
+                        </div>
+                        <div class="col-sm-3">
+                          <h2>Preparation</h2>
+                          <ul class="list-unstyled">
+                            <li><a href="https://extension.usu.edu/food/">Food</a></li>
+                            <li><a href="https://extension.usu.edu/youthcancook/">Youth Can Cook</a></li>
+                            <li><a href="https://extension.usu.edu/foodsense/">Food $ense</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-3">
+                          <h2>Preservation</h2>
+                          <ul class="list-unstyled">
+                            <li><a href="https://extension.usu.edu/foodpreservation/">Food Preservation</a></li>
+                            <li><a href="https://extension.usu.edu/foodstorage/">Food Storage</a></li>
+                            <li><a href="https://extension.usu.edu/canning/">Canning</a></li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-3">
+                          <h2>Business</h2>
+                          <ul class="list-unstyled">
+                            <li><a href="https://extension.usu.edu/foodbiz/">Food Biz</a></li>
+                            <li><a href="https://extension.usu.edu/foodsafety/">Food Safety</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                     <!-- /Yamm Content Container -->
@@ -448,7 +480,8 @@
               </ul>
             </li>
             <li class="dropdown yamm-fw">
-              <a data-toggle="dropdown" class="dropdown-toggle" data-hover="dropdown" href="#">Family &amp; Relationships <i class="fa fa-chevron-down"></i></a>
+              <a class="visible-xs">Family &amp; Relationships</a>
+              <a data-toggle="dropdown" class="dropdown-toggle hidden-xs" data-hover="dropdown" href="#">Family &amp; Relationships <i class="fa fa-chevron-down"></i></a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="container">
@@ -458,10 +491,7 @@
                         <div class="col-sm-4">
                           <h1>Agriculture</h1>
                           <p>
-                            This is a paragraph that a writer will write later. It will make the menu look
-                            much more balanced and give it more valuable content for users. It will describe
-                            the various resources extension has to help people handle their agricultural
-                            resources effectively.
+                            This is a paragraph that a writer will write later. It will make the menu look much more balanced and give it more valuable content for users. It will describe the various resources extension has to help people handle their agricultural resources effectively.
                           </p>
                         </div>
                         <div class="col-sm-8">
@@ -503,7 +533,8 @@
               </ul>
             </li>
             <li class="dropdown yamm-fw">
-              <a data-toggle="dropdown" class="dropdown-toggle" data-hover="dropdown" href="#">Agriculture <i class="fa fa-chevron-down"></i></a>
+              <a class="visible-xs">Agriculture</a>
+              <a data-toggle="dropdown" class="dropdown-toggle hidden-xs" data-hover="dropdown" href="#">Agriculture <i class="fa fa-chevron-down"></i></a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="container">
@@ -513,10 +544,7 @@
                         <div class="col-sm-4">
                           <h1>Agriculture</h1>
                           <p>
-                            This is a paragraph that a writer will write later. It will make the menu look
-                            much more balanced and give it more valuable content for users. It will describe
-                            the various resources extension has to help people handle their agricultural
-                            resources effectively.
+                            This is a paragraph that a writer will write later. It will make the menu look much more balanced and give it more valuable content for users. It will describe the various resources extension has to help people handle their agricultural resources effectively.
                           </p>
                         </div>
                         <div class="col-sm-8">
@@ -558,7 +586,8 @@
               </ul>
             </li>
             <li class="dropdown yamm-fw">
-              <a data-toggle="dropdown" class="dropdown-toggle" data-hover="dropdown" href="#">Natural Resources <i class="fa fa-chevron-down"></i></a>
+              <a class="visible-xs">Natural Resources</a>
+              <a data-toggle="dropdown" class="dropdown-toggle hidden-xs" data-hover="dropdown" href="#">Natural Resources <i class="fa fa-chevron-down"></i></a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="container">
@@ -568,10 +597,8 @@
                         <div class="col-sm-4">
                           <h1>Natural Resources</h1>
                           <p>
-                            This is another paragraph that a writer will write later. It's pretty similar to
-                            the one that's in the agriculture dropdown, but it is different. Why? Well, that's
-                            because they're about different things, silly. This one will describe the various
-                            resources extension has to help people handle natural resources responsibly.
+                            This is another paragraph that a writer will write later. It's pretty similar to the one that's in the agriculture dropdown, but it is different. Why? Well, that's because they're about different things, silly. This one will describe the various resources
+                            extension has to help people handle natural resources responsibly.
                           </p>
                         </div>
                         <div class="col-sm-8">
@@ -626,7 +653,8 @@
               </ul>
             </li>
             <li class="dropdown yamm-fw">
-              <a data-toggle="dropdown" class="dropdown-toggle" data-hover="dropdown" href="#">Gardening <i class="fa fa-chevron-down"></i></a>
+              <a class="visible-xs">Gardening</a>
+              <a data-toggle="dropdown" class="dropdown-toggle hidden-xs" data-hover="dropdown" href="#">Gardening <i class="fa fa-chevron-down"></i></a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="container">
@@ -681,7 +709,8 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown yamm-fw">
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle" data-hover="dropdown">Locations <i class="fa fa-chevron-down"></i></a>
+              <a class="visible-xs">Locations</a>
+              <a data-toggle="dropdown" class="dropdown-toggle hidden-xs" data-hover="dropdown" href="#">Locations <i class="fa fa-chevron-down"></i></a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="container">
@@ -762,25 +791,22 @@
     </div>
     <!-- /Main Navigation Wrapper -->
   </div>
-  <div class="main-navigation gray-nav" style="border-bottom: 1px solid #ebebeb;">
+  <div class="main-navigation gray-nav">
     <!-- Main Navigation Wrapper -->
     <div class="main-navigation-wrapper">
       <!-- Navbar -->
       <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
           <a class="navbar-brand" href="/ext-dev/index-paired.html">Gardening</a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-navigation-collapse">
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-          <div class="navbar-support"><a class="sr-only" title="Questions?" target="_blank">Questions?</a>
-            <button class="btn btn-help" onclick="location.href='/questions/'">Questions?</button>
-          </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="main-navigation-collapse">
+        <div class="collapse navbar-collapse" id="site-navigation-collapse">
           <ul class="nav navbar-nav">
             <li><a href="#">Classes</a></li>
             <li><a href="#">Tips</a></li>
