@@ -1,8 +1,6 @@
 (function ($) {
   $(document).ready(_init);
 
-  var context = {};
-
   /**
    * Private function
    * Initializes paired lists on the page.
@@ -24,7 +22,7 @@
    * Private function
    * Shows content associated with link in "this".
    */
-  function _showLink(delay) {
+  function _showLink() {
     let $link = $(this);
     // If link is already active, just return now.
     if($link.hasClass('active')) return;
@@ -35,14 +33,9 @@
     let $currentActiveLink = $parentList.find('.paired-list-links .active');
     let $currentActiveContent = $parentList.find('.shown');
     let $pairedContent = $parentList.find('.paired-list-content'+contentSelector);
-    if(typeof delay == 'object') delay = 500;
-    console.log(delay);
-    if(_showLink.timeout) clearTimeout(_showLink.timeout);
-    _showLink.timeout = setTimeout(() => {
-      $currentActiveLink.removeClass('active');
-      $currentActiveContent.removeClass('shown');
-      $pairedContent.addClass('shown');
-      $link.addClass('active');
-    }, delay);
+    $currentActiveLink.removeClass('active');
+    $currentActiveContent.removeClass('shown');
+    $pairedContent.addClass('shown');
+    $link.addClass('active');
   }
 })(jQuery);
