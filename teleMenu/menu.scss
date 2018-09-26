@@ -14,16 +14,33 @@
 
 @import url('https://fonts.googleapis.com/css?family=Dosis|Oxygen|Rubik');
 $lineColor: #aaa;
-$activeBg: rgb(13, 37, 51);
+$activeBg: rgb(11, 32, 44);
 $hoverBg: rgb(15, 48, 66);
 $aggieBlue: #003366;
 $menuFontSize: 16px;
 
 
 .teleMenu.dropdown{
-  margin-left: 100px;
+  // margin-left: 100px;
+  // left: 240px;
+  // top: -60px;
+  // position: absolute;
+  width: 100%;
+  max-width: 1155px;
+  margin: auto;
   font-family: 'Roboto Condensed';
   font-size: $menuFontSize;
+  #loc-content {
+    h3{
+      margin: 5px 0;
+    }
+    li{
+      font-size: 16px;
+      a{
+        color: black;
+      }
+    }
+  }
   .dropdown-toggle{
     font-size: inherit;
     background: #0F2A3B;
@@ -34,7 +51,7 @@ $menuFontSize: 16px;
   .dropdown-menu{
     padding: 0;
     overflow: hidden;
-    width: 600px;
+    width: 700px;
     height: auto;
     // background: #eee;
     .col{
@@ -51,18 +68,15 @@ $menuFontSize: 16px;
     .col-right{
       padding-left: 5px;
       color: black;
-      font-family: 'Roboto Condensed';
+      //font-family: 'Roboto Condensed';
       font-size: 30px;
       z-index: 0;
     }
     .paired-list-content {
       display: none;
+      padding-left: 5px;
       &.shown {
         display: block;
-      }
-      h1 {
-        // margin-top: 10px;
-        margin: 5px;
       }
     }
     .paired-list-links > div{
@@ -71,7 +85,7 @@ $menuFontSize: 16px;
       font-size: $menuFontSize;
       cursor: pointer;
       &:hover{
-        background: $hoverBg;
+        background: $activeBg;
       }
       &.active{
         background: $activeBg;
