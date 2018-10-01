@@ -27,7 +27,11 @@
    * the cursor in one link for an amount of time.
    */
   function _switchLink() {
-    
+    _switchLink.timeout = setTimeout(_showLink.bind(this), 300);
+    $target = $(this);
+    $target.on('mouseleave', function () {
+      if(_switchLink.timeout) clearTimeout(_switchLink.timeout);
+    });
   }
 
   /**
