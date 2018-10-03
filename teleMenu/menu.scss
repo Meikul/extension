@@ -19,15 +19,18 @@ $hoverBg: rgb(15, 48, 66);
 $aggieBlue: #003366;
 $menuFontSize: 16px;
 
-
+@media (min-width:768px){
+  .teleMenu.dropdown{
+    margin-left: 240px;
+    margin-top: 50px;  
+    // position: absolute;
+    // top: 50px;
+    // left: 250px;
+  }
+}
 .teleMenu.dropdown{
-  // margin-left: 100px;
-  // left: 240px;
-  // top: -60px;
-  // position: absolute;
   width: 100vw;
   max-width: 1155px;
-  margin: auto;
   font-family: 'Roboto Condensed';
   font-size: $menuFontSize;
   // #loc-content {
@@ -43,10 +46,13 @@ $menuFontSize: 16px;
   // }
   .dropdown-toggle{
     font-size: inherit;
-    background: #0F2A3B;
+    // background: #0F2A3B;
     padding: 10px 12px;
     top: 0;
     left: 0;
+    // border: 1px solid rgb(53, 73, 85);
+    // background: white;
+    // color: rgb(53, 73, 85);
   }
   .dropdown-menu{
     padding: 0;

@@ -1,15 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis|Oxygen|Rubik");
+@media (min-width: 768px) {
+  .teleMenu.dropdown {
+    margin-left: 240px;
+    margin-top: 50px;
+  }
+}
+
 .teleMenu.dropdown {
   width: 100vw;
   max-width: 1155px;
-  margin: auto;
   font-family: 'Roboto Condensed';
   font-size: 16px;
 }
 
 .teleMenu.dropdown .dropdown-toggle {
   font-size: inherit;
-  background: #0F2A3B;
   padding: 10px 12px;
   top: 0;
   left: 0;
