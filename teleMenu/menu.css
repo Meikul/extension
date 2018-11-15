@@ -79,23 +79,8 @@
   z-index: 1;
 }
 
-.teleMenu.dropdown .dropdown-toggle.connected {
-  border-radius: 0 0 4px 0;
-}
-
-.teleMenu.dropdown .dropdown-toggle.connected::before {
-  position: absolute;
-  content: '';
-  display: block;
-  top: 0;
-  right: 99%;
-  width: calc((100vw - 1100px) / 2);
-  height: 112px;
-  background: #0F2A3B;
-}
-
 .teleMenu.dropdown .dropdown-toggle.slanted {
-  padding: 26px 20px;
+  padding: 18px 20px;
 }
 
 .teleMenu.dropdown .dropdown-toggle.slanted::after {
@@ -105,14 +90,14 @@
   top: 0;
   right: -11px;
   width: 24px;
-  height: 112px;
+  height: 81px;
   background: #0F2A3B;
-  -webkit-transform: skew(-7deg);
-          transform: skew(-7deg);
+  -webkit-transform: skew(-8deg);
+          transform: skew(-8deg);
   border-radius: 0 0 5px 0;
 }
 
-.teleMenu.dropdown .dropdown-toggle.slanted:not(.connected)::before {
+.teleMenu.dropdown .dropdown-toggle.slanted::before {
   position: absolute;
   content: '';
   display: block;
@@ -120,10 +105,10 @@
   left: -10px;
   border-radius: 0 0 0 5px;
   width: 22px;
-  height: 112px;
+  height: 81px;
   background: #0F2A3B;
-  -webkit-transform: skew(-7deg);
-          transform: skew(-7deg);
+  -webkit-transform: skew(8deg);
+          transform: skew(8deg);
 }
 
 .teleMenu.dropdown .dropdown-toggle:not(.slanted) {
