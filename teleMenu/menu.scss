@@ -20,8 +20,8 @@ $aggieBlue: #0F2A3B;
 $menuFontSize: 16px;
 $titleFont: 'Lato';
 
-.header-bars{
-  position: absolute;
+.site-header{
+  position: relative;
   top: 0;
   left: 0;
   width: 100vw;
@@ -75,6 +75,20 @@ $titleFont: 'Lato';
     // left: 250px;
   }
 }
+
+#global-header{
+  #global-header-wrapper{
+    min-height: 40px;
+    .global-bar{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $aggieBlue;
+      height: 40px;
+    }
+  }
+}
+
 .teleMenu.dropdown{
   width: 100vw;
   max-width: 1155px;
@@ -93,9 +107,6 @@ $titleFont: 'Lato';
         width: calc((100vw - 1100px) / 2);
         height: 112px;
         background: #0F2A3B;
-      }
-      &::after{
-        // position: relative;
       }
     }
     &.slanted{
@@ -128,7 +139,7 @@ $titleFont: 'Lato';
       }
     }
     &:not(.slanted){
-      padding: 26px 24px;
+      padding: 18px 20px;
       &:not(.connected){
         border-radius: 0 0 4px 4px;
       }
@@ -149,10 +160,9 @@ $titleFont: 'Lato';
     position: absolute;
     color: white;
     text-decoration: none;
-    padding: 26px 24px;
     z-index: 1;
     img{
-      width: 205px;
+      width: 136px;
     }
     em{
       padding-left: 10px;

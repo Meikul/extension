@@ -1,37 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis|Oxygen|Patua+One|Lato|Cabin");
-.header-bars {
-  position: absolute;
+.site-header {
+  position: relative;
   top: 0;
   left: 0;
   width: 100vw;
 }
 
-.header-bars .title-bar {
+.site-header .title-bar {
   background: #0F2A3B;
   width: 100%;
   padding: 12px;
 }
 
-.header-bars .title-bar .title-wrapper {
+.site-header .title-bar .title-wrapper {
   width: 100%;
   max-width: 1200px;
   margin: auto;
 }
 
-.header-bars .title-bar .title-wrapper h1 {
+.site-header .title-bar .title-wrapper h1 {
   margin: 0;
   margin-left: 355px;
   color: white;
   font-family: "Lato";
 }
 
-.header-bars .main-navigation {
+.site-header .main-navigation {
   width: 100%;
   background: white;
   border-bottom: 1px solid #ddd;
 }
 
-.header-bars .main-navigation nav.navbar {
+.site-header .main-navigation nav.navbar {
   width: 100%;
   max-width: 1200px;
   margin: auto;
@@ -40,15 +40,27 @@
   min-height: 40px;
 }
 
-.header-bars .main-navigation nav.navbar ul.navbar-nav {
+.site-header .main-navigation nav.navbar ul.navbar-nav {
   margin-left: 330px;
 }
 
-.header-bars .main-navigation nav.navbar ul.navbar-nav a {
+.site-header .main-navigation nav.navbar ul.navbar-nav a {
   color: #0F2A3B;
   font-family: "Lato";
   font-size: 16px;
   padding: 12px 12px;
+}
+
+#global-header #global-header-wrapper {
+  min-height: 40px;
+}
+
+#global-header #global-header-wrapper .global-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #0F2A3B;
+  height: 40px;
 }
 
 .teleMenu.dropdown {
@@ -64,7 +76,6 @@
   position: absolute;
   color: white;
   text-decoration: none;
-  padding: 26px 24px;
   z-index: 1;
 }
 
@@ -116,7 +127,7 @@
 }
 
 .teleMenu.dropdown .dropdown-toggle:not(.slanted) {
-  padding: 26px 24px;
+  padding: 18px 20px;
 }
 
 .teleMenu.dropdown .dropdown-toggle:not(.slanted):not(.connected) {
@@ -139,7 +150,7 @@
 }
 
 .teleMenu.dropdown .dropdown-toggle img {
-  width: 205px;
+  width: 136px;
 }
 
 .teleMenu.dropdown .dropdown-toggle em {
