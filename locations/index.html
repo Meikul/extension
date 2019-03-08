@@ -1,0 +1,1409 @@
+
+<!DOCTYPE HTML>
+<!--[if IE 7]> <html class="ie7" lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> <![endif]--><!--[if IE 8]> <html class="ie8" lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> <![endif]--><!--[if !(IE 7) | !(IE 8)  ]><!--><html xml:lang="en" lang="en"><!--<![endif]-->
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+			/*Start Global Headcode*/
+		</script>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+      <link href="//ajax.googleapis.com" rel="dns-prefetch">
+      <meta name="viewport" content="width=device-width">
+      <base href="http://extension.usu.edu/">
+      <link rel="icon" href="https://extension.usu.edu/images/uploads/extension-favicon.png">
+      <link href="https://extension.usu.edu/_resources/css/styles.css" rel="stylesheet" type="text/css" media="screen">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><script type="text/javascript">
+			/*End Global Headcode*/
+		  </script><script type="text/javascript">
+			/*Start Local Headcode*/
+		</script><!-- please don't remove, not pushed to production -->
+    <link rel="stylesheet" href="http://127.0.0.1:5500/style.css"/>
+<meta name="google-site-verification" content="AQ7FlR0rjEaMgMWQHNN-4fLQFp8GJuAysmYnxNSa02o" /> <!-- For Webmaster Tools, do not delete -->
+<!-- js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://extension.usu.edu/_resources/scripts/lightbox.js" type="text/javascript"></script>
+<script src="https://extension.usu.edu/_resources/scripts/lightbox-type-selector.js" type="text/javascript"></script>
+<script src="https://extension.usu.edu/_resources/scripts/toggle-arrows.js" type="text/javascript"></script>
+<script src="https://extension.usu.edu/_resources/scripts/modernizr-2.6.1.min.js" type="text/javascript"></script>
+<script src="http://127.0.0.1:5500/script.js"></script>
+
+<!-- Facebook Script for Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1517667851879728');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1517667851879728&ev=PageView&noscript=1"
+/></noscript>
+
+
+<!-- Pinterest Verification -->
+<meta name="p:domain_verify" content="3177164d8401e350b16170b553cd1c86"/><script type="text/javascript">
+			/*End Local Headcode*/
+		</script><script type="text/javascript">
+			/*for disqus comments*/
+			var page_id="https://extension.usu.edu/locations.php";
+		</script><title>USU Extension Locations</title>
+      <meta name="Description" content="Extension County Offices are located throughout the state.  Find the one nearest your right here!"><script type="text/javascript">// <![CDATA[
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-45551551-1', 'usu.edu');
+  ga('create', 'UA-61329972-1', 'extmain', {'name': 'extmain'});
+  ga('create', 'UA-61329972-31', 'ext', {'name': 'ext'});
+  ga('create', 'UA-61329972-33', 'ext2', {'name': 'ext2'});
+  ga('send', 'pageview');
+  ga('extmain.send', 'pageview');
+  ga('ext.send', 'pageview');
+  ga('ext2.send', 'pageview');
+// ]]></script>
+   </head>
+   <body>
+      <div id="extensionHeader">
+         <div class="innerWrapper"><a class="extensionLogo" href="/"> <img class="image-reset" src="/_resources/images/Extension-4H-Logo.png" alt="Utate State University Extension Logo - Small" width="204" height="60" /> </a>
+            <div class="usuNavWrapper">
+               <ul class="usuNav level0 ep-horiz-ul"><li class="toggle"><a data-toggle="collapse" href="#usu-nav">USU Links</a></li>
+<ul id="usu-nav" class="hidden-nav tab-pane fade">
+	<li><a href="http://www.usu.edu/">USU Home</a></li>
+	<li><a href="http://www.usu.edu/azindex/">A-Z Index</a></li>
+	<li><a href="http://www.usu.edu/myusu/">MyUSU</a></li>
+	<li class="last"><a href="http://www.usu.edu/directory/">Directory</a></li>
+</ul>
+<li class="toggle"><a data-toggle="collapse" href="#ext-nav">Extension Links</a></li>
+<ul id="ext-nav" class="hidden-nav tab-pane fade">
+	<li><a href="http://extension.usu.edu/">Home</a></li>
+	<li><a href="http://extension.usu.edu/locations.php">Locations</a></li>
+	<li><a href="http://extension.usu.edu/calendar.php">Calendar</a></li>
+	<li><a href="http://extension.usu.edu/publications.php">Publications</a></li>
+	<li class="last"><a href="https://extension.cart.usu.edu/">Shopping Cart</a></li>
+</ul><!-- Social Media Links, UNIQUE TO THIS SITE go after this asset -->
+<li class="toggle"><a data-toggle="collapse" href="#soc-nav">Social Media</a></li>
+<ul id="soc-nav" class="hidden-nav tab-pane fade">
+	<li><a href="https://www.facebook.com/usuextension" target="_blank"><i class="fa fa-facebook fa-2x" ></i><span class="sr-only">USU Extension Facebook</span></a></li>
+	<li><a href="https://twitter.com/usuextension" target="_blank"><i class="fa fa-twitter fa-2x" ></i><span class="sr-only">USU Extension Twitter</span></a></li>
+	<li><a href="https://instagram.com/usuextension/" target="_blank"><i class="fa fa-instagram fa-2x" ></i><span class="sr-only">USU Extension Instagram</span></a></li>
+	<li><a href="https://www.pinterest.com/usuextension/" target="_blank"><i class="fa fa-pinterest fa-2x" ></i><span class="sr-only">USU Extension Pinterest</span></a></li>
+	<li><a href="https://google.com/+usuextension" target="_blank"><i class="fa fa-google-plus fa-2x" ></i><span class="sr-only">USU Extension Google+</span></a></li>
+	<li><a href="http://linkedin.com/company/usuextension" target="_blank"><i class="fa fa-linkedin-square fa-2x" ></i><span class="sr-only">USU Extension LinkedIn</span></a></li>
+	<li><a href="https://www.youtube.com/usuextension" target="_blank"><i class="fa fa-youtube fa-2x" ></i><span class="sr-only">USU Extension YouTube</span></a></li>
+</ul>
+</ul>
+            </div>
+            <div id="extensionSearch"><script>
+(function() {
+var cx = '008637555176047886659:dyr814d8vq0';
+var gcse = document.createElement('script');
+gcse.type = 'text/javascript';
+gcse.async = true;
+gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+'//cse.google.com/cse.js?cx=' + cx;
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(gcse, s);
+})();
+</script>
+<gcse:search></gcse:search>
+               <div id="searchResults">
+                  <ul id="extensionSites"></ul>
+                  <div id="siteResults"></div>
+               </div>
+            </div>
+         </div>
+         <div class="clear"></div>
+      </div>
+      <div id="container">
+<header class="site-header" role="banner" style="background: url('/_resources/images/uploads/header_images/Fall-Header-2.jpg') no-repeat;">
+	<div class="titleWrapper">
+		<h1><a href="/">Utah State University Extension</a></h1>
+	</div><!-- .titleWrapper -->
+</header>
+
+         <div id="content" class="ep-vert-margin content-wrapper" role="main"><a name="main-content" tabindex="-1"></a><section>
+               <div class="mainContentWrapper">
+                  <div class="contentTwo ep-col-1-3">
+                     <nav role="main" class="sideNav">
+                        <ul class="siteNav">
+<nav class="navbar navbar-default">
+	<div class="navbar-header">
+		<button class="navbar-toggle" data-toggle="collapse" data-target="#extNav1">
+			<span class="sr-only">Toggle navigation</span>
+			<em class="fa fa-bars" aria-hidden="true"></em>
+			<span class="navmenu" style="text-align: center;">Extension Menu</span> 
+		</button>
+	</div>
+	<div id="extNav1" class="collapse navbar-collapse">
+		<li class="groupTitle toggle-mobile dt-nav-title hidden-xs">Browse Extension</li>
+		<ul class="nav navbar-stacked">
+			<li><a title="County &amp; Satellite Offices of USU Extension" href="/locations.php">Locations</a></li>
+			<li><a title="USU Staff Directory" href="http://directory.usu.edu/department/663/" target="blank">Directory</a></li>
+			<li><a title="USU Extension Events Calendar" href="/calendar.php">Calendar</a></li>
+			<li><a title="Extension Impacts" href="/impacts.php">Impacts</a></li>
+			<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">News <i class="fa fa-angle-down" aria-hidden="true">&nbsp;</i></a>
+				<ul class="dropdown-menu">
+					<li><a title="USU Extension News" href="/news.php">Extension News</a></li>
+					<li><a title="Extension in the News" href="/in-the-news.php">Extension in the News</a></li>
+				</ul>
+			</li>
+			<li><a title="Extension Publications - Current, Archives, Video" href="/publications.php">Publications</a></li>
+			<li><a title="Extension Publications - Current, Archives, Video" href="https://extensioncourses.usu.edu/" target="_blank">Online Courses</a></li>
+			<li><a title="USU Extension Mobile Apps" href="/apps/">Mobile Apps</a></li>
+			<li><a title="Shop Extension Merchandise" href="https://usuextensionstore.com/">Store</a></li>
+			<li><a title="Donate to USU Extension" href="/donate.php">Donate&nbsp;<em class="fa fa-gift">&nbsp;</em></a></li>
+			
+			<li><a href="http://youtube.com/usuextension" target="_blank">Videos</a></li>
+		</ul>
+	</div>
+</nav>
+</ul>
+                        <ul class="extNav">
+<nav class="navbar navbar-default">
+	<div class="navbar-header"><button class="navbar-toggle" data-toggle="collapse" data-target="#extNav9"> <span class="sr-only">Toggle navigation</span><span class="navmenu" style="text-align: center;"><em class="fa fa-bars" aria-hidden="true">&nbsp;</em>Extension Programs</span> </button></div>
+	<div id="extNav9" class="collapse navbar-collapse">
+
+		<li class="groupTitle toggle-mobile dt-nav-title hidden-xs">USU Extension Programs</li>
+
+		<ul class="nav navbar-stacked">
+			<li class="naturalIcon"><a title="Ag &amp; Natural Resources" href="/agriculture.php">Agriculture &amp; Natural Resources</a></li>
+			<li class="gardeningIcon"><a title="Extension Gardening" href="https://extension.usu.edu/yardandgarden/index.php">Gardening</a></li>
+			<li class="homeIcon"><a title="Extension Home, Family &amp; Food" href="/homeandfamily.php">Home, Family &amp; Food</a></li>
+			<li class="hIcon"><a title="Utah 4H &amp; Youth" href="http://utah4-h.org/" target="blank">Utah 4-H &amp; Youth</a></li>
+		</ul>
+	</div>
+</nav>
+</ul>
+                     </nav>
+                     <div class="sideHomeContent">
+                        <hr class="break"><div class="hidden-xs"><a href="/news_sections/general_news/best-of-state"><img class="img-responsive" src="/images/best-of-state-two.png" alt="" width="573" height="196" /></a></div>
+<div class="calendar"><a href="https://livewellutah.org/" target="_blank"><img class="img-responsive" style="vertical-align: middle;" src="/images/uploads/LWUWebButton-OY-Aug2016-white.jpg" alt="Live Well Utah" width="574" height="210" /></a><hr /><!--trumba calendar that extension home is moving to -->
+<h2>UPCOMING EVENTS</h2>
+<script type="text/javascript" src="https://www.trumba.com/scripts/spuds.js"></script>
+<script type="text/javascript">// <![CDATA[
+$Trumba.addSpud({
+webName: "usuext",
+spudType : "upcomingpreview" ,
+teaserBase : "https://extension.usu.edu/calendar" });
+// ]]></script>
+<noscript>Your browser must support JavaScript to view this content. 
+Please enable JavaScript in your browser settings then try again. 
+<a href='http://www.trumba.com'>Events calendar powered by Trumba</a></noscript><a class="button" href="/calendar.html">View full calendar</a></div>
+<!-- end of trumba stuff -->                        <hr class="break"><div class="desktop-newsletter" style="width: 100%;">
+<div class="newsletter">
+<p><button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#newsletter-signup"><i class="fa fa-envelope" aria-hidden="true">&nbsp;</i>Newsletter Signup</button></p>
+<!-- Modal -->
+<div id="newsletter-signup" class="modal fade" role="dialog">
+<div class="modal-dialog"><!-- Modal content-->
+<div class="modal-content">
+<div class="modal-header"><button class="close" type="button" data-dismiss="modal">&times;</button>
+<h4 class="modal-title">Subscribe to Extension Newsletters</h4>
+</div>
+<div class="modal-body">
+       <form data-id="embedded_signup:form" class="form" role="form" name="embedded_signup" method="POST" action="https://visitor2.constantcontact.com/api/signup">
+		   <div class="form-group">
+           <!-- The following code must be included to ensure your sign-up form works properly. -->
+           <input data-id="ca:input" name="ca" value="27d17935-ac77-4779-8405-5dcbbb712677" type="hidden"></input>
+           <input data-id="source:input" name="source" value="EFD" type="hidden"></input>
+           <input data-id="required:input" name="required" value="list,email,first_name,last_name" type="hidden"></input>
+           <input data-id="url:input" name="url" value="" type="hidden"></input>
+			<p data-id="Email Address:p" ><label data-id="Email Address:label" data-name="email" class="control-label" for="email">Email Address</label><input data-id="Email Address:input" name="email" value="" maxlength="80" class="form-control" type="email"></input></p>
+			<p data-id="First Name:p" ><label data-id="First Name:label" data-name="first_name" class="control-label">First Name</label><input data-id="First Name:input" name="first_name" value="" maxlength="50"  class="form-control" type="name"></input></p>
+			<p data-id="Last Name:p" ><label data-id="Last Name:label" data-name="last_name" class="control-label">Last Name</label><input data-id="Last Name:input" name="last_name" value="" maxlength="50" class="form-control" type="name"></input></p>
+                      <p data-id="Lists:p" ><label data-id="Lists:label" data-name="list" >Subscribe to any of these email lists</label>
+						  <div class="checkbox"><label><input data-id="Lists:input" name="list_0" value="4" type="checkbox"><span data-id="Lists:span">4-H &amp; Youth</span></input></label></div>
+						  <div class="checkbox"><label><input data-id="Lists:input" name="list_1" value="10" type="checkbox"><span data-id="Lists:span">Live Well Utah | Newsletter</span></input></label></div>
+						  <div class="checkbox"><label><input data-id="Lists:input" name="list_2" value="2" type="checkbox"><span data-id="Lists:span">The Garden View | Newsletter</span></input></label></div>
+						  <div class="checkbox"><label><input data-id="Lists:input" name="list_3" value="3" type="checkbox"><span data-id="Lists:span">USU Extension Master Mailing List</span></input></label></div></p>
+           <button type="submit" class="btn btn-primary btn-lg" data-enabled="enabled">Sign Up</button>
+			<span id="success_message" style="display:none;">
+          	 	<div class="alert alert-success">Thank you for signing up!</div>
+       		</span>
+		   </div>
+       	<div><h6>By submitting this form, you are granting USU Extension permission to email you. You may unsubscribe via the link found at the bottom of every email.  (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank">Email Privacy Policy</a> for details.)</h6></div>
+       </form>
+   </div>
+<script type='text/javascript'>
+   var localizedErrMap = {};
+   localizedErrMap['required'] = 		'This field is required.';
+   localizedErrMap['ca'] = 			'An unexpected error occurred while attempting to send email.';
+   localizedErrMap['email'] = 			'Please enter your email address in name@email.com format.';
+   localizedErrMap['birthday'] = 		'Please enter birthday in MM/DD format.';
+   localizedErrMap['anniversary'] = 	'Please enter anniversary in MM/DD/YYYY format.';
+   localizedErrMap['custom_date'] = 	'Please enter this date in MM/DD/YYYY format.';
+   localizedErrMap['list'] = 			'Please select at least one email list.';
+   localizedErrMap['generic'] = 		'This field is invalid.';
+   localizedErrMap['shared'] = 		'<div class="alert alert-danger">Please make sure you have completed the form and try again.</div>';
+   localizedErrMap['state_mismatch'] = 'Mismatched State/Province and Country.';
+	localizedErrMap['state_province'] = 'Select a state/province';
+   localizedErrMap['selectcountry'] = 	'Select a country';
+   var postURL = 'https://visitor2.constantcontact.com/api/signup';
+</script>
+<script type='text/javascript' src='https://static.ctctcdn.com/h/contacts-embedded-signup-assets/1.0.2/js/signup-form.js'></script>
+<div class="modal-footer"><a href="/newsletters/" class="btn btn-default" target="_blank">Find Additional Extension Newsletters</a> <button class="btn btn-default" type="button" data-dismiss="modal">Close Subscription</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+                     </div>
+                  </div>
+                  <div class="ep-col-2-3 contentOne">
+                     <h1>Locations</h1>
+                     <div class="alert alert-info">
+                        
+                        <p>USU Extension has 33 locations throughout Utah. <a class="btn btn-info" href="https://www.google.com/maps/d/u/0/viewer?mid=1PwStX07JgnPIWXWGmMrHZPjmhas&amp;ll=39.25644226847782%2C-112.04473694197145&amp;z=6" target="_blank">View in Google Maps</a></p>
+                        
+                     </div>
+                     
+                     <div class="row">
+                        
+                        <div class="col-sm-4"><a class="btn btn-default btn-block" href="#CountyOffices">County Offices</a></div>
+                        
+                        <div class="col-sm-4"><a class="btn btn-default btn-block" href="#Gardens">Garden/Center Offices</a></div>
+                        
+                        <div class="col-sm-4"><a class="btn btn-default btn-block" href="#SB">Small Business Development</a></div>
+                        
+                     </div>
+                     
+                     <h2 id="CountyOffices">County Offices</h2>
+                     
+                     <div id="accordion" class="panel-group">
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse1" data-toggle="collapse" data-parent="#accordion">Beaver County &nbsp; 435-438-6450 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse1" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Physical Address:</span></strong> <br>65 N 400 E<br>Beaver, UT 84713<br><strong>Mailing Address:<br></strong>P.O. Box 466 Beaver, UT 84713
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-438-6450">435-438-6450 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/beaver">extension.usu.edu/beaver </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse2" data-toggle="collapse" data-parent="#accordion">Box Elder County &nbsp;&nbsp;435-695-2542 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse2" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>01 S Main St&nbsp;<br>Brigham City, UT 84302
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-695-2542">435-695-2542 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong>&nbsp;<a href="http://extension.usu.edu/boxelder/">extension.usu.edu/boxelder/</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse3" data-toggle="collapse" data-parent="#accordion">Cache County &nbsp;&nbsp;435-752-6263 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse3" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>179 N Main St&nbsp;<br>Suite 111 <br>Logan, UT 84321
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-752-6263">435-752-6263 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/cache">extension.usu.edu/cache </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse4" data-toggle="collapse" data-parent="#accordion">Carbon County &nbsp;&nbsp;435-636-3233 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse4" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>751 E 100 N, Suite 1700<br>Price, UT 84501
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-636-3233">435-636-3233 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/carbon">extension.usu.edu/carbon </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 9:00 a.m. - 12:00 p.m.,1:00 p.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse5" data-toggle="collapse" data-parent="#accordion">Davis County &nbsp;&nbsp;801-499-5370 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse5" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>80 East 725 South<br>Kaysville, UT 84037
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-801-499-5370">801-499-5370 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span> </strong><a href="http://extension.usu.edu/davis">extension.usu.edu/davis </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse6" data-toggle="collapse" data-parent="#accordion">Duchesne County &nbsp;&nbsp;435-738-1140 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse6" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>100 S 50 E&nbsp;<br>P.O. Box 978 <br>Duchesne, UT 84021
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-738-1140">435-738-1140 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/duchesne">extension.usu.edu/duchesne </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 8:30 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse7" data-toggle="collapse" data-parent="#accordion">Emery County &nbsp;&nbsp;435-381-2381</a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse7" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>Courthouse, Room 113<br>75 E Main St&nbsp;<br>P.O. Box 847 &nbsp;<br>Castle Dale, UT 84513
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-381-2381">435-381-2381</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/emery">extension.usu.edu/emery </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 8:30 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse8" data-toggle="collapse" data-parent="#accordion">Garfield County &nbsp;&nbsp;435-676-1113 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse8" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>55 S Main St, Courthouse&nbsp;<br>P.O. Box 77 <br>Panguitch, UT 84759
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-676-1113">435-676-1113 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/garfield">extension.usu.edu/garfield </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 9:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse9" data-toggle="collapse" data-parent="#accordion">Grand County &nbsp;&nbsp;435-259-7558 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse9" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>125 W 200 S&nbsp;<br>Moab, UT 84532
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-259-7558">435-259-7558 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/grand">extension.usu.edu/grand </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday&nbsp; 9:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse10" data-toggle="collapse" data-parent="#accordion">Iron County &nbsp;&nbsp;435-586-8132 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse10" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>585 N Main St, #5<br>P.O. Box 69 <br>Cedar City, UT 84721
+                                 </p>
+                                 
+                                 <p><span class="location-titles"><strong>Phone:</strong> </span><a href="tel://1-435-586-8132">435-586-8132 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/iron">extension.usu.edu/iron </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 8:30 a.m. -12:00 p.m.,1:00 p.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse11" data-toggle="collapse" data-parent="#accordion">Juab County &nbsp;&nbsp;435-623-3450 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse11" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>Juab County Center <br>160 N Main St&nbsp;<br>Nephi, UT 84648
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-623-3450">435-623-3450 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/juab">extension.usu.edu/juab </a></p>
+                                 
+                                 <p><span class="location-titles"><strong>Hours:</strong><br></span>Monday-Thursday 7:00 a.m. -12:00 p.m., 1:00 - 6:00 p.m.&nbsp;<br><em>Closed Fridays</em></p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse12" data-toggle="collapse" data-parent="#accordion">Kane County &nbsp;&nbsp;435-644-4901 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse12" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>180 W 300 N&nbsp;<br>Kanab, UT 84741
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-644-4901">435-644-4901 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/kane">extension.usu.edu/kane </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong>&nbsp;<br>Monday-Thursday 9:00 a.m. - 5:00 p.m. <br><em>Closed Fridays</em></p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse13" data-toggle="collapse" data-parent="#accordion">Millard County (Delta) &nbsp;&nbsp;435-864-1480 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse13" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>83 S Manzanita Ave&nbsp;<br>Delta, UT 84624
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-864-1480">435-864-1480 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span> </strong><a href="http://extension.usu.edu/millard">extension.usu.edu/millard </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday, Wednesday and Friday 8:30 a.m. - 4:30 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse14" data-toggle="collapse" data-parent="#accordion">Millard County (Fillmore) &nbsp;&nbsp;435-743-5412 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse14" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>50 S Main St&nbsp;<br>Fillmore, UT 84631-0568
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-743-5412">435-743-5412 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/millard">extension.usu.edu/millard </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Tuesday, Thursday 8:30 a.m. - 4:30 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse15" data-toggle="collapse" data-parent="#accordion">Morgan County &nbsp;&nbsp;801-829-3472 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse15" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>48 W Young St<br>P.O. Box 886 <br>Morgan, UT 84050-0720
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-801-829-3472">801-829-3472 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/morgan">extension.usu.edu/morgan </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span>&nbsp;</strong><br>Monday-Thursday 7:00 a.m. - 6:00 p.m.&nbsp;<br><em>Closed Fridays</em></p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse17" data-toggle="collapse" data-parent="#accordion">Piute County &nbsp;&nbsp;435-577-2901 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse17" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>Courthouse <br>550 N Main St&nbsp;<br>P.O. Box 39 <br>Junction, UT 84740
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-577-2901">435-577-2901 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span> </strong><a href="http://extension.usu.edu/piute">extension.usu.edu/piute </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 9:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse18" data-toggle="collapse" data-parent="#accordion">Rich County &nbsp;&nbsp;435-793-2435 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse18" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>20 S Main St&nbsp;<br>P.O. Box 8 <br>Randolph, UT 84064
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-793-2435">435-793-2435 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/rich">extension.usu.edu/rich </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 9:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse19" data-toggle="collapse" data-parent="#accordion">Salt Lake County &nbsp;&nbsp;385-468-4820 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse19" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>2001 S State St<br>Suite S1-300&nbsp;<br>P.O. Box 144575 <br>Salt Lake City, 84114-4575
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-385-468-4820">385-468-4820 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/saltlake">extension.usu.edu/saltlake </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse20" data-toggle="collapse" data-parent="#accordion">San Juan County &nbsp;&nbsp;435-587-3239 ext. 9 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse20" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>117 S Main St, Courthouse&nbsp;<br>P.O. Box 549 <br>Monticello, UT 84535
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-587-3239 ext. 9">435-587-3239 ext. 9 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/sanjuan">extension.usu.edu/sanjuan </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 9:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse21" data-toggle="collapse" data-parent="#accordion">Sanpete County &nbsp;&nbsp;435-283-3472 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse21" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>325 W 100 N<br>Ephraim, UT 84627
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-283-3472">435-283-3472 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/sanpete">extension.usu.edu/sanpete </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span>&nbsp;</strong><br>Monday - Thursday&nbsp; 9:00 a.m. - 4:00 p.m.<br>or by appointment&nbsp;
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse22" data-toggle="collapse" data-parent="#accordion">Sevier County &nbsp;&nbsp;435-893-0470 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse22" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>250 N Main St<br>Richfield, UT 84701
+                                 </p>
+                                 
+                                 <p><span class="location-titles"><strong>Phone:</strong> </span><a href="tel://1-435-893-0470">435-893-0470 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/sevier">extension.usu.edu/sevier </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse23" data-toggle="collapse" data-parent="#accordion">Summit County &nbsp;&nbsp;435-336-3217 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse23" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span></strong> <br>45 E 100 N&nbsp;<br>P.O. Box 127 <br>Coalville, UT 84017-0127
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-336-3217">435-336-3217 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/summit">extension.usu.edu/summit </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse26" data-toggle="collapse" data-parent="#accordion">Tooele County &nbsp;&nbsp;435-277-2400 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse26" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>151 N Main St&nbsp;<br>Tooele, UT 84074-2141
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-277-2400">435-277-2400 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/tooele">extension.usu.edu/tooele </a></p>
+                                 
+                                 <p><span class="location-titles"><strong>Hours:</strong><br></span>Monday-Thursday 7:00 am-6:00 pm <br><em>Closed Fridays</em></p>
+                                 
+                                 <p style="text-align: center;"><em>(For questions regarding the Utah State University Tooele Regional Campus&nbsp;<br></em><em>please contact them at 435-882-6611)</em></p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse27" data-toggle="collapse" data-parent="#accordion">Uintah County &nbsp;&nbsp;435-781-5452 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse27" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>152 E 100 N<br>Vernal UT 84078
+                                 </p>
+                                 
+                                 <p><span class="location-titles"><strong>Phone:</strong> </span><a href="tel://1-435-781-5452">435-781-5452 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/uintah">extension.usu.edu/uintah </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse29" data-toggle="collapse" data-parent="#accordion">Utah County &nbsp;&nbsp;801-851-8460 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse29" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>100 E Center St, Rm. L600 (L400 for 4-H) <br>Provo, UT 84606
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-801-851-8460">801-851-8460<br></a><strong>Phone (4-H)</strong>: <a href="tel:801-851-8470">801-851-8470</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/utah">extension.usu.edu/utah </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse30" data-toggle="collapse" data-parent="#accordion">Wasatch County &nbsp;&nbsp;435-657-3235 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse30" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>55 S 500 E&nbsp;<br>Heber City, UT 84032
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-657-3235">435-657-3235 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/wasatch">extension.usu.edu/wasatch </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 8:00 a.m. - 12:00 p.m., 1:00 p.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse31" data-toggle="collapse" data-parent="#accordion">Washington County &nbsp;&nbsp;435-634-5706 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse31" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>339 S 5500 W<br>Hurricane, UT 84737
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-634-5706">435-634-5706 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/washington">extension.usu.edu/washington </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse32" data-toggle="collapse" data-parent="#accordion">Wayne County &nbsp;&nbsp;435-836-1312 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse32" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span></strong> <br>18 S Main St, Courthouse<br>P.O. Box 160 <br>Loa, UT 84747
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-435-836-1312">435-836-1312 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/wayne">extension.usu.edu/wayne </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 9:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse33" data-toggle="collapse" data-parent="#accordion">Weber County &nbsp;&nbsp;801-399-8200</a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse33" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>1181 N Fairgrounds Dr<br>Ogden, UT 84404
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-801-399-8200">801-399-8200</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://extension.usu.edu/weber">extension.usu.edu/weber </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span> </strong>Monday-Friday 8:00 a.m. - 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                     </div>
+                     
+                     <h2 id="Gardens">Gardens/Centers</h2>
+                     
+                     <div id="accordion2" class="panel-group">
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse16" data-toggle="collapse" data-parent="#accordion2">Ogden Botanical Gardens &nbsp;&nbsp;801-399-8080 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse16" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>1750 Monroe Blvd<br>Ogden, UT 84401
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-801-399-8080">801-399-8080 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://ogdenbotanicalgardens.org">ogdenbotanicalgardens.org </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong>&nbsp;<br>Monday - Thursday 9:00 a.m. - 4:30 p.m.<br>Friday 9:00 a.m. - 3:30 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse24" data-toggle="collapse" data-parent="#accordion2">Swaner Preserve &amp; EcoCenter &nbsp;&nbsp;435-649-1767 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse24" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>1258 Center Dr<br>Park City, UT 84098
+                                 </p>
+                                 
+                                 <p><span class="location-titles"><strong>Phone:</strong> </span><a href="tel://1-435-649-1767">435-649-1767 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://www.swanerecocenter.org">swanerecocenter.org </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Wednesday - Saturday 10:00 a.m. - 4:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse25" data-toggle="collapse" data-parent="#accordion2">Thanksgiving Point &nbsp;&nbsp;801-768-4919 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse25" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>3003 N Thanksgiving Way <br>Lehi, UT 84043
+                                 </p>
+                                 
+                                 <p><span class="location-titles"><strong>Phone:</strong> </span><a href="tel://1-801-768-4919">801-768-4919 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span> </strong><a href="http://www.thanksgivingpoint.com/">thanksgivingpoint.com</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong> Monday-Friday 10:00 a.m. - 8:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#collapse28" data-toggle="collapse" data-parent="#accordion2">USU Botanical Center &nbsp;&nbsp;801-593-8969 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="collapse28" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>700 S 150 E <br>Kaysville, UT 84037
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://1-801-593-8969">801-593-8969 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://usubotanicalcenter.org/">usubotanicalcenter.org</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong>&nbsp;<br>Monday-Friday 1:00 p.m. - 5:00 p.m.&nbsp;<br>Saturday: 10:00 a.m. - 2:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                     </div>
+                     
+                     <h2 id="SB">Small Business Development Centers</h2>
+                     
+                     <div id="accordion3" class="panel-group">
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#smallbiz1" data-toggle="collapse" data-parent="#accordion3">Brigham City Small Business Development Center &nbsp;&nbsp;435-919-1296 </a></h4>
+                              
+                           </div>
+                           
+                           <div id="smallbiz1" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>195 W 1100 S, Room 170E<br>Brigham City, UT 84302
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://435-919-1296">435-919-1296 </a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://www.boxeldersbdc.org/">boxeldersbdc.org</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong>&nbsp;<br>Monday-Friday 8:00 a.m. – 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#smallbiz2" data-toggle="collapse" data-parent="#accordion3">Logan&nbsp;Small Business Development Center &nbsp;&nbsp;435-797-2277</a></h4>
+                              
+                           </div>
+                           
+                           <div id="smallbiz2" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>1770 Research Pkwy, #140<br> North Logan, UT 84341
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://435-797-2277">435-797-2277</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://sbdc.usu.edu/">sbdc.usu.edu</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong>&nbsp;Monday-Friday 8:00 a.m. – 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#smallbiz3" data-toggle="collapse" data-parent="#smallbiz3">Tooele Small Business Development Center&nbsp;&nbsp;&nbsp; 435-248-1892</a></h4>
+                              
+                           </div>
+                           
+                           <div id="smallbiz3" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>88 S Tooele Blvd<br> Tooele, UT 84074
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://435-248-1892">435-248-1892</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://www.tooelebusiness.org/">tooelebusiness.org</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong>&nbsp;Monday-Friday 8:00 a.m. – 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="panel panel-default">
+                           
+                           <div class="panel-heading">
+                              
+                              <h4 class="panel-title"><a href="#smallbiz4" data-toggle="collapse" data-parent="#smallbiz4">Vernal Small Business Development Center&nbsp;&nbsp; 435-722-1779</a></h4>
+                              
+                           </div>
+                           
+                           <div id="smallbiz4" class="panel-collapse collapse">
+                              
+                              <div class="panel-body">
+                                 
+                                 <p><strong><span class="location-titles">Address:</span> </strong><br>320 N Aggie Blvd<br> Vernal, UT 84078
+                                 </p>
+                                 
+                                 <p><strong><span class="location-titles">Phone: </span></strong><a href="tel://435-722-1779">435-722-1779</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Website:</span></strong> <a href="http://ususbdc.org/">ususbdc.org</a></p>
+                                 
+                                 <p><strong><span class="location-titles">Hours:</span></strong>&nbsp;<br>Monday-Friday 8:00 a.m. – 5:00 p.m.
+                                 </p>
+                                 
+                              </div>
+                              
+                           </div>
+                           
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+         <footer class="footer"><!-- footer --><footer class="footer">
+<ul class="mainNav level1">
+<li class="first parent">Program Areas
+<ul class="mainNav level2">
+<li><a title="Agriculture &amp; Natural Resources" href="/agriculture.php">Ag &amp; Natural Resources</a></li>
+<li class="last"><a title="Extension Gardening" href="/gardening.php">Gardening</a></li>
+<li><a title="Extension Home, Family &amp; Food" href="/homeandfamily.php">Home, Family &amp; Food</a></li>
+<li class="first"><a title="Utah 4H &amp; Youth" href="http://utah4-h.org/" target="blank">Utah 4-H &amp; Youth</a></li>
+</ul>
+</li>
+<li class="parent">About
+<ul class="mainNav level2">
+<li class="first"><a title="About Utah State University Extensions" href="/about-us.php">About Us</a></li>
+<li class="first"><a href="https://extension.usu.edu/impacts/">Impacts</a></li>
+<li class="first"><a title="County &amp; Satellite Offices of USU Extension" href="/locations.php">Locations</a></li>
+<li><a title="USU Extension Social Media" href="https://extension.usu.edu/marketing/social-media/index">Social Media</a></li>
+<li><a href="/employment-opportunities.php">Employment Opportunities</a></li>
+</ul>
+</li>
+<li class="parent">Information
+<ul class="mainNav level2">
+<li class="first"><a href="http://digitalcommons.usu.edu/extension/">Publications</a></li>
+<li><a title="Shop Extension Products" href="https://usuextensionstore.com/">Store</a></li>
+</ul>
+</li>
+<li class="parent">Press
+<ul class="mainNav level2">
+<li><a title="USU Extension Event Registrations" href="https://extension.usu.edu/pressroom/" target="_blank">Press Room</a></li>
+<li><a href="https://extension.usu.edu/in-the-news">In The News</a></li>
+</ul>
+</li>
+<li class="parent">Internal Resources
+<ul class="mainNav level2">
+<li class="first"><a title="Extension Employee Resources" href="https://extension.usu.edu/employee/">Employees</a></li>
+<li><a title="Extension Marketing" href="https://extension.usu.edu/marketing/">Marketing<br /></a></li>
+<li class="last"><a title="USU Extension/CAAS/UAES Organizational Chart" href="http://caas.usu.edu/files/Organizational-Chart-Feb-2018.pdf">Organizational Chart</a></li>
+</ul>
+</li>
+<li class="last parent">Website
+<ul class="mainNav level2">
+<li class="first"><a title="Utah State University Copyright Policy" href="http://www.usu.edu/copyright/" target="_blank">USU Copyright Policy</a></li>
+<li class="first"><a href="http://accessibility.usu.edu/" target="_blank">Accessibility</a></li>
+<li class="first"><a title="E-mail the webmaster to report an error" href="mailto:kirk.salisbury@usu.edu">Report an Error</a></li>
+<!--<li class="">
+					<a title="Site Map" href="/website/site-map">Site Map</a>
+				</li>
+				<li class="last">
+					<a title="Report an Issue" href="/website/report-an-issue">Report an Issue</a>
+				</li>--></ul>
+</li>
+</ul>
+</footer>
+            <p>Utah State University is an affirmative action/equal opportunity institution. <span id="directedit">©</span> 2017 Utah State University Extension
+            </p>
+         </footer><!-- please don't remove, not pushed to production -->
+<!-- OU: direct edit button code -->
+<script src="/_resources/scripts/direct-edit.js"></script>
+
+<!-- js -->
+<!-- Drip -->
+<script type="text/javascript">
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = '6932252';
+
+  (function() {
+    var dc = document.createElement('script');
+    dc.type = 'text/javascript'; dc.async = true;
+    dc.src = '//tag.getdrip.com/6932252.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(dc, s);
+  })();
+</script>
+<!-- end Drip -->
+
+         <div id="hidden" style="display:none;">
+            <a id="de" href="http://a.cms.omniupdate.com/10?skin=usu&amp;account=extension&amp;site=extension&amp;action=de&amp;path=/locations.pcf" >©</a>
+         </div>
+      </div>
+   <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bab786ce59","applicationID":"39467101","transactionName":"ZAZQYEoCCBBXAkxdX11MZ0ZRTAoMVQBMXV9dEBxEUBM=","queueTime":0,"applicationTime":6,"atts":"SEFTFgIYGx4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

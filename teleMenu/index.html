@@ -309,7 +309,7 @@
 
   <link rel="stylesheet" type="text/css" href="https://ouresources.usu.edu/_resources/css/profile-page-v0-classic.css">
 
-
+  <link rel="stylesheet" href="http://127.0.0.1:5500/menu.css">
 
 
 
@@ -368,9 +368,21 @@
     <div id="global-header-wrapper">
       <div class="row">
         <div class="brand">
+          <a href="javascript:void(0)" class="fa fa-bars menu-bars">&#8203;</a>
           <a href="https://extension.usu.edu/">
-            <img class="img-responsive" src="/_resources/includes/Extension-4H-Logo.png" alt="USU Extension Web Logo" />
+            <!-- <img class="img-responsive" src="/_resources/includes/Extension-4H-Logo.png" alt="USU Extension Web Logo" /> -->
+            <img class="img-responsive" src="http://127.0.0.1:5500/extension-logo.png" alt="USU Extension Web Logo" />
           </a>
+        </div>
+        <div class="drawer show">
+          <div class="overlay"></div>
+          <div class="drawer-body">
+            <ul class="list-unstyled">
+              <li><a href="#">Gardening</a></li>
+              <li><a href="#">Home, Family &amp; Food</a></li>
+              <li><a href="#">Utah 4-H &amp; Youth</a></li>
+            </ul>
+          </div>
         </div>
         <div class="header-right">
           <div class="row">
@@ -597,7 +609,9 @@
     /*for disqus comments*/
     var page_id = "https://extension.ou.usu.edu/index.php";
   </script>
+  <script src="http://127.0.0.1:5500/jquery.lettering-0.6.1.min.js"></script>
   <script src="http://127.0.0.1:5500/paired-list.js"></script>
+  <script src="http://127.0.0.1:5500/drawer.js"></script>
   <script src="https://ouresources.usu.edu/_resources/assets/js/bootstrap-tabcollapse/init.js"></script>
   <script src="https://ouresources.usu.edu/_resources/assets/components/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
   <script src="https://ouresources.usu.edu/_resources/assets/components/bootstrap-jasny/js/fileinput.min.js"></script>

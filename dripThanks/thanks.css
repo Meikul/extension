@@ -1,0 +1,40 @@
+#thanks-modal .modal-content {
+  padding: 30px 0;
+}
+
+#thanks-modal .fa-times {
+  font-size: 22px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px 15px;
+  opacity: 0.5;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+#thanks-modal .fa-times:hover {
+  opacity: 0.8;
+}
+
+#thanks-modal .modal-dialog {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#thanks-modal .fa-envelope-o {
+  font-size: 70px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#thanks-modal #thanks-header{
+  font-family: 'BebasNeue Bold';
+  font-size: 30pt;
+  text-align: center;
+}
+
+#thanks-modal #thanks-body{
+  text-align: center;
+}
