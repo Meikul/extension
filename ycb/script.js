@@ -285,6 +285,7 @@ var modal = (function () {
           modalOpen: true
       }, degreeName, _getUrl($fig));
     }
+    //Cloning clicked <figure> into lightbox. Styles size modal and hide/show relevant text.
     var $lightbox = $('.lightbox');
     $fig.clone().appendTo($lightbox);
     $lightbox.fadeIn(500);
@@ -661,8 +662,12 @@ var form = (function () {
   }
 
   // Public
+  /**
+   * Opens more info form in modal
+   */
   var open = function () {
     var $lightbox = $('.lightbox');
+    // Find more info form template and clone it into modal.
     var $moreInfo = $('.more-info');
     $moreInfo.clone().appendTo($lightbox.find('figure'));
     $moreInfo = $lightbox.find('figure .more-info');

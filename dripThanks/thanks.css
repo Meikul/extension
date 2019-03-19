@@ -22,8 +22,15 @@
   transform: translateY(-50%);
 }
 
-#thanks-modal .fa-envelope-o {
+/* #thanks-modal .fa-envelope-o {
   font-size: 70px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+} */
+
+#thanks-modal .fa-check-circle {
+  font-size: 80px;
   margin-bottom: 20px;
   width: 100%;
   text-align: center;
